@@ -1,0 +1,38 @@
+.container {
+	position: relative;
+	height: auto;
+	width: auto;
+	overflow: hidden;
+	margin: 5px;
+}
+
+a {
+	float: left;
+	margin: 20px;
+}
+
+.featuredPicture {
+	width: 270px;
+	height: 270px;
+}
+
+.bigPicture {
+	position: absolute;
+	top:900px;
+	left:20px;
+}
+
+.thumbnail {
+	width: 70px;
+	height: 70px;
+	margin: -2px;
+}
+
+.thumbnail:hover {
+	opacity: 0.8;
+}
+
+.ib {
+	display: inline-block;
+}
+
