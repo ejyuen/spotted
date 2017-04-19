@@ -16,17 +16,10 @@
 
 
 
-/*!
- * My Portfolio v1.0.0
- * Homepage: http://scripteden.com
- * Copyright 2015 Script Eden
- * Licensed under MIT
-*/
+
 
 body {
-	/*font: 300 14px/1.8 'Raleway', sans-serif;
-	color: #666;
-	overflow-x: hidden;*/
+
 	font-family: 'Raleway', "Century Gothic", Times, sans-serif;
 	font-size: 1.5em;
 	font-style: normal;
@@ -60,22 +53,7 @@ a:hover {
  * Typography
 /* ---------------------------------------------- */
 
-.think-text{
-	font-family: 'Rockwell', 'Raleway', "Century Gothic", Times, sans-serif;
-    text-transform: none;
-    letter-spacing: 1px;
-	margin: 5px 0 5px;
-	font-weight: lighter;
-	/*font-size: 6em;*/
-	display: inline;
-	color: rgba(0,0,0,1);
 
-}
-
-.think-text span{
-	text-transform: uppercase;
-	color: #005955;
-}
 h1, h2, h3, h4, h5, h6 {
 	font: 700 40px/1.2 'Raleway', sans-serif;
 	text-transform: uppercase;
@@ -114,38 +92,8 @@ h6 {
 	font-weight: 400;
 }
 
-/* ---------------------------------------------- /*
- * Reset border-radius
-/* ---------------------------------------------- */
-
-.btn,
-.iconbox,
-.progress,
-#filter li,
-.scroll-up a,
-.form-control,
-.input-group-addon {
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-		 -o-border-radius: 3px;
-			border-radius: 3px;
-}
 
 
-/* ---------------------------------------------- /*
- * Input-group
-/* ---------------------------------------------- */
-
-.input-group .form-control {
-	z-index: auto;
-}
-
-.input-group-addon {
-	background: #D8E1E4;
-	border: 2px solid #D8E1E4;
-	padding: 6px 15px;
-	font-weight: 700;
-}
 
 /* ---------------------------------------------- /*
  * Custom button style
