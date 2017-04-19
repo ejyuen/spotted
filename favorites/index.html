@@ -129,7 +129,7 @@ function add_pet(pet){
                                   +"<span class='description'>Shedding: </span>"+shedding+"</div><div>"
                                   +vaccinate+"<span class='description'>Vaccinated</span></div><div>"
                                   +neutered+"<span class='description'>Spayed/Neutered<span></div><div>"
-                                  +"<input type='button' class='btn profile' id='go-to-profile-'"+pet.name.toLowerCase()+" value='Go To Profile'/></div></div></div>";
+                                  +"<input type='button' id='go-to-profile' class='btn profile' value='Go To Profile'/></div></div></div>";
 
   return add;
 }
@@ -159,13 +159,12 @@ function close(name){
   if (pet_show.length==0){
     var show_text = "<div id='empty-notification' class='empty'><div id='notification-text' class='search-text'><p>There are no pets in your Favorites.</p><p>Would you like to add some now?</p></div><div class='wrapper'><input id='search' type='button' class='btn search' value='Go To Search Results'/></div></div>"
     $("#mainColumn").append(show_text);
-    //$('#pets').remove();
   }
 }
 
 
 $(document).on('click',"#go-to-profile", function(evt){
-  window.location.href = "";
+  document.location.href = "../petprofile/index.html";
 })
 
 $(document).on('click',"#close-benjamin", function(evt){
@@ -206,7 +205,7 @@ $(document).on('click',"#undo-remove", function(evt){
 <div class="container">
 </br>
   <div class="row favorites-header">
-    <img class='icon' src='../images/heart.jpg'><h2 class="favorites">Favorites</h2>
+    <img class='icon' src='../images/heart.jpg'/><h2 class="favorites">Favorites</h2>
   </div>
 </br>
   <div class="row">
