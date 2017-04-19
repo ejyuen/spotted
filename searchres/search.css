@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Antic+Slab');
+
+body {
+	font-family: 'Antic Slab', serif;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	
+}
+
+.header {
+	background-color: pink;
+	position: absolute;
+	height: 100px;
+	width: 100%;
+
+}
+
+.sidebar {
+	position: absolute;
+	width: 15%;
+	height: 100%;
+
+	top: 100px;
+	background-color: grey;
+	overflow: scroll;
+	border: 5px solid grey;
+
+}
+
+.results {
+	position: absolute;
+	width: 85%;
+	height: calc(100vh - 100px);
+
+	left: 15%;
+	top: 100px;
+
+	padding-left: 10px;
+
+}
+
+.tags {
+	padding-bottom: 20px;
+}
+
+/*input[type=checkbox] {
+
+}*/
+
+.petbox {
+	display: inline-block;
+	padding: 5px 5px 5px 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+
+	background-color: grey;
+}
+
+.petprev {
+	width: 300px;
+	height: 300px;
+}
+
+.petinf {
+	margin-top: 5px;
+	background-color: white;
+	padding: 5px 0px 5px 5px;
+}
+
+.fav {
+	width: 50px;
+	height: 50px;
+}
+

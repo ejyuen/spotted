@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <title>Spotted Search Results</title>
+
+	    <!-- Bootstrap -->
+	    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	    <!-- styles -->
+	    <link href="search.css" type="text/css" rel="stylesheet"/>
+
+	    <!-- JS -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   
+	    <script type="text/javascript" src="main.js"></script>
+	</head>
+
+	<body>
+		<div class="header">
+		<h1>spotted</h1>
+		</div>
+		<div class="sidebar">
+
+			<h3>Filter By:</h3>
+			<h4>Type</h4>
+
+			<input type="checkbox" class="cbox" id="cat"/>
+			<label for="cat">Cat</label>
+			<br>
+			<input type="checkbox" class="cbox" id="dog"/>
+			<label for="dog">Dog</label>
+
+			<h4>Age</h4>
+			<input type="checkbox" class="cbox" id="young"/>
+			<label for="young"> < 1 year </label>
+			<br>
+			<input type="checkbox" class="cbox" id="med"/>
+			<label for="med"> 1-2 years </label>
+			<br>
+			<input type="checkbox" class="cbox" id="old"/>
+			<label for="old"> 3-5 years</label>
+			<br>
+			<input type="checkbox" class="cbox" id="sr"/>
+			<label for="sr"> > 5 years </label>
+
+			<h4>Sex</h4>
+
+			<input type="checkbox" class="cbox" id="male"/>
+			<label for="male">Male</label>
+			<br>
+			<input type="checkbox" class="cbox" id="female"/>
+			<label for="female">Female</label>
+
+			<h4>Health</h4>
+
+			<input type="checkbox" class="cbox" id="fixed"/>
+			<label for="fixed">Spayed/Neutered</label>
+			<br>
+			<input type="checkbox" class="cbox" id="specneeds"/>
+			<label for="specneeds">Special Needs</label>
+
+			<h4>Size</h4>
+			<input type="checkbox" class="cbox" id="small"/>
+			<label for="small">Small</label>
+			<br>
+			<input type="checkbox" class="cbox" id="medium"/>
+			<label for="medium">Medium</label>
+			<br>
+			<input type="checkbox" class="cbox" id="large"/>
+			<label for="large">Large</label>
+
+			<h4>Change Zipcode:</h4>
+			<input>
+		</div>
+		<div class="results">
+			<div class="tags">
+				<h3>Tags:</h3>
+				<h4>Breed:</h4><input><input type="button">
+			</div>
+			<div class="petbox">
+				<div class="petprev">
+					<img src="../images/Gatsby1.png">
+				</div>
+				<div class="petinf">
+					<h4>Gatsby</h4>
+					<p>Male, 1 y/o, Corgi</p>
+
+					<img src="../images/hearticon-pink.png" class="fav">
+				</div>
+			</div>
+
+			<div class="petbox">
+				<div class="petprev">
+					<img src="../images/HerbertProfile.png">
+				</div>
+				<div class="petinf">
+					<h4>Herbert</h4>
+					<p>Male, 2 y/o, Holland Lop</p>
+
+					<img src="../images/hearticon-pink.png" class="fav">
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+</html>
