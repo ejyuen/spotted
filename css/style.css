@@ -316,14 +316,13 @@ h6 {
 }
 
 .navbar-custom,
-.navbar-custom .dropdown-menu {
+ {
 	background: #fff;
 	padding: 0;
 }
 
 .navbar-custom .navbar-brand,
-.navbar-custom .navbar-nav > li > a,
-.navbar-custom .navbar-nav .dropdown-menu > li > a {
+.navbar-custom .navbar-nav > li > a, {
 	font-size: 11px;
 	letter-spacing: 3px;
 	color: #222;
@@ -361,8 +360,7 @@ h6 {
 }
 
 .navbar-custom .nav .open > a,
-.navbar-custom .dropdown-menu > li > a:hover,
-.navbar-custom .dropdown-menu > li > a:focus {
+{
 	background: #f5f5f5;
 }
 
