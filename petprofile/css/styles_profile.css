@@ -1,3 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+:root{
+    --darkblue: RGB(100,160,142);
+		--lightblue: RGB(190,216,211);
+		--lightorange: RGB(253,200,84);
+		--darkorange: RGB(249,150,49);
+		--lightgray: RGB(245,245,245);
+}
+
+
+body {
+	font-family: 'Josefin Sans';
+}
+
+.profile-header{
+	padding-top: 50px;
+	border-bottom: 1px solid black;
+	background-color: var(--lightgray);
+}
+
+
+
+.icon {
+	 width: 50px;
+	 height: 50px;
+}
+
+.bg-success {
+	font-family: 'Raleway';
+	font-weight: bold;
+	font-size: 50px;
+	background-color: transparent;
+}
+
+.label-info {
+	font-family: 'Raleway';
+	font-weight: bold;
+	font-size: 14px;
+	background-color: #7de8d8;
+	color: white;
+}
+
 .container {
 	position: relative;
 	height: auto;
@@ -36,3 +81,15 @@ a {
 	display: inline-block;
 }
 
+.btn-primary{
+	background-color: #7de8d8;
+	color: white;
+	font-family: 'Raleway';
+	font-weight: bold;
+	font-size: 16px;
+	border: 0px solid black;
+}
+
+.btn-primary:hover{
+	background-color: RGB(229,29,47);
+}
