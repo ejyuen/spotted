@@ -7,12 +7,21 @@
 		--lightblue: RGB(190,216,211);
 		--lightorange: RGB(253,200,84);
 		--darkorange: RGB(249,150,49);
+		--lightgray: RGB(245,245,245);
 }
 
 
 body {
 	font-family: 'Josefin Sans';
 }
+
+.profile-header{
+	padding-top: 50px;
+	border-bottom: 1px solid black;
+	background-color: var(--lightgray);
+}
+
+
 
 .icon {
 	 width: 50px;
