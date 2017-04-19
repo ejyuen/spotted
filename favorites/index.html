@@ -1,0 +1,229 @@
+<!--
+Spotted Favorites Page
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>spotted</title>
+
+<!-- Load style sheets -->
+<link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+
+<link rel="stylesheet" href="mainLayout.css">
+
+<!-- Use mobile-aware viewport -->
+<meta name="viewport" content=
+  "width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Load any supplemental Javascript libraries here -->
+<script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</script>
+
+<script>
+
+// A short jQuery extension to read query parameters from the URL.
+$.extend({
+  getUrlVars: function() {
+    var vars = [], pair;
+    var pairs = window.location.search.substr(1).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+      pair = pairs[i].split('=');
+      vars.push(pair[0]);
+      vars[pair[0]] = pair[1] &&
+          decodeURIComponent(pair[1].replace(/\+/g, ' '));
+    }
+    return vars;
+  },
+  getUrlVar: function(name) {
+    return $.getUrlVars()[name];
+  }
+});
+// $.getUrlVar('size')
+
+// all the pets and their properties
+var benjamin = {
+  name: "Benjamin",
+  gender: "Male",
+  age: "8 months",
+  breed: "Maltese",
+  activity: 3,
+  kids: 3,
+  shedding: 2,
+  vaccinations: 1,
+  neutered: 1,
+  images: ["../images/benjamin_1.jpg","../images/benjamin_2.jpg","../images/benjamin_3.jpg","../images/benjamin_4.jpg","../images/benjamin_5.jpg"]
+};
+
+var staples = {
+  name: "Staples",
+  gender: "Male",
+  age: "4 months",
+  breed: "Chihuahua",
+  activity: 2,
+  kids: 1,
+  shedding: 1,
+  vaccinations: 0,
+  neutered: 1,
+  images: ["../images/staples_1.jpg","../images/staples_2.jpg","../images/staples_3.jpg","../images/staples_4.jpg"]
+};
+
+var ping = {
+  name: "Ping",
+  gender: "Female",
+  age: "9 months",
+  breed: "Siamese",
+  activity: 5,
+  kids: 4,
+  shedding: 2,
+  vaccinations: 1,
+  neutered: 1,
+  images: ["../images/ping_1.jpg","../images/ping_2.jpg","../images/ping_3.jpg","../images/ping_4.jpg"]
+};
+
+var pet_dict = [ping,staples,benjamin];
+var pet_removed;
+var pet_show = ["ping","staples","benjamin"];
+
+function add_pet(pet){
+  var activity="";
+  for (var j=0; j< pet.activity; j++) {
+    activity += "<img class='paw' src='../images/paw.png'></img>";
+  }
+
+  var kids="";
+  for (var j=0; j< pet.kids; j++) {
+    kids += "<img class='paw' src='../images/paw.png'></img>";
+  }
+
+  var shedding="";
+  for (var j=0; j< pet.shedding; j++) {
+    shedding += "<img class='paw' src='../images/paw.png'></img>";
+  }
+
+  var vaccinate="";
+  if (pet.vaccinations==1){
+    vaccinate += "<img class='paw' src='../images/yes.png'></img>"
+  } else {
+    vaccinate += "<img class='paw' src='../images/no.png'></img>"
+  }
+
+  var neutered="";
+  if (pet.neutered==1){
+    neutered += "<img class='paw' src='../images/yes.png'></img>"
+  } else {
+    neutered += "<img class='paw' src='../images/no.png'></img>"
+  }
+
+  var add="<div id=pet-"+pet.name.toLowerCase()+" class='pet'><div><div>"+"<input id='close-"+pet.name.toLowerCase()+"' type='button' class='btn remove' value='X'/></div><div>"
+                                  +"<img class='prof' src="+pet.images[0]+"></img>"+"</div><div class='name'>"
+                                  +pet.name+"</div><div class='description'>"
+                                  +pet.gender+"</div><div class='description'>"
+                                  +pet.age+"</div><div class='description'>"
+                                  +pet.breed+"</div><div class='description'>"
+                                  +"<span class='description'>Activity: </span>"+activity+"</div><div>"
+                                  +"<span class='description'>Kid-Friendly: </span>"+kids+"</div><div>"
+                                  +"<span class='description'>Shedding: </span>"+shedding+"</div><div>"
+                                  +vaccinate+"<span class='description'>Vaccinated</span></div><div>"
+                                  +neutered+"<span class='description'>Spayed/Neutered<span></div><div>"
+                                  +"<input type='button' class='btn profile' id='go-to-profile-'"+pet.name.toLowerCase()+" value='Go To Profile'/></div></div></div>";
+
+  return add;
+}
+$(document).ready(function(){
+  var pets="";
+  for (var i=0; i< pet_dict.length; i++) {
+    var pet=pet_dict[i];
+    pets+=add_pet(pet);
+  }
+  $("#pets").append(pets);
+
+
+});
+//----------end of document.ready-------------
+
+function close(name){
+  pet_removed=name;
+  var index = pet_show.indexOf(name);
+  if (index > -1) {
+    pet_show.splice(index, 1);
+  }
+
+  $('#pet-'+name).remove();
+  $('#notification-text').html('You just removed '+name.charAt(0).toUpperCase()+name.slice(1)+' from your Favorites');
+  $('#notification').css('visibility','visible');
+
+  if (pet_show.length==0){
+    var show_text = "<div id='empty-notification' class='empty'><div id='notification-text' class='search-text'><p>There are no pets in your Favorites.</p><p>Would you like to add some now?</p></div><div class='wrapper'><input id='search' type='button' class='btn search' value='Go To Search Results'/></div></div>"
+    $("#mainColumn").append(show_text);
+    //$('#pets').remove();
+  }
+}
+
+
+$(document).on('click',"#go-to-profile", function(evt){
+  window.location.href = "";
+})
+
+$(document).on('click',"#close-benjamin", function(evt){
+  close('benjamin');
+})
+$(document).on('click',"#close-staples", function(evt){
+  close('staples');
+})
+$(document).on('click',"#close-ping", function(evt){
+  close('ping');
+})
+
+$(document).on('click',"#close-notification", function(evt){
+  $('#notification').css('visibility','hidden');
+})
+
+$(document).on('click',"#undo-remove", function(evt){
+  var pet;
+  for (var i=0; i< pet_dict.length; i++){
+    if (pet_dict[i].name.toLowerCase()==pet_removed){
+      pet=pet_dict[i];
+    }
+  }
+
+  $("#pets").append(add_pet(pet));
+  pet_removed='';
+  $('#notification').css('visibility','hidden');
+  $('#empty-notification').remove();
+  pet_show.push(pet.name.toLowerCase());
+})
+
+
+
+</script>
+</head>
+
+<body>
+<div class="container">
+</br>
+  <div class="row favorites-header">
+    <img class='icon' src='../images/heart.jpg'><h2 class="favorites">Favorites</h2>
+  </div>
+</br>
+  <div class="row">
+    <div class="col-md-3 left" id="firstColumn">
+    </div>
+
+    <div class="col-md-9 main" id="mainColumn">
+      <div id="pets" class="pets">
+      </div>
+    </div>
+  </div> <!-- class="row" -->
+  <div id="notification" class="container notification">
+    <input id='close-notification' type='button' class='btn remove' value='X'/>
+    <div id="notification-text" class="notification-text"></div>
+    <div class="wrapper"><input id='undo-remove' type='button' class='btn undo' value='Undo'/></div>
+  </div>
+</div> <!-- class="container" -->
+</body>
+
+</html>
