@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Antic+Slab');
+
+body {
+	font-family: 'Antic Slab', serif;
+	margin-left: 10px;
+}
+
+.header {
+	background-color: pink;
+	position: absolute;
+	height: 100px;
+	width: 100%;
+
+}
+
+.sidebar {
+	position: absolute;
+	width: 15%;
+	height: calc(100vh - 100px);
+
+	top: 100px;
+	background-color: grey;
+
+}
+
+.results {
+	position: absolute;
+	width: 85%;
+	height: calc(100vh - 100px);
+
+	left: 15%;
+	top: 100px;
+}
