@@ -8,6 +8,13 @@ Spotted Favorites Page
 <meta charset="utf-8">
 <title>spotted</title>
 
+<!-- Load any supplemental Javascript libraries here -->
+<script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/seedrandom.js">
+</script>
+
 <!-- Load style sheets -->
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -26,10 +33,7 @@ Spotted Favorites Page
 <meta name="viewport" content=
   "width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Load any supplemental Javascript libraries here -->
-<script src=
-  "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-</script>
+
 
 <script>
 
@@ -175,6 +179,10 @@ $(document).on('click',"#go-to-profile", function(evt){
   document.location.href = "../petprofile/index.html";
 })
 
+$(document).on('click',"#search", function(evt){
+  document.location.href = "../searchres/index.html";
+})
+
 $(document).on('click',"#close-benjamin", function(evt){
   close('benjamin');
 })
@@ -246,6 +254,59 @@ $(document).on('click',"#undo-remove", function(evt){
 </br>
   <div class="row">
     <div class="col-md-3 left" id="firstColumn">
+        </br>
+          <div class="row zipcode">
+            <label for='zipcode'>Zip-Code:</label>
+      			<input type="text" id="zipcode" placeholder="01803" style="width: 60px;"/>
+          </div>
+        </br>
+        <div class='filter-head'>Filter By:</div>
+  			<div class='filter-param'>Type</div>
+
+  			<input type="checkbox" class="cbox" id="cat"/>
+  			<label class="filter-option" for="cat">Cat</label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="dog"/>
+  			<label class="filter-option" for="dog">Dog</label>
+
+  			<div class='filter-param'>Age</div>
+  			<input type="checkbox" class="cbox" id="young"/>
+  			<label class="filter-option" for="young"> < 1 year </label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="med"/>
+  			<label class="filter-option" for="med"> 1-2 years </label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="old"/>
+  			<label class="filter-option" for="old"> 3-5 years</label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="sr"/>
+  			<label class="filter-option" for="sr"> > 5 years </label>
+
+  			<div class='filter-param'>Sex</div>
+
+  			<input type="checkbox" class="cbox" id="male"/>
+  			<label class="filter-option" for="male">Male</label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="female"/>
+  			<label class="filter-option" for="female">Female</label>
+
+  			<div class='filter-param'>Health</div>
+
+  			<input type="checkbox" class="cbox" id="fixed"/>
+  			<label class="filter-option" for="fixed">Spayed/Neutered</label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="specneeds"/>
+  			<label class="filter-option" for="specneeds">Special Needs</label>
+
+  			<div class='filter-param'>Size</div>
+  			<input type="checkbox" class="cbox" id="small"/>
+  			<label class="filter-option" for="small">Small</label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="medium"/>
+  			<label class="filter-option" for="medium">Medium</label>
+  			<br>
+  			<input type="checkbox" class="cbox" id="large"/>
+  			<label class="filter-option" for="large">Large</label>
     </div>
 
     <div class="col-md-9 main" id="mainColumn">
@@ -259,6 +320,34 @@ $(document).on('click',"#undo-remove", function(evt){
     <div class="wrapper"><input id='undo-remove' type='button' class='btn undo' value='Undo'/></div>
   </div>
 </div> <!-- class="container" -->
+
+
+<!-- Footer start -->
+
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <p class="copyright">© 2015 Spotted</p>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 contact-info">
+        <p class = "text-left">
+          Phone: +1 800-SPO-TTED<br>
+          Email: spotted@mit.edu
+        </p>
+      </div>
+
+
+    </div><!-- .row -->
+  </div><!-- .container -->
+</footer>
+
+<div class="scroll-up">
+  <a href="#home"><i class="fa fa-angle-up"></i></a>
+</div>
+
 </body>
 
 </html>
