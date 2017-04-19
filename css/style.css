@@ -427,27 +427,27 @@ h6 {
 /*-----------------------*/
 /***** Services *****/
 /*-----------------------*/
-.platforms{
+.adoption-steps{
 	margin: 0px 40px;
 }
-.platform{
+.adoption-step{
 	background-color: #fff;
 	border-left: 1px solid #6d0000;
 	display: table-cell;
 	text-align: center;
 }
 
-.platform h2{
+.adoption-step h2{
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.platform-title{
+.adoption-step-title{
 	text-align: center;
 }
 
-.platform-text{
+.adoption-step-text{
 	padding-top: 10px;
 	/*padding-left: 15%;*/
 	padding-bottom: 10px;
@@ -456,14 +456,14 @@ h6 {
 	font-size: 18px;
 }
 
-.platform-btn {
+.adoption-step-btn {
 	text-align: center;
 	padding-right: 30%;
 	padding-left: 30%;
 }
 
 
-.platform-title {
+.adoption-step-title {
 	text-transform: uppercase;
 	margin: 0 0 15px;
 	padding: 0;
@@ -472,23 +472,6 @@ h6 {
 
 
 
-
-/
-/*-----------------------*/
-/***** Enroll *****/
-/*-----------------------*/
-
-.enroll-btn > .btn {
-    background: #005955;
-    color: #ffffff;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-.enroll-btn > .btn:hover{
-    background: #9a0000;
-
-
-}
 
 
 
