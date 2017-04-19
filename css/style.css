@@ -7,12 +7,7 @@
 }
 
 
-
-
-
-
 body {
-
 	font-family: 'Raleway', "Century Gothic", Times, sans-serif;
 	font-size: 1.5em;
 	font-style: normal;
@@ -169,8 +164,8 @@ h6 {
 .section-chunk-title{
     font-weight: 200;
     color: #000;
-    
-    
+
+
 }
 
 .section-chunk-subtitle {
@@ -216,7 +211,7 @@ h6 {
 .home-logo {
     position: absolute;
 	left: 30%;
-	
+
 	top: 20px;
 	height: auto;
 	max-width: 40%;
@@ -298,7 +293,7 @@ h6 {
 	margin: 0;
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
-	
+
 }
 
 .navbar-custom,
@@ -315,10 +310,10 @@ h6 {
 	color: #222;
 }
 
-.navbar .navbar-brand #imageBrand{ 
+.navbar .navbar-brand #imageBrand{
     height: 20px; /* you can use % */
     margin-top : 0px;
-    width: auto; 
+    width: auto;
 }
 
 .navbar-custom .nav li.active,
@@ -333,7 +328,7 @@ h6 {
 .navbar-custom .navbar-brand {
 	font-weight: 700;
 	font-size: 22px;
-    
+
 }
 
 .navbar-custom .dropdown-menu {
@@ -403,12 +398,3 @@ h6 {
 	padding: 0;
 
 }
-
-
-
-
-
-
-
-
-
