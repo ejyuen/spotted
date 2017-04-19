@@ -13,16 +13,52 @@
 
 	    <!-- styles -->
 	    <link href="search.css" type="text/css" rel="stylesheet"/>
+	    <link href="../css/style.css" type="text/css" rel="stylesheet"/>
 
 	    <!-- JS -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   
 	    <script type="text/javascript" src="main.js"></script>
+
+	    	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
-		<div class="header">
-		<h1>spotted</h1>
-		</div>
+	<!-- Navigation start -->
+
+		<header class="header">
+
+			<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+
+				<div class="container">
+
+					<div class="navbar-header">
+					
+						<a class="navbar-brand" href="index.html">Spotted
+					</div>
+
+					<div class="collapse navbar-collapse" id="custom-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							
+							<li><a href=""><span class= "glyphicon glyphicon-search"></span>Search</a></li>
+							<li><a href=""><span class= "glyphicon glyphicon-question-sign"></span>Adoption Info</a></li>
+	                        <li><a href=""><span class= "glyphicon glyphicon-heart"></span>Favorites</a></li>
+	                        
+						</ul>
+					</div>
+
+				</div><!-- .container -->
+
+			</nav>
+
+		</header>
+
 		<div class="sidebar">
 
 			<h3>Filter By:</h3>
@@ -33,6 +69,9 @@
 			<br>
 			<input type="checkbox" class="cbox" id="dog"/>
 			<label for="dog">Dog</label>
+			<br>
+			<input type="checkbox" class="cbox" id="other"/>
+			<label for="other">Other</label>
 
 			<h4>Age</h4>
 			<input type="checkbox" class="cbox" id="young"/>
@@ -75,35 +114,102 @@
 
 			<h4>Change Zipcode:</h4>
 			<input>
+			<button> Go </button>
 		</div>
 		<div class="results">
+
 			<div class="tags">
 				<h3>Tags:</h3>
-				<h4>Breed:</h4><input><input type="button">
+				<h4>Breed:</h4><input><button>Search</button>
 			</div>
 			<div class="petbox">
 				<div class="petprev">
 					<img src="../images/Gatsby1.png">
 				</div>
-				<div class="petinf">
-					<h4>Gatsby</h4>
-					<p>Male, 1 y/o, Corgi</p>
+				<div class="descbox">
+					<div class="petinf">
+						<h4>Gatsby</h4>
+						<p>Male, 1 y/o, Corgi Dog</p>
+					</div>
+					<img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Gatsby added to favorites!">
+				</div>
+			</div>
 
+<!-- Modal -->
+<div class="modal fade" id="gatsby" tabindex="-1" role="dialog" aria-labelledby="gatsby" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="gatsby">GATSBY</h5>
+      </div>
+      <div class="modal-body">
+      	<div class="img-scroll">
+      		<img class="gatsbySlides" src="../images/GatsbyProfile.png">
+      		<img class="gatsbySlides" src="../images/Gatsby1.png">
+      		<img class="gatsbySlides" src="../images/Gatsby2.png">
+      		<img class="gatsbySlides" src="../images/Gatsby3.png">
+      		<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+			<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+      	</div>
+      	<button type="button" class="btn btn-secondary">Feed Treat</button>
+      	<button type="button" class="btn btn-secondary">Walk</button>
+      	<button type="button" class="btn btn-secondary">Play</button>
+      	<br><br>
+        Gatsby's a corgi.
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">See Profile</button>
+        <img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Gatsby added to favorites!">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--     OTHER PETS -->
+			<div class="petbox">
+				<div class="petprev">
+					<img src="../images/HerbertProfile.png">
+				</div>
+				<div class="descbox">
+					<div class="petinf">
+						<h4>Herbert</h4>
+						<p>Male, 2 y/o, Holland Lop Rabbit</p>
+					</div>
 					<img src="../images/hearticon-pink.png" class="fav">
 				</div>
 			</div>
 
 			<div class="petbox">
 				<div class="petprev">
-					<img src="../images/HerbertProfile.png">
+					<img src="../images/ping_4.jpg">
 				</div>
-				<div class="petinf">
-					<h4>Herbert</h4>
-					<p>Male, 2 y/o, Holland Lop</p>
-
+				<div class="descbox">
+					<div class="petinf">				
+						<h4>Ping</h4>
+						<p>Female, 3 y/o, Siamese Cat</p>
+					</div.
 					<img src="../images/hearticon-pink.png" class="fav">
 				</div>
 			</div>
+
+<!-- 			<div class="petbox">
+				<div class="petprev">
+					<img src="../images/benjamin_square.jpg">
+				</div>
+				<div class="descbox">
+					<div class="petinf">
+						<h4>Benjamin</h4>
+						<p>Male, 6 m/o, Dog</p>
+					</div>
+					<img src="../images/hearticon-pink.png" class="fav">
+				</div>
+			</div> -->
 
 		</div>
 
