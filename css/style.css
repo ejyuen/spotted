@@ -1,11 +1,18 @@
-
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 @font-face {
 	font-family: 'Raleway';
-	src: url('../fonts/raleway.ttf') format ('ttf');
 
 }
 
+:root{
+    --darkblue: RGB(100,160,142);
+		--lightblue: RGB(190,216,211);
+		--lightorange: RGB(253,200,84);
+		--darkorange: RGB(249,150,49);
+		--lightgray: RGB(245,245,245);
+}
 
 body {
 	font-family: 'Raleway', "Century Gothic", Times, sans-serif;
@@ -21,12 +28,12 @@ img {
 }
 
 a {
-	color: #005955;
+	color: var(--darkblue);
 }
 
 a:hover {
 	text-decoration: none;
-	color: #999;
+	color: var(--lightorange);
 }
 
 /* ---------------------------------------------- /*
@@ -49,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 5px;
 	/*letter-spacing: 0px;*/
 	margin: 5px 0 5px;
-	color: #222;
+	color: black;
 }
 
 h2 {
@@ -79,7 +86,6 @@ h6 {
 	letter-spacing: 1px;
 	font-weight: 400;
 }
-
 
 
 
@@ -140,7 +146,7 @@ h6 {
 }
 
 .section-chunk-gray {
-	background: #f5f5f5;
+	background: var(--lightgray);
 }
 
 
@@ -163,13 +169,13 @@ h6 {
 
 .section-chunk-title{
     font-weight: 200;
-    color: #000;
+    color: white;
 
 
 }
 
 .section-chunk-subtitle {
-	font-family: 'Raleway', "Century Gothic", Times, sans-serif;
+	font-family: 'Raleway', "Josefin Sans", Times, sans-serif;
 	font-style: normal;
 	font-size: 18px;
 }
@@ -283,6 +289,7 @@ h6 {
 .header {
 	border-bottom: 1px solid #f5f5f5;
 	position: relative;
+	max-height: 50px;
 	width: 100%;
 	z-index: 1000;
 }
@@ -350,6 +357,7 @@ h6 {
 .navbar-custom .navbar-toggle .icon-bar {
 	background: #222;
 }
+
 
 
 

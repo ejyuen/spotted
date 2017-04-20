@@ -10,6 +10,31 @@
 		--lightgray: RGB(245,245,245);
 }
 
+.navbar {
+  max-height: 50px !important;
+}
+
+.navbar-header .navbar-brand{
+  max-height: 50px;
+  padding: 0px;
+  padding-top: 15px;
+  margin:auto;
+}
+
+ .navbar-info .navbar-favorite .navbar-search {
+   max-height: 50px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+ .filler {
+   max-height: 50px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   width: 670px;
+ }
+
+
 
 body {
 	font-family: 'Josefin Sans';
@@ -21,18 +46,86 @@ body {
 	background-color: var(--lightgray);
 }
 
-
+.container-head {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-height: 50px;
+  width: 100%;
+  margin-left: 47px;
+  margin-right: 48px;
+}
 
 .icon {
 	 width: 50px;
 	 height: 50px;
+   margin-bottom: 14px;
 }
 
 .bg-success {
 	font-family: 'Raleway';
 	font-weight: bold;
-	font-size: 50px;
-	background-color: transparent;
+	font-size: 40px;
+	background-color: transparent !important;
+  margin-left: 4px;
+  color: var(--darkblue);
+}
+
+.name {
+	font-family: 'Raleway';
+	font-size: 24px;
+	font-weight: 'black';
+	padding-top: 10px;
+  color: var(--darkblue);
+}
+
+.adoption {
+	font-family: 'Raleway';
+	font-size: 24px;
+	font-weight: 'black';
+	padding-top: 10px;
+  color: var(--darkorange);
+}
+
+.adoption-sub {
+	font-family: 'Raleway';
+	font-size: 20px;
+	font-weight:  bold;
+	padding-top: 10px;
+  color: var(--lightorange);
+}
+
+.adopt-form {
+	background-color: var(--darkblue);
+	color: white;
+	font-family: 'Raleway';
+	font-weight: bold;
+  font-size: 12px;
+}
+
+.adopt-form:hover {
+  background-color: var(--darkorange);
+  color: white;
+	font-weight: bold;
+}
+
+.description {
+	font-family: 'Josefin Sans';
+	font-size: 20px;
+	font-weight: 'light';
+}
+
+.information {
+  font-family: 'Josefin Sans';
+	font-size: 16px;
+	font-weight: 'light';
+}
+
+.tag {
+	font-family: 'Josefin Sans';
+	font-size: 20px;
+	font-weight: 'light';
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .label-info {
@@ -53,7 +146,9 @@ body {
 
 a {
 	float: left;
-	margin: 20px;
+	margin: 18px;
+  color: black !important;
+  font-size: 11px;
 }
 
 .featuredPicture {
