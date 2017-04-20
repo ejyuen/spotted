@@ -361,9 +361,9 @@ h6 {
 }
 .adoption-step{
 	background-color: #fff;
-	border-left: 1px solid #6d0000;
+	border-left: 1px solid #000;
 	display: table-cell;
-	text-align: center;
+	text-align: left;
 }
 
 .adoption-step h2{
