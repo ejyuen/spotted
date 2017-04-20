@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Antic+Slab');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+
 
 body {
-	font-family: 'Antic Slab', serif;
+	font-family: 'Raleway';
 }
 
 img {
 	height: 100% !important;
 	width: 100%;
-	
+
 }
 
 
@@ -93,4 +97,3 @@ img {
 #detarrow {
 	-top: 5px;
 }
-
