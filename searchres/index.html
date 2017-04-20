@@ -112,104 +112,233 @@
 			<input type="checkbox" class="cbox" id="large"/>
 			<label for="large">Large</label>
 
+			<h4>Breed:</h4><input><button class="btn btn-secondary">Search</button>
+
 			<h4>Change Zipcode:</h4>
 			<input>
-			<button> Go </button>
+			<button class="btn btn-secondary"> Go </button>
 		</div>
 		<div class="results">
 
 			<div class="tags">
-				<h3>Tags:</h3>
-				<h4>Breed:</h4><input><button>Search</button>
+				<h1>SEARCH</h1>
+
+				<div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Sort by:
+				  <span class="caret"></span></button>
+				  <ul class="dropdown-menu">
+				    <li><a href="#">Distance</a></li>
+				    <li><a href="#">Maintenance(Low to High)</a></li>
+				    <li><a href="#">Maintenance(High to Low)</a></li>
+				  </ul>
+				</div>
+
+
 			</div>
-			<div class="petbox">
+
+			<div class="petbox" id="gatsby">
 				<div class="petprev">
-					<img src="../images/Gatsby1.png">
+					<img src="../images/GatsbyProfile.png">
 				</div>
 				<div class="descbox">
 					<div class="petinf">
 						<h4>Gatsby</h4>
-						<p>Male, 1 y/o, Corgi Dog</p>
+						<p>Male, 1 y/o, Corgi</p>
 					</div>
 					<img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Gatsby added to favorites!">
 				</div>
 			</div>
 
-<!-- Modal -->
-<div class="modal fade" id="gatsby" tabindex="-1" role="dialog" aria-labelledby="gatsby" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="modal-title" id="gatsby">GATSBY</h5>
-      </div>
-      <div class="modal-body">
-      	<div class="img-scroll">
-      		<img class="gatsbySlides" src="../images/GatsbyProfile.png">
-      		<img class="gatsbySlides" src="../images/Gatsby1.png">
-      		<img class="gatsbySlides" src="../images/Gatsby2.png">
-      		<img class="gatsbySlides" src="../images/Gatsby3.png">
-      		<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-			<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
-      	</div>
-      	<button type="button" class="btn btn-secondary">Feed Treat</button>
-      	<button type="button" class="btn btn-secondary">Walk</button>
-      	<button type="button" class="btn btn-secondary">Play</button>
-      	<br><br>
-        Gatsby's a corgi.
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">See Profile</button>
-        <img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Gatsby added to favorites!">
-      </div>
-    </div>
-  </div>
-</div>
-
 <!--     OTHER PETS -->
-			<div class="petbox">
+			<div class="petbox" id="herbert">
 				<div class="petprev">
 					<img src="../images/HerbertProfile.png">
 				</div>
 				<div class="descbox">
 					<div class="petinf">
 						<h4>Herbert</h4>
-						<p>Male, 2 y/o, Holland Lop Rabbit</p>
+						<p>Male, 2 y/o, Holland Lop</p>
 					</div>
-					<img src="../images/hearticon-pink.png" class="fav">
+					<img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Herbert added to favorites!">
 				</div>
 			</div>
 
-			<div class="petbox">
+			<div class="petbox" id="ping">
 				<div class="petprev">
 					<img src="../images/ping_4.jpg">
 				</div>
 				<div class="descbox">
 					<div class="petinf">				
 						<h4>Ping</h4>
-						<p>Female, 3 y/o, Siamese Cat</p>
-					</div.
-					<img src="../images/hearticon-pink.png" class="fav">
+						<p>Female, 3 y/o, Siamese</p>
+					</div>
+					<img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Ping added to favorites!">
 				</div>
 			</div>
 
-<!-- 			<div class="petbox">
+			<div class="petbox" id="benj">
 				<div class="petprev">
 					<img src="../images/benjamin_square.jpg">
 				</div>
 				<div class="descbox">
 					<div class="petinf">
 						<h4>Benjamin</h4>
-						<p>Male, 6 m/o, Dog</p>
+						<p>Male, 6 m/o, Maltese</p>
 					</div>
-					<img src="../images/hearticon-pink.png" class="fav">
+					<img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Benjamin added to favorites!">
 				</div>
-			</div> -->
+			</div>
+
+
+			<!-- MODALS -->
+
+			<div class="modal fade" id="gatsbyModal" tabindex="-1" role="dialog" aria-labelledby="gatsbyModal" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			        <h5 class="modal-title" id="gatsbyModal">GATSBY</h5>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="img-scroll">
+			      		<img class="gatsbySlides" src="../images/GatsbyProfile.png">
+			      		<img class="gatsbySlides" src="../images/Gatsby1.png">
+			      		<img class="gatsbySlides" src="../images/Gatsby2.png">
+			      		<img class="gatsbySlides" src="../images/Gatsby3.png">
+			      	</div>
+			      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'gatsby')">&#10094;</button>
+					<button class="btn btn-secondary" onclick="plusDivs(+1, 'gatsby')">&#10095;</button>
+<!-- 			      	<button type="button" class="btn btn-secondary">Feed Treat</button>
+			      	<button type="button" class="btn btn-secondary">Walk</button>
+			      	<button type="button" class="btn btn-secondary">Play</button> -->
+			      	<br><br>
+			        <p>
+			        Gatsby is very active and energetic. He loves to go on hikes, play with other dogs, and play with a whole bunch of toys. Gatsby enjoys meeting new people, and loves interacting with kids. Gatsby would be happy in a bustling family environment. He would do well as the only dog in a home or in a multi-dog home.
+			        </p>
+			      </div>
+
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">See Profile</button>
+			        <img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Gatsby added to favorites!">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+			<div class="modal fade" id="herbertModal" tabindex="-1" role="dialog" aria-labelledby="herbertModal" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			        <h5 class="modal-title" id="herbertModal">HERBERT</h5>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="img-scroll">
+			      		<img class="herbertSlides" src="../images/HerbertProfile.png">
+			      		<img class="herbertSlides" src="../images/Herbert2.jpeg">
+			      	</div>
+			      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'herbert')">&#10094;</button>
+					<button class="btn btn-secondary" onclick="plusDivs(+1, 'herbert')">&#10095;</button>
+<!-- 			      	<button type="button" class="btn btn-secondary">Feed Treat</button>
+			      	<button type="button" class="btn btn-secondary">Walk</button>
+			      	<button type="button" class="btn btn-secondary">Play</button> -->
+			      	<br><br>
+			        Herbert's an unpaired Holland Lop. Gentle and mild-mannered, Herbert can be a little aloof but loves his daily pets. He loves jumping around and climbing things, and tearing up cardboard boxes. Litter trained and socialized, Herbert would make a perfect pet for children or anyone looking for a laid back companion for their home.
+			      </div>
+
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">See Profile</button>
+			        <img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Herbert added to favorites!">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		<!-- 	PING MODAL -->
+			<div class="modal fade" id="pingModal" tabindex="-1" role="dialog" aria-labelledby="pingModal" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			        <h5 class="modal-title" id="pingModal">PING</h5>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="img-scroll">
+			      		<img class="pingSlides" src="../images/ping_4.jpg">
+			      		<img class="pingSlides" src="../images/ping_1.jpg">
+			      		<img class="pingSlides" src="../images/ping_2.jpg">
+			      		<img class="pingSlides" src="../images/ping_3.jpg">
+			      	</div>
+			      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'ping')">&#10094;</button>
+					<button class="btn btn-secondary" onclick="plusDivs(+1, 'ping')">&#10095;</button>
+<!-- 			      	<button type="button" class="btn btn-secondary">Feed Treat</button>
+			      	<button type="button" class="btn btn-secondary">Walk</button>
+			      	<button type="button" class="btn btn-secondary">Play</button> -->
+			      	<br><br>
+			        <p>
+			        Choose a Siamese cat if you look forward to spending time with and interacting with your cat. This is a loyal and loving feline who will pout and pine if given little or no attention. In the right home, however, he will be a fiercely loyal companion for life.
+			        </p>
+			      </div>
+
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">See Profile</button>
+			        <img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Ping added to favorites!">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+<!-- 			BENJAMIN MODAL -->
+			<div class="modal fade" id="benjModal" tabindex="-1" role="dialog" aria-labelledby="benjModal" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			        <h5 class="modal-title" id="benjModal">BENJAMIN</h5>
+			      </div>
+			      <div class="modal-body">
+			      	<div class="img-scroll">
+			      		<img class="benjSlides" src="../images/benjamin_square.jpg">
+			      		<img class="benjSlides" src="../images/benjamin_2.jpg">
+			      		<img class="benjSlides" src="../images/benjamin_3.jpg">
+			      		<img class="benjSlides" src="../images/benjamin_4.jpg">
+			      		<img class="benjSlides" src="../images/benjamin_5.jpg">
+			      	</div>
+			      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'benj')">&#10094;</button>
+					<button class="btn btn-secondary" onclick="plusDivs(+1, 'benj')">&#10095;</button>
+<!-- 			      	<button type="button" class="btn btn-secondary">Feed Treat</button>
+			      	<button type="button" class="btn btn-secondary">Walk</button>
+			      	<button type="button" class="btn btn-secondary">Play</button> -->
+			      	<br><br>
+			      	<p>
+			        Benjamin just wants to cuddle and nap. He is gentle-mannered and affectionate, eager and sprightly in action, and, has energy and personality larger than his size. The Maltese is a extra-small breed and has a lifespan of 13 to 15 years. He needs good nutrition and grooming.
+			        </p>
+			      </div>
+
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">See Profile</button>
+			        <img src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Ping added to favorites!">
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
 		</div>
 

@@ -14,13 +14,13 @@ img {
 .sidebar {
 	position: absolute;
 	width: 15%;
-	height: 100%;
+	height: 200%;
 
 	top: 51px;
 
-	background-color: grey;
 	overflow: scroll;
-	border: 5px solid grey;
+	border-right: 5px solid grey;
+	border-top: 5px solid grey;
 
 	padding-top: 10px;
 	padding-left: 10px;
@@ -28,13 +28,15 @@ img {
 }
 
 .results {
-	background-color: #e8e8e8;
+
 	position: absolute;
 	width: 85%;
 	height: 100%;
 
 	left: 15%;
 	top: 51px;
+
+	border-top: 5px solid grey;
 
 	padding-left: 20px;
 	padding-top: 10px;
@@ -82,4 +84,13 @@ img {
 
 .popover-title {display:none;}
 
+.img-scroll {
+	width: 300px;
+	height: 300px;
+
+}
+
+#detarrow {
+	-top: 5px;
+}
 
