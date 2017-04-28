@@ -3,6 +3,15 @@
 
 
 
+h4 {
+	font-size: 16px !important;
+	margin-bottom: 2px !important;
+}
+
+p{
+	font-size: 12px !important;
+
+}
 
 body {
 	font-family: 'Raleway';
@@ -14,89 +23,108 @@ img {
 
 }
 
+#detarrow {
+	-top: 5px;
+}
+
+.breed-search{
+	display:inline-block;
+	margin-right: 310px;
+	padding-top: 8px;
+}
+
+.descbox {
+	background-color: white;
+	padding-left: 20px;
+}
+
+.fav {
+	width: 40px;
+	height: 40px;
+	cursor: pointer; cursor: hand;
+}
+
+.filter-param {
+	font-size: 18px;
+	font-family: "Josefin Sans";
+}
+
+.filter-option {
+	font-size: 16px;
+	font-family: "Josefin Sans";
+	padding-left: 10px;
+}
+
 .ib {
 	display: inline-block;
 }
 
-.sidebar {
-	position: absolute;
-	width: 15%;
-	height: 200%;
-
-	top: 51px;
-
-	overflow: scroll;
-	border-right: 5px solid grey;
-	border-top: 5px solid grey;
-
-	padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
+.icon {
+	 width: 50px;
+	 height: 50px;
+	 position: relative;
+	 bottom: 14px;
 }
 
+.img-scroll {
+	width: 300px;
+	height: 300px;
+}
+
+.left {
+	position: relative;
+}
+
+.petbox {
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-right: 3px;
+	width: 275px;
+	border: 1px solid lightgray;
+}
+
+.petinf {
+	cursor: pointer;
+}
+
+.petprev {
+	height: 273px;
+	width: 273px;
+	cursor: pointer;
+}
+
+.popover-title {display:none;}
+
 .results {
+	position: relative;
+	border: 1px solid white;
+}
 
-	position: absolute;
-	width: 85%;
-	height: 100%;
+.search {
+	font-family: 'Raleway';
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--darkblue);
+	padding-left: 5px;
+}
 
-	left: 15%;
-	top: 51px;
-
-	border-top: 5px solid grey;
-
-	padding-left: 20px;
-	padding-top: 10px;
-
+.search-header{
+	padding-top: 50px;
+	border-bottom: 1px solid black;
+	background-color: var(--lightgray);
 }
 
 .tags {
 	padding-bottom: 20px;
 }
 
-/*input[type=checkbox] {
-
-}*/
-
-.petbox {
-	display: inline-block;
-	padding: 5px 5px 5px 5px;
-	margin-bottom: 10px;
-	margin-right: 10px;
-
-	background-color: grey;
-}
-
-.petprev {
-	width: 300px;
-	height: 300px;
-	cursor: pointer; cursor: hand;
-}
-
-.descbox {
-	margin-top: 5px;
-	background-color: white;
-	padding: 5px 0px 5px 5px;
-}
-
-.petinf {
-	cursor: pointer; cursor: hand;
-}
-
-.fav {
-	width: 50px;
-	height: 50px;
-	cursor: pointer; cursor: hand;
-}
-
-.popover-title {display:none;}
-
-.img-scroll {
-	width: 300px;
-	height: 300px;
-
-}
-
-#detarrow {
-	-top: 5px;
+.zipcode {
+	display: table-cell;
+	vertical-align: middle;
+	background-color: var(--lightblue);
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	width: 100%;
 }

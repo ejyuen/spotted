@@ -10,32 +10,6 @@
 }
 
 
-.filter-head {
-	font-size: 20px;
-	font-family: "Raleway";
-}
-
-.filter-param {
-	font-size: 18px;
-	font-family: "Josefin Sans";
-}
-
-.filter-option {
-	font-size: 16px;
-	font-family: "Josefin Sans";
-	padding-left: 10px;
-}
-
-.zipcode {
-	display: table-cell;
-	vertical-align: middle;
-	background-color: var(--lightblue);
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	width: 100%;
-}
 
 
 
