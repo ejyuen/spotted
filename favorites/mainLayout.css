@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-
-
-
 :root{
     --darkblue: RGB(100,160,142);
 		--lightblue: RGB(190,216,211);
@@ -11,6 +8,7 @@
 		--darkorange: RGB(249,150,49);
 		--lightgray: RGB(245,245,245);
 }
+
 
 .filter-head {
 	font-size: 20px;
@@ -39,17 +37,78 @@
 	width: 100%;
 }
 
-.favorites-header{
-	padding-top: 50px;
-	border-bottom: 1px solid black;
-	background-color: var(--lightgray);
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 6px;
+    padding: 0px;
 }
+
+.close {
+	background-color: transparent;
+	float: right;
+	width: 10px;
+	border-radius: 15px;
+  color: black;
+  opacity: 1.0;
+}
+.close:hover {
+  background-color: transparent;
+  color: var(--darkblue);
+	font-weight: bold;
+}
+
+.description {
+	font-family: 'Josefin Sans';
+	font-size: 16px;
+	font-weight: 'light';
+  height: 30px;
+}
+
+.empty {
+	position: relative;
+	top:0px;
+	left:0px;
+	height:542px;
+	width:1170px;
+	background-color: white;
+  border: 1px solid black;
+}
+
+.empty-lineup {
+  position: relative;
+	top:0px;
+	left:0px;
+	height:140px;
+	width:1170px;
+	background-color: white;
+  border: 1px solid black;
+  padding-top: 16px;
+}
+
 .favorites {
 	font-family: 'Raleway';
   font-size: 40px;
   font-weight: bold;
   color: var(--darkblue);
 	padding-left: 5px;
+}
+
+.favorites-header{
+	padding-top: 50px;
+	border-bottom: 1px solid black;
+	background-color: var(--lightgray);
+}
+
+.features-space{
+  position: relative;
+  height:207px;
+  background-color: white;
+  border: 1px solid white;
 }
 
 .icon {
@@ -59,174 +118,26 @@
 	 bottom: 14px;
 }
 
+.icon-container {
+  position: relative;
+  height: 140px;
+  width: 200px;
+  display: inline-block;
+  border: 1px solid gray;
+  margin-right: 8px;
+  border-radius: 4px;
+  overflow: hidden
+}
+
+.lineup-text{
+  text-align:center;
+}
+
 .name {
 	font-family: 'Raleway';
 	font-size: 24px;
 	font-weight: 'black';
 	padding-top: 10px;
-}
-
-.description {
-	font-family: 'Josefin Sans';
-	font-size: 16px;
-	font-weight: 'light';
-}
-
-.main {
-	/*--- background-image: url('../images/background_dog.jpg');
-	background-size: auto 100%;----*/
-	background-color: var(--lightblue);
-}
-
-.left {
-	background-color: var(--lightgray);
-	height: 565px;
-	position: relative;
-	overflow: scroll;
-}
-
-::-webkit-scrollbar {display:none;}
-
-.empty {
-	position: absolute;
-	top:0px;
-	left:0px;
-	height:565px;
-	width:855px;
-	background-color: var(--lightblue);
-}
-
-/* profile picture*/
-.pets {
-  display:table;
-	border-spacing: 10px;
-	overflow: scroll;
-}
-
-.pet {
-  display: table-cell;
-	width: 262px;
-	height: 542px;
-  text-align: center;
-  vertical-align: top;
-  line-height: 2em;
-	border-radius: 25px;
-	border: 1px solid lightgray;
-	background: white;
-	opacity: 0.95;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
-.prof {
-	width:100%;
-	vertical-align:top;
-}
-
-.paw {
-	max-width: 20px;
-	max-height: 20px;
-	position: relative;
-	padding-left: 2px;
-	padding-right: 2px;
-	bottom: 2px;
-}
-
-.pet-slide {
-	width:250px;
-	height: 160px;
-	margin: auto;
-	display: none;
-}
-
-.slide {
-	max-width: 250px;
-	max-height: 160px;
-}
-
-.slideshow-container {
-  max-width: 855px;
-  position: relative;
-  margin: auto;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.dot {
-  cursor:pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-
-
-input.remove {
-	background-color: transparent;
-	float: right;
-	width: 10px;
-	border-radius: 15px;
-}
-input.remove:hover {
-  background-color: transparent;
-  color: var(--darkblue);
-	font-weight: bold;
-}
-
-input.profile {
-	background-color: var(--darkblue);
-	color: white;
-	font-family: 'Raleway';
-	font-weight: bold;
-}
-
-input.profile:hover {
-  background-color: var(--darkorange);
-  color: white;
-	font-weight: bold;
-}
-
-input.undo {
-	background-color: var(--darkblue);
-	color: white;
-	font-family: 'Raleway';
-	font-weight: bold;
-}
-
-input.undo:hover {
-	background-color: var(--lightblue);
-	color: white;
-}
-
-.wrapper {
-  text-align: center;
 }
 
 .notification {
@@ -255,12 +166,78 @@ input.undo:hover {
 	font-weight: 'light';
 }
 
-.search-text{
-	text-align: center;
-	padding-top: 150px;
-	padding-bottom: 50px;
-	font-family: 'Raleway' black;
-	font-size: 24px;
+.paw {
+	max-width: 20px;
+	max-height: 20px;
+	position: relative;
+	padding-left: 2px;
+	padding-right: 2px;
+	bottom: 2px;
+}
+
+.pet {
+  display: table-cell;
+	width: 262px;
+	height: 542px;
+  text-align: center;
+  vertical-align: top;
+  line-height: 2em;
+	border: 0px solid white;
+	background: white;
+	opacity: 0.95;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.pet-features {
+  width: 160px;
+}
+
+.pets {
+  display:table;
+	overflow: scroll;
+}
+
+.pet-icon {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height: 140px;
+  width: 200;
+}
+
+.prof {
+	width:100%;
+	vertical-align:top;
+}
+
+.profile {
+  margin-top: 20px;
+  margin-bottom: 40px;
+	background-color: var(--darkblue);
+	color: white;
+	font-family: 'Raleway';
+	font-weight: bold;
+}
+
+.profile:hover {
+  background-color: var(--darkorange);
+  color: white;
+	font-weight: bold;
+}
+
+.remove {
+  background-color: transparent;
+  position:absolute;
+  top:0px;
+  right:0px;
+  width: 5px;
+}
+
+.remove:hover {
+  color: var(--darkorange);
 }
 
 .search {
@@ -273,4 +250,28 @@ input.undo:hover {
 .search:hover {
 	background-color: var(--darkorange);
 	color: white;
+}
+
+.search-text{
+	text-align: center;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	font-family: 'Raleway' black;
+	font-size: 24px;
+}
+
+.undo {
+	background-color: var(--darkblue);
+	color: white;
+	font-family: 'Raleway';
+	font-weight: bold;
+}
+
+.undo:hover {
+	background-color: var(--lightblue);
+	color: white;
+}
+
+.wrapper {
+  text-align: center;
 }
