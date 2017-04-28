@@ -14,6 +14,9 @@ img {
 
 }
 
+.ib {
+	display: inline-block;
+}
 
 .sidebar {
 	position: absolute;
