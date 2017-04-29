@@ -27,6 +27,7 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 	</head>
 
 	<body>
@@ -58,6 +59,7 @@
 			</nav>
 
 		</header>
+
 		<div class="container">
 		</br>
 			<div class="row search-header">
@@ -124,10 +126,13 @@
 					<div class="results">
 
 						<div class="tags">
+
 							<div class="breed-search">
+
 				        <label for='breed'>Breed:</label>
 				        <input type="text" id="breed" placeholder="search for breeds" style="width: 300px;"/>
 				      </div>
+
 							<div class="dropdown" style="display:inline-block;">
 								Sort by:
 							  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"> --select--
@@ -138,63 +143,10 @@
 							    <li><a href="#">Maintenance (High to Low)</a></li>
 							  </ul>
 							</div>
+
 						</div>
 
-						<div class="petbox" id="gatsby">
-							<div class="petprev">
-								<img src="../images/GatsbyProfile.png">
-							</div>
-							<div class="descbox">
-								<div class="petinf" style="vertical-align: middle; display: inline-block">
-									<h4>Gatsby</h4>
-									<p>Male, 1 year, Corgi</p>
-								</div>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img style="vertical-align: middle;" src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Gatsby added to favorites!">
-							</div>
-						</div>
-
-			<!--     OTHER PETS -->
-						<div class="petbox" id="herbert">
-							<div class="petprev">
-								<img src="../images/HerbertProfile.png">
-							</div>
-							<div class="descbox">
-								<div class="petinf" style="vertical-align: middle; display: inline-block">
-									<h4>Herbert</h4>
-									<p>Male, 2 months, Holland Lop</p>
-								</div>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img style="vertical-align: middle;" src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Herbert added to favorites!">
-							</div>
-						</div>
-
-						<div class="petbox" id="ping">
-							<div class="petprev">
-								<img src="../images/ping_4.jpg">
-							</div>
-							<div class="descbox">
-								<div class="petinf" style="vertical-align: middle; display: inline-block;">
-									<h4>Ping</h4>
-									<p>Female, 9 months, Siamese</p>
-								</div>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img style="vertical-align: middle;" src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Ping added to favorites!">
-							</div>
-						</div>
-
-						<div class="petbox" id="benj">
-							<div class="petprev">
-								<img src="../images/benjamin_square.jpg">
-							</div>
-							<div class="descbox">
-								<div class="petinf" style="vertical-align: middle; display: inline-block">
-									<h4>Benjamin</h4>
-									<p>Male, 8 months, Maltese</p>
-								</div>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img style="vertical-align: middle;" src="../images/hearticon-pink.png" class="fav" data-toggle="popover" data-content= "Benjamin added to favorites!">
-							</div>
+						<div id="pet-display">
 						</div>
 
 						<!-- MODALS -->
@@ -347,6 +299,98 @@
 				</div>
 			</div> <!--  row -->
 		</div> <!--  container -->
+
+		<script>
+		//Populate the search bar
+
+
+		var gatsby = {
+			name: "Gatsby", 
+			species: "dog",
+			gender: "Male",
+			age: "3 years",
+			breed: "Corgi",
+			activity: 4,
+			kids: 5, 
+			shedding: 3,
+			vaccinations: 1,
+			neutered: 1,
+			images: ["../images/GatsbyProfile.png", "../images/Gatsby2.png", "../images/Gatsby3.png", "../images/Gatsby1.png"],
+			description: "Gatsby is very active and energetic. He loves to go on hikes, play with other dogs, and play with a whole bunch of toys. Gatsby enjoys meeting new people, and loves interacting with kids. Gatsby would be happy in a bustling family environment. He would do well as the only dog in a home or in a multi-dog home."
+		};
+
+		var herbert = {
+			name: "Herbert",
+			species: "rabbit",
+			gender: "Male",
+			age: "2 years",
+			breed: "Holland Lop",
+			activity: 2,
+			kids: 5,
+			shedding: 3,
+			vaccinations: 1,
+			neutered: 1,
+			images: ["../images/HerbertProfile.png", "../images/Herbert2.png"],
+			description: "Herbert's an unpaired Holland Lop. Gentle and mild-mannered, Herbert can be a little aloof but loves his daily pets. He loves jumping around and climbing things, and tearing up cardboard boxes. Litter trained and socialized, Herbert would make a perfect pet for children or anyone looking for a laid back companion for their home."
+		};
+
+		var benjamin = {
+			  name: "Benjamin",
+			  species: "dog",
+			  gender: "Male",
+			  age: "8 months",
+			  breed: "Maltese",
+			  activity: 3,
+			  kids: 3,
+			  shedding: 2,
+			  vaccinations: 1,
+			  neutered: 1,
+			  images: ["../images/benjamin_square.jpg","../images/benjamin_2.jpg","../images/benjamin_3.jpg","../images/benjamin_4.jpg","../images/benjamin_5.jpg"],
+			  description: "Benjamin just wants to cuddle and nap. He is gentle-mannered and affectionate, eager and sprightly in action, and, has energy and personality larger than his size. The Maltese is a extra-small breed and has a lifespan of 13 to 15 years. He needs good nutrition and grooming."
+		};
+
+		var staples = {
+			  name: "Staples",
+			  species: "dog",
+			  gender: "Male",
+			  age: "4 months",
+			  breed: "Chihuahua",
+			  activity: 2,
+			  kids: 1,
+			  shedding: 1,
+			  vaccinations: 0,
+			  neutered: 1,
+			  images: ["../images/staples_1.jpg","../images/staples_2.jpg","../images/staples_3.jpg","../images/staples_4.jpg"],
+			  description: "hello"
+		};
+
+		var ping = {
+			  name: "Ping",
+			  species: "cat",
+			  gender: "Female",
+			  age: "9 months",
+			  breed: "Siamese",
+			  activity: 5,
+			  kids: 4,
+			  shedding: 2,
+			  vaccinations: 1,
+			  neutered: 1,
+			  images: ["../images/ping_4.jpg","../images/ping_2.jpg","../images/ping_3.jpg","../images/ping_1.jpg"],
+			  description: "im a cat"
+		};
+
+		var petlist = [gatsby, herbert, benjamin, staples, ping];
+		//add the html for each pet
+		for (i = 0; i < petlist.length; i++){
+			var newResult = "<div class='petbox' id='" + petlist[i].name + "'><div class='petprev'><img src='" + petlist[i].images[0] + "'></div>"
+							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block'>"
+							+ "<h4>" + petlist[i].name + "</h4> <p>" + petlist[i].gender + ", " + petlist[i].age + ", " + petlist[i].breed + "</p></div><br>"
+							+ "<img style='vertical-align: middle;' src='../images/hearticon-pink.png' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div>";
+
+			$('#pet-display').append(newResult);
+		}
+
+		</script>
 
 	</body>
 </html>

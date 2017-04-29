@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$('.fav').click(function(evt){
 		setTimeout(function(){
 			$('.popover').fadeOut('Slow');
-		}, 1000);
+		}, 2000);
 	});
 });
 
@@ -31,12 +31,14 @@ $(document).on('click', '.fav', function(evt){
 	}
 });
 
+
+
 var gatsbySlideIndex = 1;
 var herbertSlideIndex = 1;
 var pingSlideIndex = 1;
 var benjSlideIndex = 1;
 
-//pet preview
+//pet preview slideshow
 $(document).on('click', '.petprev', function(evt) {
 
 	var name = $(evt.target).closest('[id]').prop('id');
