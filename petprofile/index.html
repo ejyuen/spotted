@@ -31,67 +31,90 @@
 
   <body>
     <header class="header">
+
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-      <div class="container-head">
+
+      <div class="container">
+
         <div class="navbar-header">
-          <a class="navbar-brand" href="../home.html">Spotted</a>
-          <a class="filler"></a>
-          <a class="navbar-search" href="../searchres/index.html"><span class= "glyphicon glyphicon-search"></span> Search</a>
-          <a class="navbar-info" href="/../adoptionInfo/index.html"><span class= "glyphicon glyphicon-question-sign"></span> Adoption Info</a>
-          <a class="navbar-favorite" href="../favorites/index.html"><span class= "glyphicon glyphicon-heart"></span> Favorites</a>
+
+          <a class="navbar-brand" href="../home.html">Spotted
         </div>
-      </div><!-- end of container-all -->
+
+        <div class="collapse navbar-collapse" id="custom-collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li style="top: -20px; right: -70px"><a href="../searchres/index.html"><span class= "glyphicon glyphicon-search"></span>Search</a></li>
+            <li style="top: -20px; right: -50px"><a href="#"><span class= "glyphicon glyphicon-question-sign"></span>Adoption Info</a></li>
+            <li style="top: -20px; right: -20px"><a href="../favorites/index.html"><span class= "glyphicon glyphicon-heart"></span>Favorites</a></li>
+
+          </ul>
+        </div>
+
+      </div><!-- .container -->
+
     </nav>
-    </header>
+
+  </header>
 
     <div class='container'>
-    </br>
+    <br>
         <div class="row profile-header">
         <img class='ib icon' src='../images/dog.png'/><span class="bg-success ib">  PET PROFILE</span>
         </div>
     </br>
     <div class='row'>
       <div class="col-md-6">
-          <div class="col-md-10 col-md-offset-2">
-              <div class="container">
-                <div>
-                  <img id="mainPic" class="featuredPicture" src="../images/GatsbyProfile.png">
-                </div>
-                <br>
+          <div class="col-md-12">
+<div class="slideshow-container">
+  <div class="slides">
+    <img src="../images/GatsbyProfile.png" style="width:100%">
+  </div>
 
-                <div id="thumb1" class="ib">
-                  <img class="thumbnail" src="../images/GatsbyProfile.png">
-                </div>
+  <div class="slides">
+    <img src="../images/Gatsby1.png" style="width:100%">
+  </div>
 
-                <div id="thumb2" class="ib">
-                  <img class="thumbnail" src="../images/Gatsby1.png">
-                </div>
+  <div class="slides">
+    <img src="../images/Gatsby2.png" style="width:100%; height:100%">
+  </div>
 
-                <div id="thumb3" class="ib">
-                  <img class="thumbnail" src="../images/Gatsby2.png">
-                </div>
+  <div class="slides">
+    <img src="../images/Gatsby3.png" style="width:100%">
+  </div>
+</div>
 
-                <div id="thumb4" class="ib">
-                  <img class="thumbnail" src="../images/Gatsby3.png">
-                </div>
-              </div>
+  <a class="prev" onclick="plusSlides(-1)" style="left:32px">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)" style="right:8px">&#10095;</a>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+</div>
+
           </div>
-          <div class="name ib"><strong> Gatsby </strong></div>
-          <div class="description ib"> &emsp;&emsp;&emsp;&emsp;<i class="fa fa-mars" style="font-size: 36px; color: blue"></i> Male </div>
-          <div class="description ib"> &emsp;&emsp;&emsp;&emsp; 3 years old </div>
+          <div class="name"><strong> Gatsby </strong></div>
+          <br>
+          <div class="description"> Male </div>
+          <div class="description"> 3 years old </div>
           <div class="description"> Pembroke Welsh Corgi </div>
+          <br>
           <div class="tag ib"><span class="label label-info"> Vaccinated </span></div>
           <div class="tag ib"><span class="label label-info"> Neutered </span></div>
           <div class="tag ib"><span class="label label-info"> Kid-friendly </span></div>
       </div>
 
       <div class="col-md-6">
-        <div class="name"> About Gatsby </div>
+        <div class="name"><strong> About Gatsby </strong></div>
+        <br>
         <p class="description"> Gatsby is a medium sized dog, weighing at 25 pounds. He has a beautiful tri-color coat, with a light undercoat. As a Corgi, he does shed a good deal a couple of times a year. </p>
         <p class="description"> Gatsby is very active and energetic. He loves to go on hikes, play with other dogs, and play with a whole bunch of toys. Gatsby enjoys meeting new people, and loves interacting with kids. Gatsby would be happy in a bustling family environment. He would do well as the only dog in a home or in a multi-dog home. </p>
         <p class="description"> Gatsby has good house manners and is house trained. He is in optimal health, neutered, and has had a full dental procedure. He has been vaccinated for rabies, DHLPPC (distemper, hepatitis, leptospirosis parvo, parainfluenza, and coronavirus). </p>
         <br>
-        <div class="adoption"> Adoption Process </div>
+        <div class="adoption"><strong> Adoption Process </strong></div>
         <div class="adoption-sub"><u> Next Steps: </u></div>
         <div class="row">
           <div class="col-md-5 information">
@@ -113,10 +136,10 @@
           <div class="col-md-1 information" style="center">
             <div class="text-muted"> OR </div>
           </div>
-          <div class="col-md-6 information">
+          <div class="col-md-5 col-md-offset-1 information">
                 <p><strong> Fill out this interest form: </strong></p>
                 <br>
-                <input type="button" class="btn adopt-form" value="Adoption Interest Form"/>
+                <input type="button" class="btn adopt-form" style="width: 100%; font-size: 12.5px; white-space: normal;" value="Adoption Interest Form"/>
           </div>
         </div>
 
@@ -130,7 +153,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-          <p class="copyright">© 2015 Spotted</p>
+          <p class="copyright">© 2017 Spotted</p>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         </div>
@@ -145,6 +168,36 @@
       </div><!-- .row -->
     </div><!-- .container -->
   </footer>
+
+<!-- reference: https://www.w3schools.com/howto/howto_js_slideshow.asp --> 
+  <script> 
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+  </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
