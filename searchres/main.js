@@ -4,7 +4,17 @@ $(document).ready(function(){
 
 	$('#exampleModal').modal({show: false});
 
-	$('[data-toggle="popover"]').popover();
+	//popover on bottom of heart
+	$('[data-toggle="popover"]').popover({
+		placement: 'bottom'
+	});
+
+	//on click, set a 1 second delay before fading out popover
+	$('.fav').click(function(evt){
+		setTimeout(function(){
+			$('.popover').fadeOut('Slow');
+		}, 1000);
+	});
 });
 
 $('#myModal').on('shown.bs.modal', function () {
