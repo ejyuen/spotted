@@ -330,7 +330,7 @@
 			shedding: 3,
 			vaccinations: 1,
 			neutered: 1,
-			images: ["../images/HerbertProfile.png", "../images/Herbert2.png"],
+			images: ["../images/HerbertProfile.png", "../images/Herbert2.jpeg"],
 			description: "Herbert's an unpaired Holland Lop. Gentle and mild-mannered, Herbert can be a little aloof but loves his daily pets. He loves jumping around and climbing things, and tearing up cardboard boxes. Litter trained and socialized, Herbert would make a perfect pet for children or anyone looking for a laid back companion for their home."
 		};
 
@@ -380,14 +380,38 @@
 		};
 
 		var petlist = [gatsby, herbert, benjamin, staples, ping];
+
+		//manually make the slide indices
+
+		var GatsbySlideIndex = 1;
+		var HerbertSlideIndex = 1;
+		var PingSlideIndex = 1;
+		var BenjaminSlideIndex = 1;
+		var StaplesSlideIndex = 1;
+
 		//add the html for each pet
 		for (i = 0; i < petlist.length; i++){
+			//pet window
 			var newResult = "<div class='petbox' id='" + petlist[i].name + "'><div class='petprev'><img src='" + petlist[i].images[0] + "'></div>"
 							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block'>"
 							+ "<h4>" + petlist[i].name + "</h4> <p>" + petlist[i].gender + ", " + petlist[i].age + ", " + petlist[i].breed + "</p></div><br>"
 							+ "<img style='vertical-align: middle;' src='../images/hearticon-pink.png' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div>";
 
+			//modal
+
+			var newModal = "<div class='modal fade' id='" + petlist[i].name + "Modal' tabindex='-1' role='dialog' aria-labelledby='" + petlist[i].name + "Modal' aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h5 class='modal-title' id='" + petlist[i].name +"Modal'>" + petlist[i].name + "</h5></div><div class='modal-body'<div class='img-scroll'>";
+
+			for (j = 0; j < petlist[i].images.length; j++){
+				newModal = newModal + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'>";
+			}
+
+			newModal = newModal + "</div><button class='btn btn-secondary' onclick='plusDivs(-1, " + petlist[i].name + ")'>&#10094;</button><button class='btn btn-secondary' onclick='plusDivs(+1, " + petlist[i].name + ")'>&#10095;</button><button type='button' class='btn btn-secondary'>Feed Treat</button><button type='button' class='btn btn-secondary'>Walk</button><button type='button' class='btn btn-secondary'>Play</button><br><br><p>" + petlist[i].description + "</p></div><div class='modal-footer'><button type='button' class='btn btn-secondary' data-dismiss='modal'>See Profile</button><img src='../images/hearticon-pink.png' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div></div></div";
+
 			$('#pet-display').append(newResult);
+			$('#pet-display').append(newModal);
+
+
+
 		}
 
 		</script>

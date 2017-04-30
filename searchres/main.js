@@ -33,12 +33,6 @@ $(document).on('click', '.fav', function(evt){
 
 
 
-var gatsbySlideIndex = 1;
-var herbertSlideIndex = 1;
-var pingSlideIndex = 1;
-var benjSlideIndex = 1;
-
-//pet preview slideshow
 $(document).on('click', '.petprev', function(evt) {
 
 	var name = $(evt.target).closest('[id]').prop('id');
@@ -59,11 +53,10 @@ $(document).on('click', '.petinf', function(evt) {
 
 
 function plusDivs(n, name) {
-    showDivs(window[name + 'SlideIndex'] += n, window[name + 'SlideIndex'], name);
+    showDivs(window[name.id + 'SlideIndex'] += n, window[name.id + 'SlideIndex'], name.id);
 }
 
 function showDivs(n, slideIndex, name) {
-
     var i;
     var x = document.getElementsByClassName(name + "Slides");
     if (n > x.length) {window[name + 'SlideIndex'] = 1} 
