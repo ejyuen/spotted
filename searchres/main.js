@@ -24,13 +24,20 @@ $('#myModal').on('shown.bs.modal', function () {
 //Adding and removing from favorites
 $(document).on('click', '.fav', function(evt){
 	if ($(evt.target).attr('src') == '../images/hearticon-red.png') {
-		$(evt.target).attr('src', '../images/hearticon-pink.png');
-	} else {
+		var heartClass = $(evt.target).attr('id');
+		var name = heartClass.substr(0, heartClass.indexOf('-'));
 
-		$(evt.target).attr('src', '../images/hearticon-red.png');
+		$("#" + name + "-fav-modal").attr('src', '../images/hearticon-pink.png');
+		$("#" + name + '-fav').attr('src', '../images/hearticon-pink.png');
+
+	} else {
+		var heartClass = $(evt.target).attr('id');
+		var name = heartClass.substr(0, heartClass.indexOf('-'));
+		console.log(heartClass);
+		$("#" + name + "-fav-modal").attr('src', '../images/hearticon-red.png');
+		$("#" + name + '-fav').attr('src', '../images/hearticon-red.png');
 	}
 });
-
 
 
 $(document).on('click', '.petprev', function(evt) {
@@ -49,6 +56,7 @@ $(document).on('click', '.petinf', function(evt) {
 	showDivs(window[namestr], window[namestr], name);
 
 	$('#' + name + 'Modal').modal('show');
+	//get the appropriate heart color
 });
 
 
