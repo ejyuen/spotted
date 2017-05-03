@@ -393,9 +393,9 @@
 		for (i = 0; i < petlist.length; i++){
 			//pet window
 			var newResult = "<div class='petbox' id='" + petlist[i].name + "'><div class='petprev'><img src='" + petlist[i].images[0] + "'></div>"
-							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block'>"
-							+ "<h4>" + petlist[i].name + "</h4> <p>" + petlist[i].gender + ", " + petlist[i].age + ", " + petlist[i].breed + "</p></div><br>"
-							+ "<img style='vertical-align: middle;' src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div>";
+							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block;'>"
+							+ "<h4>" + petlist[i].name + "</h4> <p>" + petlist[i].gender + ", " + petlist[i].age + ", " + petlist[i].breed + "</p></div>"
+							+ "<img style='vertical-align: middle; float: right; margin-right: 10px; margin-top: 7px' src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div>";
 
 			//modal
 
