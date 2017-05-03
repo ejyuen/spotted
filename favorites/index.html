@@ -100,6 +100,7 @@ var pet_dict = [ping,staples,benjamin];
 var pet_removed;
 var pet_show = ['ping','staples','benjamin'];
 var compare = [];
+var is_empty = true;
 
 function add_features(){
   var add="<div id='features' class='pet pet-features'><div class='features-space'></div>"
@@ -116,9 +117,10 @@ function add_features(){
 }
 
 function open(pet){
-  if (compare.length == 0){
+  if (is_empty){
     $('#empty-compare').remove();
     add_features();
+    is_empty = false;
   }
 
   if (compare.indexOf(pet.name.toLowerCase()) > -1){
@@ -156,8 +158,19 @@ function open(pet){
     neutered += "<img class='paw' src='../images/no.png'></img><span> No<span>"
   }
 
-  var add="<div id=pet-"+pet.name.toLowerCase()+" class='pet'><div><div>"+"<input id='close-"+pet.name.toLowerCase()+"' type='button' class='btn close' value='X'/></div><div>"
-                                  +"<img class='prof' src="+pet.images[0]+"></img>"+"</div><div class='name'>"
+  var images="<div class='slideshow-container'>";
+  for (var k=0; k<pet.images.length; k++){
+    images+="<div class='slides-"+pet.name.toLowerCase()+"'><img class='prof' src="+pet.images[k]+"></img></div>";
+  }
+  images+="</div><a class='prev' onclick='plusSlides(-1,"+pet.name.toLowerCase()+")' style='left:0px'>&#10094;</a><a class='next' onclick='plusSlides(1,"+pet.name.toLowerCase()+")' style='right:0px'>&#10095;</a>";
+  images+="<div style='text-align:center;margin-top:4px'>";
+  for (var k=0; k<pet.images.length; k++){
+    images+="<span class='dot-"+pet.name.toLowerCase()+"' onclick='currentSlide("+(k+1)+","+pet.name.toLowerCase()+")'></span>";
+  }
+  images+="</div>";
+
+  var add="<div id=pet-"+pet.name.toLowerCase()+" class='pet'><div><div>"+"<input id='close-"+pet.name.toLowerCase()+"' type='button' class='btn close' value='X'/></div>"
+                                  +images+"<div class='name'>"
                                   +pet.name+"</div><hr/><div class='description'>"
                                   +pet.gender+"</div><hr/><div class='description'>"
                                   +pet.age+"</div><hr/><div class='description'>"
@@ -172,6 +185,11 @@ function open(pet){
   $("#pets").append(add);
 }
 
+function click_compare(){
+  var html="<div id='empty-compare' class='empty'><img class='arrow' src='../images/arrow.png'></img><p class='low'>Click a pet to get started.<p></div>";
+  return html;
+}
+
 $(document).ready(function(){
   var pets="";
   for (var i=0; i< pet_dict.length; i++) {
@@ -182,7 +200,6 @@ $(document).ready(function(){
     pets+="</div>"
   }
   $("#lineup").append(pets);
-
 
 });
 //----------end of document.ready-------------
@@ -197,6 +214,12 @@ function remove(name){
   var indexx = compare.indexOf(name);
   if (indexx > -1) {
     compare.splice(indexx, 1);
+  }
+
+  if (compare.length==0 && is_empty==false){
+    $("#pets").append(click_compare);
+    $("#features").remove();
+    is_empty=true;
   }
 
   $('#remove-text').html('You just removed '+name.charAt(0).toUpperCase()+name.slice(1)+' from your Favorites');
@@ -219,9 +242,10 @@ function close(name){
     compare.splice(index, 1);
   }
 
-  if (compare.length==0){
-    $("#pets").append("<div id='empty-compare' class='empty'>Click a pet to get started.</div>");
+  if (compare.length==0 && is_empty==false){
+    $("#pets").append(click_compare);
     $("#features").remove();
+    is_empty=true;
   }
 }
 
@@ -269,9 +293,6 @@ $(document).on('click',"#close-notification", function(evt){
 })
 
 $(document).on('click',"#undo-remove", function(evt){
-  if (pet_show.length==0){
-    $('#empty-lineup').remove();
-  }
   var pet;
   for (var i=0; i< pet_dict.length; i++){
     if (pet_dict[i].name.toLowerCase()==pet_removed){
@@ -291,6 +312,76 @@ $(document).on('click',"#undo-remove", function(evt){
   pet_show.push(pet.name.toLowerCase());
 })
 
+//---------------carousels-----------
+var slideIndex_benjamin=1;
+var slideIndex_ping=1;
+var slideIndex_staples=1;
+
+function plusSlides(n,pet) {
+  if (pet.name.toLowerCase()=='staples'){
+    slideIndex_staples+=1;
+    showSlides(slideIndex_staples,'staples');
+  } else if (pet.name.toLowerCase()=='benjamin'){
+    slideIndex_benjamin+=1;
+    showSlides(slideIndex_benjamin,'benjamin');
+  } else if (pet.name.toLowerCase()=='ping'){
+    slideIndex_ping+=1;
+    showSlides(slideIndex_ping,'ping');
+  }
+}
+
+function currentSlide(n,pet) {
+  if (pet.name.toLowerCase()=='staples'){
+    console.log('current');
+    slideIndex_staples=n;
+    showSlides(slideIndex_staples,'staples');
+  } else if (pet.name.toLowerCase()=='benjamin'){
+    slideIndex_benjamin=n;
+    showSlides(slideIndex_benjamin,'benjamin');
+  } else if (pet.name.toLowerCase()=='ping'){
+    slideIndex_ping=n;
+    showSlides(slideIndex_ping,'ping');
+  }
+
+function showSlides(n,pet) {
+  var i;
+  var slides = document.getElementsByClassName("slides-"+pet);
+  var dots = document.getElementsByClassName("dot-"+pet);
+  if (n > slides.length) {
+    if (pet=='staples'){
+      slideIndex_staples=1;
+    } else if (pet=='benjamin'){
+      slideIndex_benjamin=1;
+    } else if (pet=='ping'){
+      slideIndex_ping=1;
+    }
+  } else if (n < 1) {
+    if (pet=='staples'){
+      slideIndex_staples=slides.length;
+    } else if (pet=='benjamin'){
+      slideIndex_benjamin=slides.length;
+    } else if (pet=='ping'){
+      slideIndex_ping=slides.length;
+    }
+  }
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  if (pet=='staples'){
+    slides[slideIndex_staples-1].style.display = "block";
+    dots[slideIndex_staples-1].className += " active";
+  } else if (pet=='benjamin'){
+    slides[slideIndex_benjamin-1].style.display = "block";
+    dots[slideIndex_benjamin-1].className += " active";
+  } else if (pet=='ping'){
+    slides[slideIndex_ping-1].style.display = "block";
+    dots[slideIndex_ping-1].className += " active";
+  }
+}
+}
 
 
 </script>
@@ -334,7 +425,8 @@ $(document).on('click',"#undo-remove", function(evt){
 
       <div id="pets" class="pets">
         <div id='empty-compare' class='empty'>
-          Click a pet to get started.
+          <img class='arrow' src='../images/arrow.png'></img>
+          <p class='low'>Click a pet to get started.<p>
         </div>
       </div>
 
