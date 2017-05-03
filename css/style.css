@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Quattrocento+Sans');
 
 @font-face {
 	font-family: 'Raleway';
@@ -145,11 +146,24 @@ h6 {
 	padding: 120px 0 100px;
 }
 
+
+
 .section-chunk-gray {
 	background: var(--lightgray);
 }
 
-
+#home-top .section-chunk-title{
+	font-size: 6em;
+	font-family: 'Comfortaa', sans-serif;
+	text-transform: lowercase;
+	letter-spacing: 3px;
+	font-weight: 700;
+	height: 20px; /* you can use % */
+    margin-top : 0px;
+    width: auto;
+    color: #28C3B9;
+    text-align: center;
+}
 
 
 
@@ -165,6 +179,7 @@ h6 {
 .section-chunk-header-left .section-chunk-line {
 	width: inherit;
 	margin: 30px 0;
+
 }
 
 .section-chunk-title{
@@ -313,15 +328,11 @@ h6 {
 .navbar-custom .navbar-nav > li > a,
 .navbar-custom .navbar-nav .dropdown-menu > li > a {
 	font-size: 11px;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	color: #222;
 }
 
-.navbar .navbar-brand #imageBrand{
-    height: 20px; /* you can use % */
-    margin-top : 0px;
-    width: auto;
-}
+
 
 .navbar-custom .nav li.active,
 .navbar-custom .nav li a:hover,
@@ -333,8 +344,16 @@ h6 {
 }
 
 .navbar-custom .navbar-brand {
-	font-weight: 700;
+	/*font-weight: 700;*/
 	font-size: 22px;
+	font-family: 'Comfortaa', sans-serif;
+	text-transform: none;
+	letter-spacing: 3px;
+	font-weight: 700;
+	height: 20px; /* you can use % */
+    margin-top : 0px;
+    width: auto;
+    color: #28C3B9;
 
 }
 
