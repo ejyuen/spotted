@@ -16,6 +16,7 @@
 hr {
     display: block;
     height: 1px;
+    width: 100%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 6px;
@@ -45,13 +46,20 @@ hr {
 
 .description {
 	font-family: 'Josefin Sans';
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 'light';
   height: 30px;
-  margin-bottom: 10px;
+
 }
 
-.dot-ping, .dot-benjamin, .dot-staples {
+.description-f {
+	font-family: 'Josefin Sans';
+	font-size: 20px;
+	font-weight: 'light';
+  height: 30px;
+}
+
+.dot-robert, .dot-benjamin, .dot-staples {
   cursor:pointer;
   height: 13px;
   width: 13px;
@@ -62,7 +70,7 @@ hr {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot-benjamin:hover, .dot-staples:hover, .dot-ping:hover {
+.active, .dot-benjamin:hover, .dot-staples:hover, .dot-robert:hover {
   background-color: #717171;
 }
 .prev:hover, .next:hover {
@@ -87,6 +95,7 @@ hr {
   padding-left: 9px;
   padding-right: 9px;
   top: -185px;
+  margin-bottom: -100px;
 }
 
 .prev {
@@ -145,7 +154,7 @@ hr {
 
 .features-space{
   position: relative;
-  height:240px;
+  height:250px;
   background-color: white;
   border: 1px solid white;
 }
@@ -234,6 +243,7 @@ hr {
 	padding-bottom: 5px;
 	padding-left: 5px;
 	padding-right: 5px;
+  margin-right: 12px;
 }
 
 .pet-features {
