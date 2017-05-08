@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Quattrocento+Sans');
 
 @font-face {
-	font-family: 'Raleway';
-
+	font-family: 'Josefin Slab';
 }
 
 :root{
@@ -16,7 +14,7 @@
 }
 
 body {
-	font-family: 'Raleway', "Century Gothic", Times, sans-serif;
+	font-family: 'Josefin Slab', "Century Gothic", Times, sans-serif;
 	font-size: 1.5em;
 	font-style: normal;
 	text-transform: none;
@@ -52,8 +50,10 @@ a:hover {
 
 
 h1, h2, h3, h4, h5, h6 {
-	font: 700 40px/1.2 'Raleway', sans-serif;
-	text-transform: lowercase;
+
+	font: 700 40px/1.2 'Comfortaa', sans-serif;
+	text-transform: uppercase;
+
 	/*text-transform: none;*/
 	letter-spacing: 5px;
 	/*letter-spacing: 0px;*/
@@ -96,7 +96,9 @@ h6 {
 /* ---------------------------------------------- */
 
 .btn {
-	font-family: 'Raleway', sans-serif;
+
+	font-family: 'Comfortaa', sans-serif;
+
 	text-transform: capitalize;
 	letter-spacing: 1px;
 	font-size: 1em;
@@ -192,7 +194,7 @@ h6 {
 }
 
 .section-chunk-subtitle {
-	font-family: 'Raleway', "Josefin Sans", Times, sans-serif;
+	font-family: 'Comfortaa', "Josefin Slab", Times, sans-serif;
 	font-style: normal;
 	font-size: 18px;
 }
@@ -238,7 +240,7 @@ h6 {
 .petImg{
 	position: absolute;
 
-	
+
 
 }
 
@@ -344,8 +346,13 @@ h6 {
 	border: 0;
 	border-radius: 0;
 	margin: 0;
+<<<<<<< HEAD
 	text-transform: lowercase;
 	font-family: 'Raleway', sans-serif;
+=======
+	text-transform: uppercase;
+	font-family: 'Comfortaa', sans-serif;
+>>>>>>> d412e7b04a6a12c86148cd0590fcaa8bde1ae916
 
 }
 
@@ -453,7 +460,7 @@ h6 {
 	padding-top: 10px;
 	/*padding-left: 15%;*/
 	padding-bottom: 10px;
-	font-family: 'Raleway', "Century Gothic", Times, sans-serif;
+	font-family: 'Comfortaa', "Century Gothic", Times, sans-serif;
 	font-style: normal;
 	font-size: 18px;
 }
