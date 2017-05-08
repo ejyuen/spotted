@@ -110,7 +110,7 @@ function add_features(){
                                   +"<div class='description-f'>Age</div><hr/>"
                                   +"<div class='description-f'>Breed</div><hr/>"
                                   +"<div class='description-f'>Activity</div><div><hr/>"
-                                  +"<div class='description-f'>Kid-Friendliness</div><hr/>"
+                                  +"<div class='description-f'>Kid-Friendly</div><hr/>"
                                   +"<div class='description-f'>Shedding</div><hr/>"
                                   +"<div class='description-f'>Vaccinations</div><hr/>"
                                   +"<div class='description-f'>Spayed/Neutered</div><hr/></div>";
@@ -170,7 +170,7 @@ function open(pet){
   }
   images+="</div>";
 
-  var add="<div id=pet-"+pet.name.toLowerCase()+" class='pet'><div><div>"+"<input id='close-"+pet.name.toLowerCase()+"' type='button' class='btn close' value='X'/></div>"
+  var add="<div id=pet-"+pet.name.toLowerCase()+" class='pet'><div><div>"+"<input id='close-"+pet.name.toLowerCase()+"' type='button' class='btn closee' value='x'/></div>"
                                   +images+"<div class='name'>"
                                   +pet.name+"</div><hr/><div class='description'>"
                                   +pet.gender+"</div><hr/><div class='description'>"
@@ -303,7 +303,7 @@ $(document).on('click',"#undo-remove", function(evt){
   var undo_pet="";
   undo_pet+="<div id='icon-"+pet.name.toLowerCase()+"' class='icon-container'>";
   undo_pet+="<input type='image' id='open-"+pet.name.toLowerCase()+"' class='pet-icon' src='"+pet.images[0]+"' alt='"+pet.name+"'/>";
-  undo_pet+="<input type='button' id='remove-"+pet.name.toLowerCase()+"' class='btn remove' value='X'>";
+  undo_pet+="<input type='button' id='remove-"+pet.name.toLowerCase()+"' class='btn remove' value='x'>";
   undo_pet+="</div>"
 
   $("#lineup").append(undo_pet);
@@ -383,7 +383,6 @@ function showSlides(n,pet) {
   }
 }
 
-
 </script>
 </head>
 
@@ -412,7 +411,7 @@ function showSlides(n,pet) {
 <div class="container">
 </br>
   <div class="row favorites-header">
-    <img style='padding:10px; margin-left:10px;' class='icon' src='./images/heartbw.png'/><span class="favorites">Favorites</span>
+    <img style='padding:10px; margin-left:2px;' class='icon' src='./images/heartbw.png'/><span class="favorites">Favorites</span>
   </div>
 </br>
   <div class="row description">
