@@ -11,9 +11,15 @@ $(document).ready(function(){
 
 	//on click, set a 2 second delay before fading out popover
 	$('.fav').click(function(evt){
-		setTimeout(function(){
-			$('.popover').fadeOut('Slow');
-		}, 2000);
+		if ($(evt.target).attr('src') != '../images/hearticon-red.png') {
+			$(evt.target).popover("show");
+			setTimeout(function(){
+				$('.popover').fadeOut('Slow');
+			}, 2000);
+
+		} else {
+			$(evt.target).popover("hide");
+		}
 	});
 });
 
