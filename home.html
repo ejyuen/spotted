@@ -30,7 +30,58 @@
 
 
 
+<script>
 
+
+
+var digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+
+$(document).ready(function()
+{
+    
+
+  
+
+});
+
+
+
+// keyboard events arrive here
+//Checks if text input is valid, and will enable the buttons corresponding to the valid moves based on the coordinates of the textInput
+$(document).on('keyup', function(evt) {
+	console.log("keyup");
+	console.log(evt.which);
+    var zipValue = $("#zipInput").val();
+    console.log("zipValue: " + zipValue);
+
+    allDigits = false;
+    digitFlag = true
+
+    for (char in zipValue){
+    	allDigits = allDigits &&  (digits.indexOf(char) > -1);
+    }
+
+    if (digitFlag){
+    	allDigits = true
+    }
+
+    validZip = zipValue.length == 5 && allDigits;
+
+    console.log("validZip" + validZip)
+   
+
+    if (validZip && (evt.keyCode == 13)){
+    	$("#zipButton").click();
+    	window.location.href = "./searchres/index.html";
+     	
+     	console.log("triggered");
+    }
+    	
+}); 	
+
+
+</script>
 
 
 
@@ -51,10 +102,12 @@
 					<a class="navbar-brand" href="./home.html">spotted
 				</div>
 
+
+
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
 
-						<li><a href="./searchres/index.html"><span class= "glyphicon glyphicon-search"></span>Search</a></li>
+						<li><a href="./searchres/index.html"><span class= "glyphicon glyphicon-search"></span>Browse</a></li>
 						<li><a href="#adoption-info"><span class= "glyphicon glyphicon-question-sign"></span>Adoption Info</a></li>
                         <li><a href="./favorites/index.html"><span class= "glyphicon glyphicon-heart"></span>Favorites</a></li>
 
@@ -74,18 +127,31 @@
     <!-- home-top -->
 
 	<section id="home-top" class="section-chunk section-chunk-gray">
-		<div class="container">
+
+
+		<img class = "petImg" id= "petImg1" src="https://img.clipartfest.com/279f76048b6303d284dff577f3c950ac_mykonos-greek-cuisine-cute-puppy-clipart-transparent-background_403-600.png">
+
+		<img class = "petImg" id= "petImg2" src="http://nobacks.com/wp-content/uploads/2014/11/Cat-23.png">
+
+
+		<div class="container" id = "home-container">
+
+			
 			<div class="row">
 
-				<div class="col-sm-6 col-sm-offset-3">
-					<div class = "section-chunk-title">spotted</div>
-					<div class="section-chunk-header">
+			
+
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="section-chunk-header" style = "background-color: rgba(245, 245, 245, 0.8);">
+						<h2 class="section-chunk-title">spotted</h2> 
 						
+						<h6 class="section-chunk-subtitle" style = "letter-spacing: 4px; color: #666; text-align: center; padding-left: 60px; padding-top: 2.8em;">
+							online pet adoption
+						</h6>
 						<div class="section-chunk-subtitle">
-							Online Pet Adoption
-						</div>
-						<div class="section-chunk-subtitle">
-						<br> <br> <br> <br>
+
+							<br><br>
+						
 							Our mission is to help you with the pet adoption process so that loveable animals can find a home!
 						</div>
 					</div>
@@ -93,14 +159,15 @@
 				</div>
 
 			</div>
-			<div class="col-lg-4 col-lg-offset-4 col-md-6  col-sm-4 col-sm-offset-4">
-			    <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Enter Zip-Code">
-			      <span class="input-group-btn">
-			        <a class="btn btn-default" type="button" href="./searchres/index.html">Find Pets Near Me! <span class = "glyphicon glyphicon-arrow-right"> </span></a>
-			      </span>
-			    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+				    <div class="input-group">
+				      <input type="text" id ="zipInput" class="form-control input-medium" placeholder="Enter Zip-Code" size = "15">
+				      <span class="input-group-btn">
+				        <a class="btn btn-primary" id="zipButton" type="button" href="./searchres/index.html">Find Pets Near Me! <span class = "glyphicon glyphicon-arrow-right"> </span></a>
+				      </span>
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
 
 
 
@@ -119,28 +186,36 @@
 	<!-- Adoption Info start -->
 
 	<section id="adoption-info" class="section-chunk">
+		<div id="filler-rect"></div>
+
 
 
 		<div class="container">
+
+
 			<div class="row">
 
 				<div class="col-sm-6 col-sm-offset-3">
 
+
 					<div class="section-chunk-header">
-						<h2 class="section-chunk-title" style= "color: #666;">Adoption Info</h2>
-						<div class="section-chunk-line"></div>
+						<h2 class="section-chunk-title" style= "color: #666;">First time adopting? </h2>
+						
 						<div class="section-chunk-subtitle">
-							First time adopting? Read this!
+							<button type="button" class="btn btn-primary btn-lg">Learn The Process!</button>
+							
+							
+					
 						</div>
+
 					</div>
 
-				</div>
+				</div><!-- .row -->
 
-			</div><!-- .row -->
+			</div> <!-- .container -->
+		</div>
 
-		</div> <!-- .container -->
-
-        <div class="container-fluid adoption-steps">
+       <!--  <div class="container-fluid adoption-steps">
             <div class="row">
 
                 <div class="col-xs-12 col-sm-3 col-md-3 adoption-step" style ="border-left: 0px;" >
@@ -206,7 +281,7 @@
 
 
                     <p class="copyright">
-                         © 2015 Spotted
+                         © 2017 Spotted
 					</p>
 
 				</div>

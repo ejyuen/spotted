@@ -144,6 +144,7 @@ h6 {
 
 .section-chunk {
 	padding: 120px 0 100px;
+
 }
 
 
@@ -222,11 +223,36 @@ h6 {
 			background-size: cover;
 	/*margin-top: -15px;*/
 	padding: 0;
+
 }
 
+.home-top{
+	overflow: hidden;
+	z-index: -1;
+	position: relative;
 
 
-/
+}
+.petImg{
+	position: absolute;
+
+	
+
+}
+
+#petImg1{
+	-ms-transform:  translate(900px, -50px) rotate(-25deg); /* IE 9 */
+    -webkit-transform:  translate(900px, -50px) rotate(-25deg); /* Chrome, Safari, Opera */
+    transform:  translate(900px, -50px) rotate(-25deg);
+    z-index: 0;
+}
+
+#petImg2{
+	-ms-transform:  translate(-300px, -250px) rotate(30deg) scale(0.65, 0.65); /* IE 9 */
+    -webkit-transform:  translate(-300px, -250px) rotate(30deg) scale(0.65, 0.65); /* Chrome, Safari, Opera */
+    transform:  translate(-300px, -250px) rotate(30deg) scale(0.65, 0.65);
+    z-index: 0;
+}
 
 
 .home-logo {
@@ -275,9 +301,12 @@ h6 {
 
 .copyright {
 	float: left;
-	color: rgba(255, 255, 255, .2);
+	font-weight: lighter;
+	color: rgba(255, 255, 255, .8);
 	display: inline-block;
 	padding-top: 20px;
+	padding-left: 10em;
+
 }
 
 .copyright a{
@@ -286,7 +315,7 @@ h6 {
 
 .contact-info {
 	font-weight: lighter;
-	color: rgba(255, 255, 255, .4);
+	color: rgba(255, 255, 255, .8);
 	padding-top: 15px;
 
 }
@@ -383,8 +412,23 @@ h6 {
 /*-----------------------*/
 /***** Services *****/
 /*-----------------------*/
+.adoption-info{
+	z-index: 5;
+}
+
+#filler-rect{
+	position: absolute;
+	width: 120%;
+	height: 150px;
+	background: white;
+	-ms-transform:  translate(0px, -120px); /* IE 9 */
+    -webkit-transform:  translate(0px, -120px); /* Chrome, Safari, Opera */
+    transform:  translate(0px, -120px);
+
+}
 .adoption-steps{
 	margin: 0px 40px;
+
 }
 .adoption-step{
 	background-color: #fff;
