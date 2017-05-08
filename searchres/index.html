@@ -282,13 +282,17 @@
 
 			//modal
 
-			var newModal = "<div class='modal fade' id='" + petlist[i].name + "Modal' tabindex='-1' role='dialog' aria-labelledby='" + petlist[i].name + "Modal' aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h5 class='modal-title' id='" + petlist[i].name + "Modal'>" + petlist[i].name + "</h5></div><div class='modal-body'><div class='img-scroll'>";
+			var newModal = "<div class='modal fade' id='" + petlist[i].name + "Modal' tabindex='-1' role='dialog' aria-labelledby='" + petlist[i].name + "Modal' aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h5 class='modal-title' id='" + petlist[i].name + "Modal'>" + petlist[i].name + "</h5></div><div class='modal-body'>";
+
+			newModal = newModal + "<div class='slideshow-container'>";
 
 			for (j = 0; j < petlist[i].images.length; j++){
-				newModal = newModal + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'>";
+				// newModal = newModal + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'>";
+				newModal = newModal + "<div class='slides'>" + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'></div>";
 			}
 
-			newModal = newModal + "</div><button class='btn btn-secondary' onclick='plusDivs(-1, " + petlist[i].name + ")'>&#10094;</button><button class='btn btn-secondary' onclick='plusDivs(+1, " + petlist[i].name + ")'>&#10095;</button><button type='button' class='btn btn-secondary'>Feed Treat</button><button type='button' class='btn btn-secondary'>Walk</button><button type='button' class='btn btn-secondary'>Play</button><br><br><p>" + petlist[i].description + "</p></div>";
+			newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ petlist[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ petlist[i].name + "); plusSlides(+1);'>&#10095;</a><br><div style='text-align:center'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div>";
+			// newModal = newModal + "</div><button class='btn btn-secondary' onclick='plusDivs(-1, " + petlist[i].name + ")'>&#10094;</button><button class='btn btn-secondary' onclick='plusDivs(+1, " + petlist[i].name + ")'>&#10095;</button><button type='button' class='btn btn-secondary'>Feed Treat</button><button type='button' class='btn btn-secondary'>Walk</button><button type='button' class='btn btn-secondary'>Play</button><br><br><p>" + petlist[i].description + "</p></div>";
 
 
 			//add the pet favorites info
@@ -324,6 +328,34 @@
 		}
 
 		</script>
+<!-- reference: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+  <script>
+  var slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+  </script>
 	</body>
 </html>
