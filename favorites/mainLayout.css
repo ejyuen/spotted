@@ -232,8 +232,9 @@ hr {
   left:0px;
   height: 140px;
   width: 200;
+}
 
-}.prev, .next {
+.prev, .next {
   display: inline-block;
   cursor: pointer;
   position: relative;

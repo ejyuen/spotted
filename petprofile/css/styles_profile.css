@@ -36,15 +36,41 @@
  }
 
 
+p{
+  font-family: 'Josefin Slab';
+  font-size: 20px;
+}
+
+strong {
+  font-family: 'Comfortaa';
+}
 
 body {
-	font-family: 'Josefin Sans';
+	font-family: 'Josefin Slab';
+}
+
+.paw {
+	max-width: 20px;
+	max-height: 20px;
+	position: relative;
+	padding-left: 2px;
+	padding-right: 2px;
+	bottom: 2px;
 }
 
 .profile-header{
-	padding-top: 50px;
+  padding-top: 32px;
 	border-bottom: 1px solid black;
 	background-color: var(--lightgray);
+  height: 72px;
+}
+
+.profile-header-text {
+  font-family: 'Comfortaa';
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--darkblue);
+	padding-left: 0px;
 }
 
 .container-head {
@@ -57,18 +83,9 @@ body {
 }
 
 .icon {
-	 width: 50px;
-	 height: 50px;
-   margin-bottom: 14px;
-}
-
-.bg-success {
-	font-family: 'Raleway';
-	font-weight: bold;
-	font-size: 40px;
-	background-color: transparent !important;
-  margin-left: 4px;
-  color: var(--darkblue);
+	 width: 40px;
+	 height: 40px;
+   margin-bottom: 8px;
 }
 
 .name {
@@ -94,17 +111,18 @@ body {
 }
 
 .adopt-form {
-	background-color: #5cb85c;
+  margin-top: 20px;
+  margin-bottom: 40px;
+	background-color: var(--darkblue);
 	color: white;
-	font-family: 'Raleway';
+	font-family: 'Comfortaa';
 	font-weight: bold;
-  font-size: 12px;
+  text-transform: capitalize !important;
 }
 
 .adopt-form:hover {
-  background-color: #5cb85c;
-  opacity: 0.7;
-  color: white;
+  background-color: var(--lightorange);
+  color: white !important;
 	font-weight: bold;
 }
 
@@ -115,13 +133,13 @@ body {
 }
 
 .information {
-  font-family: 'Josefin Sans';
+  font-family: 'Josefin Slab';
 	font-size: 16px;
 	font-weight: 'light';
 }
 
 .tag {
-	font-family: 'Josefin Sans';
+	font-family: 'Josefin Slab';
 	font-size: 20px;
 	font-weight: 'light';
   padding-left: 0px;
@@ -209,8 +227,10 @@ a {
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
   width: auto;
+  top: 4%;
+  height: 400px;
+  line-height: 370px;
   margin-top: -17px;
   margin-left: -5px;
   padding: 16px;
@@ -247,4 +267,3 @@ a {
 .active, .dot:hover {
   background-color: #717171;
 }
-
