@@ -47,6 +47,11 @@ img {
 	cursor: pointer; cursor: hand;
 }
 
+.paw {
+	width: 20px;
+	height:16;
+}
+
 .filter-param {
 	font-size: 18px;
 	font-family: "Josefin Sans";
