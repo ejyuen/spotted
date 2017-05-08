@@ -225,6 +225,7 @@ hr {
   left:0px;
   height: 140px;
   width: 200;
+
 }.prev, .next {
   display: inline-block;
   cursor: pointer;
@@ -239,7 +240,7 @@ hr {
   padding-bottom: 72px;
   padding-left: 9px;
   padding-right: 9px;
-  top: -185px;
+  top: -187px;
   margin-bottom: -100px;
 }
 
@@ -273,32 +274,37 @@ hr {
 }
 
 .profile:hover {
-  background-color: var(--darkorange);
+  background-color: var(--lightorange);
   color: white;
 	font-weight: bold;
 }
 
 .remove {
-  background-color: transparent;
+  background-color: white;
   position:absolute;
   top:0px;
   right:0px;
   width: 5px;
+  padding-left: 6px !important;
+  padding-right: 16px !important;
+  padding-top: 3px !important;
+  padding-bottom: 0px !important;
+  margin: 5px;
 }
 
 .remove:hover {
-  color: var(--darkorange);
+  color: var(--darkblue);
 }
 
 .search {
-	background-color: var(--darkblue);
+	background-color: var(--lightblue);
 	color: white;
 	font-family: 'Comfortaa';
 	font-weight: bold;
 }
 
 .search:hover {
-	background-color: var(--darkorange);
+	background-color: var(--lightorange);
 	color: white;
 }
 
