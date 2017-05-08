@@ -434,7 +434,34 @@
 				newModal = newModal + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'>";
 			}
 
-			newModal = newModal + "</div><button class='btn btn-secondary' onclick='plusDivs(-1, " + petlist[i].name + ")'>&#10094;</button><button class='btn btn-secondary' onclick='plusDivs(+1, " + petlist[i].name + ")'>&#10095;</button><button type='button' class='btn btn-secondary'>Feed Treat</button><button type='button' class='btn btn-secondary'>Walk</button><button type='button' class='btn btn-secondary'>Play</button><br><br><p>" + petlist[i].description + "</p></div><div class='modal-footer'><button type='button' class='btn btn-secondary' data-dismiss='modal'>See Profile</button><img src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div></div></div";
+			newModal = newModal + "</div><button class='btn btn-secondary' onclick='plusDivs(-1, " + petlist[i].name + ")'>&#10094;</button><button class='btn btn-secondary' onclick='plusDivs(+1, " + petlist[i].name + ")'>&#10095;</button><button type='button' class='btn btn-secondary'>Feed Treat</button><button type='button' class='btn btn-secondary'>Walk</button><button type='button' class='btn btn-secondary'>Play</button><br><br><p>" + petlist[i].description + "</p></div><div class='modal-footer'><button type='button' class='btn btn-secondary' data-dismiss='modal'>See Profile</button><img src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'>";
+
+
+			//add the pet favorites info
+			//activity += "<img class='paw' src='../images/paw.png'></img>"
+			  // activity: 2,
+			  // kids: 1,
+			  // shedding: 1,
+
+			newModal +="<div class='description'>Activity</div><div><hr/>"
+
+			for (k = 0; k < petlist[i].activity; k++){
+				newModal += "<img class='paw' src='../images/paw.png'></img>";
+			}
+
+			newModal += "<div class='description'>Kid-Friendliness</div><hr/>";
+
+			for (l = 0; l < petlist[i].kids; l++){
+				newModal += "<img class='paw' src='../images/paw.png'></img>";
+			}
+
+			newModal += "<div class='description'>Shedding</div><hr/>";
+
+			for (l = 0; l < petlist[i].shedding; l++){
+				newModal += "<img class='paw' src='../images/paw.png'></img>";
+			}
+
+			newModal += "</div></div></div></div>";
 
 			$('#pet-display').append(newResult);
 			$('#pet-display').append(newModal);
