@@ -30,18 +30,24 @@ hr {
   margin-left: 60px;
 }
 
-.close {
-	background-color: transparent;
+.closee {
+  opacity: 1.0;
 	float: right;
 	width: 10px;
-	border-radius: 15px;
+	border-radius: 4px;
   color: black;
-  opacity: 1.0;
+  padding-left: 6px !important;
+  padding-right: 13px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  text-transform: lowercase !important;
+  background-color: rgba(255,255,255,0.4);
+  color: black;
+  margin-bottom: 2px;
 }
-.close:hover {
-  background-color: transparent;
-  color: var(--darkblue);
-	font-weight: bold;
+.closee:hover {
+  background-color: var(--lightblue);
+  color: black;
 }
 
 .description {
@@ -97,21 +103,22 @@ hr {
 
 .favorites {
 	font-family: 'Comfortaa';
-  font-size: 40px;
+  font-size: 26px;
   font-weight: bold;
   color: var(--darkblue);
-	padding-left: 5px;
+	padding-left: 2px;
 }
 
 .favorites-header{
-	padding-top: 50px;
+	padding-top: 36px;
 	border-bottom: 1px solid black;
 	background-color: var(--lightgray);
+  height: 76px;
 }
 
 .features-space{
   position: relative;
-  height:252px;
+  height:244px;
   background-color: white;
   border: 1px solid white;
 }
@@ -120,7 +127,7 @@ hr {
 	 width: 50px;
 	 height: 50px;
 	 position: relative;
-	 bottom: 14px;
+	 bottom: 8px;
 }
 
 .icon-container {
@@ -242,6 +249,7 @@ hr {
   padding-right: 9px;
   top: -187px;
   margin-bottom: -100px;
+  user-select: none;
 }
 
 .prev {
@@ -280,20 +288,23 @@ hr {
 }
 
 .remove {
-  background-color: white;
+  background-color: rgba(255,255,255,0.4);
+  color: black;
   position:absolute;
   top:0px;
   right:0px;
   width: 5px;
   padding-left: 6px !important;
-  padding-right: 16px !important;
-  padding-top: 3px !important;
+  padding-right: 13px !important;
+  padding-top: 0px !important;
   padding-bottom: 0px !important;
   margin: 5px;
+  text-transform: lowercase !important;
 }
 
 .remove:hover {
-  color: var(--darkblue);
+  background-color: var(--lightblue);
+  color: black;
 }
 
 .search {
