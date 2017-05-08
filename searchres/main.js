@@ -9,7 +9,7 @@ $(document).ready(function(){
 		placement: 'bottom'
 	});
 
-	//on click, set a 1 second delay before fading out popover
+	//on click, set a 2 second delay before fading out popover
 	$('.fav').click(function(evt){
 		setTimeout(function(){
 			$('.popover').fadeOut('Slow');
@@ -67,10 +67,15 @@ function plusDivs(n, name) {
 function showDivs(n, slideIndex, name) {
     var i;
     var x = document.getElementsByClassName(name + "Slides");
-    if (n > x.length) {window[name + 'SlideIndex'] = 1} 
+    if (n > x.length) {window[name + 'SlideIndex'] = 1}
     if (n < 1) {slideIndex = x.length} ;
     for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none"; 
+        x[i].style.display = "none";
     }
-    x[window[name + 'SlideIndex'] -1].style.display = "block"; 
+    x[window[name + 'SlideIndex'] -1].style.display = "block";
+}
+
+function switch_drop(phrase){
+	$("#drop-down").text(phrase);
+	$("#drop-down-menu").dropdown("toggle");
 }

@@ -83,8 +83,8 @@ var staples = {
   images: ["../images/staples_1.jpg","../images/staples_2.jpg","../images/staples_3.jpg","../images/staples_4.jpg"]
 };
 
-var ping = {
-  name: "Ping",
+var robert = {
+  name: "Robert",
   gender: "Female",
   age: "9 months",
   breed: "Siamese",
@@ -96,23 +96,23 @@ var ping = {
   images: ["../images/ping_4.jpg","../images/ping_2.jpg","../images/ping_3.jpg","../images/ping_1.jpg"]
 };
 
-var pet_dict = [ping,staples,benjamin];
+var pet_dict = [robert,staples,benjamin];
 var pet_removed;
-var pet_show = ['ping','staples','benjamin'];
+var pet_show = ['robert','staples','benjamin'];
 var compare = [];
 var is_empty = true;
 
 function add_features(){
   var add="<div id='features' class='pet pet-features'><div class='features-space'></div>"
                                   +"<div class='name'>Name</div><hr/>"
-                                  +"<div class='description'>Gender</div><hr/>"
-                                  +"<div class='description'>Age</div><hr/>"
-                                  +"<div class='description'>Breed</div><hr/>"
-                                  +"<div class='description'>Activity</div><div><hr/>"
-                                  +"<div class='description'>Kid-Friendliness</div><hr/>"
-                                  +"<div class='description'>Shedding</div><hr/>"
-                                  +"<div class='description'>Vaccinations</div><hr/>"
-                                  +"<div class='description'>Spayed/Neutered</div><hr/></div>";
+                                  +"<div class='description-f'>Gender</div><hr/>"
+                                  +"<div class='description-f'>Age</div><hr/>"
+                                  +"<div class='description-f'>Breed</div><hr/>"
+                                  +"<div class='description-f'>Activity</div><div><hr/>"
+                                  +"<div class='description-f'>Kid-Friendliness</div><hr/>"
+                                  +"<div class='description-f'>Shedding</div><hr/>"
+                                  +"<div class='description-f'>Vaccinations</div><hr/>"
+                                  +"<div class='description-f'>Spayed/Neutered</div><hr/></div>";
   $("#pets").append(add);
 }
 
@@ -264,8 +264,8 @@ $(document).on('click',"#open-benjamin", function(evt){
 $(document).on('click',"#open-staples", function(evt){
   open(staples);
 })
-$(document).on('click',"#open-ping", function(evt){
-  open(ping);
+$(document).on('click',"#open-robert", function(evt){
+  open(robert);
 })
 
 $(document).on('click',"#close-benjamin", function(evt){
@@ -274,8 +274,8 @@ $(document).on('click',"#close-benjamin", function(evt){
 $(document).on('click',"#close-staples", function(evt){
   close('staples');
 })
-$(document).on('click',"#close-ping", function(evt){
-  close('ping');
+$(document).on('click',"#close-robert", function(evt){
+  close('robert');
 })
 
 $(document).on('click',"#remove-benjamin", function(evt){
@@ -284,8 +284,8 @@ $(document).on('click',"#remove-benjamin", function(evt){
 $(document).on('click',"#remove-staples", function(evt){
   remove('staples');
 })
-$(document).on('click',"#remove-ping", function(evt){
-  remove('ping');
+$(document).on('click',"#remove-robert", function(evt){
+  remove('robert');
 })
 
 $(document).on('click',"#close-notification", function(evt){
@@ -314,34 +314,34 @@ $(document).on('click',"#undo-remove", function(evt){
 
 //---------------carousels-----------
 var slideIndex_benjamin=1;
-var slideIndex_ping=1;
+var slideIndex_robert=1;
 var slideIndex_staples=1;
 
 function plusSlides(n,pet) {
   if (pet.name.toLowerCase()=='staples'){
-    slideIndex_staples+=1;
+    slideIndex_staples+=n;
     showSlides(slideIndex_staples,'staples');
   } else if (pet.name.toLowerCase()=='benjamin'){
-    slideIndex_benjamin+=1;
+    slideIndex_benjamin+=n;
     showSlides(slideIndex_benjamin,'benjamin');
-  } else if (pet.name.toLowerCase()=='ping'){
-    slideIndex_ping+=1;
-    showSlides(slideIndex_ping,'ping');
+  } else if (pet.name.toLowerCase()=='robert'){
+    slideIndex_robert+=n;
+    showSlides(slideIndex_robert,'robert');
   }
 }
 
 function currentSlide(n,pet) {
   if (pet.name.toLowerCase()=='staples'){
-    console.log('current');
     slideIndex_staples=n;
     showSlides(slideIndex_staples,'staples');
   } else if (pet.name.toLowerCase()=='benjamin'){
     slideIndex_benjamin=n;
     showSlides(slideIndex_benjamin,'benjamin');
-  } else if (pet.name.toLowerCase()=='ping'){
-    slideIndex_ping=n;
-    showSlides(slideIndex_ping,'ping');
+  } else if (pet.name.toLowerCase()=='robert'){
+    slideIndex_robert=n;
+    showSlides(slideIndex_robert,'robert');
   }
+}
 
 function showSlides(n,pet) {
   var i;
@@ -352,16 +352,16 @@ function showSlides(n,pet) {
       slideIndex_staples=1;
     } else if (pet=='benjamin'){
       slideIndex_benjamin=1;
-    } else if (pet=='ping'){
-      slideIndex_ping=1;
+    } else if (pet=='robert'){
+      slideIndex_robert=1;
     }
   } else if (n < 1) {
     if (pet=='staples'){
       slideIndex_staples=slides.length;
     } else if (pet=='benjamin'){
       slideIndex_benjamin=slides.length;
-    } else if (pet=='ping'){
-      slideIndex_ping=slides.length;
+    } else if (pet=='robert'){
+      slideIndex_robert=slides.length;
     }
   }
   for (i = 0; i < slides.length; i++) {
@@ -376,11 +376,10 @@ function showSlides(n,pet) {
   } else if (pet=='benjamin'){
     slides[slideIndex_benjamin-1].style.display = "block";
     dots[slideIndex_benjamin-1].className += " active";
-  } else if (pet=='ping'){
-    slides[slideIndex_ping-1].style.display = "block";
-    dots[slideIndex_ping-1].className += " active";
+  } else if (pet=='robert'){
+    slides[slideIndex_robert-1].style.display = "block";
+    dots[slideIndex_robert-1].className += " active";
   }
-}
 }
 
 
@@ -452,7 +451,7 @@ function showSlides(n,pet) {
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 contact-info">
         <p class = "text-left">
-          Phone: +1 800-SPO-TTED<br>
+          Phone: +1 800-SPOTTED<br>
           Email: spotted@mit.edu
         </p>
       </div>

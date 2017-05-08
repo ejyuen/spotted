@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Quattrocento+Sans');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
 :root{
     --darkblue: RGB(100,160,142);
@@ -16,6 +16,7 @@
 hr {
     display: block;
     height: 1px;
+    width: 100%;
     border: 0;
     border-top: 1px solid #ccc;
     margin: 6px;
@@ -44,14 +45,21 @@ hr {
 }
 
 .description {
-	font-family: 'Josefin Sans';
-	font-size: 24px;
+	font-family: 'Josefin Slab';
+	font-size: 20px;
 	font-weight: 'light';
   height: 30px;
-  margin-bottom: 10px;
+
 }
 
-.dot-ping, .dot-benjamin, .dot-staples {
+.description-f {
+	font-family: 'Josefin Slab';
+	font-size: 20px;
+	font-weight: 'light';
+  height: 30px;
+}
+
+.dot-robert, .dot-benjamin, .dot-staples {
   cursor:pointer;
   height: 13px;
   width: 13px;
@@ -62,50 +70,8 @@ hr {
   transition: background-color 0.6s ease;
 }
 
-.active, .dot-benjamin:hover, .dot-staples:hover, .dot-ping:hover {
+.active, .dot-benjamin:hover, .dot-staples:hover, .dot-robert:hover {
   background-color: #717171;
-}
-.prev:hover, .next:hover {
-  background-color: rgba(209,209,209,0.8);
-}
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-.prev, .next {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  width: auto;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  padding-top: 73px;
-  padding-bottom: 72px;
-  padding-left: 9px;
-  padding-right: 9px;
-  top: -185px;
-}
-
-.prev {
-  float: left;
-  margin-left: 1px;
-}
-
-.next {
-  float:right;
-  margin-right: 1px;
-}
-
-.slideshow-container {
-  display: inline-block;
-  width: 250px;
-  height: 175px;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
 }
 
 .empty {
@@ -130,7 +96,7 @@ hr {
 }
 
 .favorites {
-	font-family: 'Raleway';
+	font-family: 'Comfortaa';
   font-size: 40px;
   font-weight: bold;
   color: var(--darkblue);
@@ -145,7 +111,7 @@ hr {
 
 .features-space{
   position: relative;
-  height:240px;
+  height:252px;
   background-color: white;
   border: 1px solid white;
 }
@@ -179,7 +145,7 @@ hr {
 }
 
 .name {
-	font-family: 'Raleway';
+	font-family: 'Comfortaa';
 	font-size: 24px;
 	font-weight: 'black';
 	padding-top: 10px;
@@ -207,7 +173,7 @@ hr {
 	padding-left: 10px;
 	font-size: 16px;
 	padding-bottom: 20px;
-	font-family: 'Josefin Sans';
+	font-family: 'Josefin Slab';
 	font-weight: 'light';
 }
 
@@ -234,10 +200,18 @@ hr {
 	padding-bottom: 5px;
 	padding-left: 5px;
 	padding-right: 5px;
+  margin-right: 12px;
 }
 
 .pet-features {
   width: 160px;
+}
+
+.pet-lineup {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--lightgray);
+  height: 150px;
 }
 
 .pets {
@@ -251,6 +225,36 @@ hr {
   left:0px;
   height: 140px;
   width: 200;
+}.prev, .next {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  padding-top: 73px;
+  padding-bottom: 72px;
+  padding-left: 9px;
+  padding-right: 9px;
+  top: -185px;
+  margin-bottom: -100px;
+}
+
+.prev {
+  float: left;
+  margin-left: 1px;
+}
+
+.next {
+  float:right;
+  margin-right: 1px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(209,209,209,0.8);
 }
 
 .prof {
@@ -263,8 +267,9 @@ hr {
   margin-bottom: 40px;
 	background-color: var(--darkblue);
 	color: white;
-	font-family: 'Raleway';
+	font-family: 'Comfortaa';
 	font-weight: bold;
+  text-transform: capitalize !important;
 }
 
 .profile:hover {
@@ -288,7 +293,7 @@ hr {
 .search {
 	background-color: var(--darkblue);
 	color: white;
-	font-family: 'Raleway';
+	font-family: 'Comfortaa';
 	font-weight: bold;
 }
 
@@ -297,18 +302,27 @@ hr {
 	color: white;
 }
 
+.slideshow-container {
+  display: inline-block;
+  width: 250px;
+  height: 175px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
 .search-text{
 	text-align: center;
 	padding-top: 150px;
 	padding-bottom: 50px;
-	font-family: 'Raleway' black;
+	font-family: 'Comfortaa' black;
 	font-size: 24px;
 }
 
 .undo {
 	background-color: var(--darkblue);
 	color: white;
-	font-family: 'Raleway';
+	font-family: 'Comfortaa';
 	font-weight: bold;
 }
 
