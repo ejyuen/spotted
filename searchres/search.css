@@ -29,13 +29,16 @@ img {
 
 .breed-search{
 	display:inline-block;
-	margin-right: 310px;
-	padding-top: 8px;
 }
 
 .descbox {
 	background-color: white;
 	padding-left: 20px;
+}
+
+.dropdown {
+	float: right;
+	margin-right: 6px;
 }
 
 .fav {
@@ -78,9 +81,15 @@ img {
 .petbox {
 	display: inline-block;
 	margin-bottom: 10px;
-	margin-right: 3px;
+	margin-right: 8px;
 	width: 275px;
 	border: 1px solid lightgray;
+}
+
+#pet-display {
+	width: 855.5px;
+	padding: 0px;
+	margin: 0px;
 }
 
 .petinf {
@@ -88,7 +97,7 @@ img {
 }
 
 .petprev {
-	height: 273px;
+	height: 217px;
 	width: 273px;
 	cursor: pointer;
 }
@@ -114,7 +123,13 @@ img {
 	background-color: var(--lightgray);
 }
 
+.slide {
+	height: 217px;
+	width: 273px;
+}
+
 .tags {
+	width: 847.5px;
 	padding-bottom: 20px;
 }
 
