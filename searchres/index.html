@@ -71,7 +71,7 @@
 				<div class="col-md-3 left">
 				      <div class="row zipcode">
 				        <label for='zipcode'>Zip-Code:</label>
-				        <input type="text" id="zipcode" placeholder="01803" style="width: 60px;"/>
+				        <input type="text" class="form-control" id="zipcode" placeholder="01803" style="display: inline-block; width: 70px;"/>
 				      </div>
 				    </br>
 				    <div class='filter-param'>Type</div>
@@ -133,18 +133,20 @@
 							<div class="breed-search">
 
 				        <label for='breed'>Breed:</label>
-				        <input type="text" id="breed" placeholder="search for breeds" style="width: 300px;"/>
+				        <input type="text" class="form-control" id="breed" placeholder="Golden Retriever, Siamese, etc." style="display:inline-block; width: 300px;"/>
 				      </div>
 
-							<div class="dropdown" style="display:inline-block;">
-								Sort by:
-							  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"> --select--
-							  <span class="caret"></span></button>
+							<div class="dropdown" style="display:inline-block;">Sort by
+							  <button id="drop-down-menu" class="btn btn-secondary dropdown-toggle" value="select" type="button" data-toggle="dropdown">
+							  <p id="drop-down" style="display:inline-block;margin-bottom:0px;margin-right:4px;">--select--</p><span class="caret"></span></button>
 							  <ul class="dropdown-menu">
-							    <li><a href="#">Distance</a></li>
-							    <li><a href="#">Maintenance (Low to High)</a></li>
-							    <li><a href="#">Maintenance (High to Low)</a></li>
+							    <li><input class="btn btn-link" type="button" value="Distance &#8593;" onclick="switch_drop('Distance &#8593;')" /></li>
+							    <li><input class="btn btn-link" type="button" value = "Shedding &#8593;" onclick="switch_drop('Shedding &#8593;')"/></li>
+									<li><input class="btn btn-link" type="button" value = "Activity &#8593;" onclick="switch_drop('Activity &#8593;')"/></li>
+							    <li><input class="btn btn-link" type="button" value = "Activity &#8595;" onclick="switch_drop('Activity &#8595;')"/></li>
+									<li><input class="btn btn-link" type="button" value = "Kid-Friendliness &#8595;" onclick="switch_drop('Kid-Friendliness &#8595;')"/></li>
 							  </ul>
+							</button>
 							</div>
 
 						</div>
@@ -166,10 +168,10 @@
 						      </div>
 						      <div class="modal-body">
 						      	<div class="img-scroll">
-						      		<img class="gatsbySlides" src="../images/GatsbyProfile.png">
-						      		<img class="gatsbySlides" src="../images/Gatsby1.png">
-						      		<img class="gatsbySlides" src="../images/Gatsby2.png">
-						      		<img class="gatsbySlides" src="../images/Gatsby3.png">
+						      		<img class="slide" src="../images/GatsbyProfile.png">
+						      		<img class="slide" src="../images/Gatsby1.png">
+						      		<img class="slide" src="../images/Gatsby2.png">
+						      		<img class="slide" src="../images/Gatsby3.png">
 						      	</div>
 						      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'gatsby')">&#10094;</button>
 								<button class="btn btn-secondary" onclick="plusDivs(+1, 'gatsby')">&#10095;</button>
@@ -202,8 +204,8 @@
 						      </div>
 						      <div class="modal-body">
 						      	<div class="img-scroll">
-						      		<img class="herbertSlides" src="../images/HerbertProfile.png">
-						      		<img class="herbertSlides" src="../images/Herbert2.jpeg">
+						      		<img class="slide" src="../images/HerbertProfile.png">
+						      		<img class="slide" src="../images/Herbert2.jpeg">
 						      	</div>
 						      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'herbert')">&#10094;</button>
 								<button class="btn btn-secondary" onclick="plusDivs(+1, 'herbert')">&#10095;</button>
@@ -231,14 +233,14 @@
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						          <span aria-hidden="true">&times;</span>
 						        </button>
-						        <h5 class="modal-title" id="pingModal">PING</h5>
+						        <h5 class="modal-title" id="pingModal">Robert</h5>
 						      </div>
 						      <div class="modal-body">
 						      	<div class="img-scroll">
-						      		<img class="pingSlides" src="../images/ping_4.jpg">
-						      		<img class="pingSlides" src="../images/ping_1.jpg">
-						      		<img class="pingSlides" src="../images/ping_2.jpg">
-						      		<img class="pingSlides" src="../images/ping_3.jpg">
+						      		<img class="slide" src="../images/ping_4.jpg">
+						      		<img class="slide" src="../images/ping_1.jpg">
+						      		<img class="slide" src="../images/ping_2.jpg">
+						      		<img class="slide" src="../images/ping_3.jpg">
 						      	</div>
 						      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'ping')">&#10094;</button>
 								<button class="btn btn-secondary" onclick="plusDivs(+1, 'ping')">&#10095;</button>
@@ -273,11 +275,11 @@
 						      </div>
 						      <div class="modal-body">
 						      	<div class="img-scroll">
-						      		<img class="benjSlides" src="../images/benjamin_square.jpg">
-						      		<img class="benjSlides" src="../images/benjamin_2.jpg">
-						      		<img class="benjSlides" src="../images/benjamin_3.jpg">
-						      		<img class="benjSlides" src="../images/benjamin_4.jpg">
-						      		<img class="benjSlides" src="../images/benjamin_5.jpg">
+						      		<img class="slide" src="../images/benjamin_square.jpg">
+						      		<img class="slide" src="../images/benjamin_2.jpg">
+						      		<img class="slide" src="../images/benjamin_3.jpg">
+						      		<img class="slide" src="../images/benjamin_4.jpg">
+						      		<img class="slide" src="../images/benjamin_5.jpg">
 						      	</div>
 						      	<button class="btn btn-secondary" onclick="plusDivs(-1, 'benj')">&#10094;</button>
 								<button class="btn btn-secondary" onclick="plusDivs(+1, 'benj')">&#10095;</button>
@@ -302,19 +304,43 @@
 				</div>
 			</div> <!--  row -->
 		</div> <!--  container -->
+	</br>
+</br>
+
+		<!-- Footer start -->
+
+		<footer id="footer">
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		        <p class="copyright">© 2017 Spotted</p>
+		      </div>
+		      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+		      </div>
+		      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 contact-info">
+		        <p class = "text-left">
+		          Phone: +1 800-SPO-TTED<br>
+		          Email: spotted@mit.edu
+		        </p>
+		      </div>
+
+
+		    </div><!-- .row -->
+		  </div><!-- .container -->
+		</footer>
 
 		<script>
 		//Populate the search bar
 
 
 		var gatsby = {
-			name: "Gatsby", 
+			name: "Gatsby",
 			species: "dog",
 			gender: "Male",
 			age: "3 years",
 			breed: "Corgi",
 			activity: 4,
-			kids: 5, 
+			kids: 5,
 			shedding: 3,
 			vaccinations: 1,
 			neutered: 1,
@@ -368,7 +394,7 @@
 		};
 
 		var ping = {
-			  name: "Ping",
+			  name: "Robert",
 			  species: "cat",
 			  gender: "Female",
 			  age: "9 months",
