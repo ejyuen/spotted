@@ -9,7 +9,6 @@
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -24,7 +23,7 @@
     <!-- styles -->
     <link href="css/styles_profile.css" rel="stylesheet"/>
     <link href="../css/style.css"rel="stylesheet"/>
-    <link href="../css/bootstrap.min.css" rel="stylesheet"/> 
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
 
 
   </head>
@@ -61,7 +60,7 @@
     <div class='container'>
     <br>
         <div class="row profile-header">
-        <img style="margin-left: 10px; margin-top:-10px; margin-right:10px;" class='ib icon' src='../images/dogbw.png'/><span class="bg-success ib">  Pet Profile </span>
+        <img style="margin-left: 4px; margin-top:-10px; margin-right:10px;" class='ib icon' src='../images/dogbw.png'/><span class="profile-header-text ib">  Pet Profile </span>
         </div>
     </br>
     <div class='row'>
@@ -101,25 +100,30 @@
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-  <span class="dot" onclick="currentSlide(4)"></span> 
-  <span class="dot" onclick="currentSlide(5)"></span> 
-  <span class="dot" onclick="currentSlide(6)"></span> 
-  <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
 </div>
 
           </div>
-          <div class="name"><strong> Gatsby </strong></div>
+          <div class="name" style="margin-left:78px;"><strong> Gatsby </strong></div>
           <br>
-          <div class="description"> Male </div>
-          <div class="description"> 3 years old </div>
-          <div class="description"> Pembroke Welsh Corgi </div>
-          <br>
-          <div class="tag ib"><span class="label label-info"> Vaccinated </span></div>
-          <div class="tag ib"><span class="label label-info"> Neutered </span></div>
-          <div class="tag ib"><span class="label label-info"> Kid-friendly </span></div>
+        <div class="row col-md-6">
+          <div class="description ib" style="margin:0 0 10px 78px;"> Male </div>
+          <div class="description ib" style="margin:0 0 10px 78px;"> 3 years old </div>
+          <div class="description ib" style="margin:0 0 10px 78px;"> Pembroke Welsh Corgi </div>
+        </div>
+        <div class="row col-md-6">
+          <div class="tag"><p style="margin-left:10px;margin-right:5px;display:inline-block;">Activity</p><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"></div>
+          <div class="tag"><p style="margin-left:10px;margin-right:5px;display:inline-block;">Kid-Friendly</p><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"></div>
+          <div class="tag"><p style="margin-left:10px;margin-right:5px;display:inline-block;">Shedding</p><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"><img class="paw" src="../favorites/images/paw.png"></div>
+          <div class="tag"><img class="paw" style="margin-left:10px;" src="../favorites/images/yes.png"><p style="margin-left:10px;display:inline-block;">Vaccinated</p></div>
+          <div class="tag"><img class="paw" style="margin-left:10px;" src="../favorites/images/yes.png"><p style="margin-left:10px;display:inline-block;">Neutered</p></div>
+        </div>
       </div>
 
       <div class="col-md-6">
@@ -133,7 +137,7 @@
         <div class="adoption-sub"><u> Next Steps: </u></div>
         <div class="row">
           <div class="col-md-5 information">
-                <p><strong> Contact the shelter: </strong></p>
+                <p><strong style="font-size:16px;"> Contact the shelter: </strong></p>
                 <p> ASPCA NYC Adoption Center </p>
                 <p> (212) 876-7700 </p>
                 <p> solicitations@aspca.org </p>
@@ -152,7 +156,7 @@
             <div class="text-muted"> OR </div>
           </div>
           <div class="col-md-5 col-md-offset-1 information">
-                <p><strong> Fill out this interest form: </strong></p>
+                <p><strong style="font-size:16px;"> Fill out this interest form: </strong></p>
                 <br>
                 <input type="button" class="btn adopt-form" style="width: 100%; font-size: 12.5px; white-space: normal;" value="Adoption Interest Form"/>
           </div>
@@ -174,7 +178,7 @@
         </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 contact-info">
           <p class = "text-left">
-            Phone: +1 800-SPO-TTED<br>
+            Phone: +1 800-SPOTTED<br>
             Email: spotted@mit.edu
           </p>
         </div>
@@ -184,8 +188,8 @@
     </div><!-- .container -->
   </footer>
 
-<!-- reference: https://www.w3schools.com/howto/howto_js_slideshow.asp --> 
-  <script> 
+<!-- reference: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+  <script>
   var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -201,15 +205,15 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("slides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
+  if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
+      slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block"; 
+  slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
   </script>
