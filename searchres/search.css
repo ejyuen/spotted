@@ -23,6 +23,7 @@ img {
 
 }
 
+
 #detarrow {
 	-top: 5px;
 }
@@ -47,6 +48,11 @@ img {
 	cursor: pointer; cursor: hand;
 }
 
+.paw {
+	width: 20px;
+	height:16;
+}
+
 .filter-param {
 	font-size: 18px;
 	font-family: "Josefin Sans";
@@ -68,6 +74,7 @@ img {
 	 position: relative;
 	 bottom: 14px;
 }
+
 
 .img-scroll {
 	width: 300px;
@@ -143,3 +150,5 @@ img {
 	padding-bottom: 8px;
 	width: 100%;
 }
+
+

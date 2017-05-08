@@ -57,6 +57,7 @@ $.extend({
 // $.getUrlVar('size')
 
 // all the pets and their properties
+
 var benjamin = {
   name: "Benjamin",
   gender: "Male",
@@ -67,7 +68,7 @@ var benjamin = {
   shedding: 2,
   vaccinations: 1,
   neutered: 1,
-  images: ["../images/benjamin_1.jpg","../images/benjamin_2.jpg","../images/benjamin_3.jpg","../images/benjamin_4.jpg","../images/benjamin_5.jpg"]
+  images: ["./images/benjamin_1.jpg","./images/benjamin_2.jpg","./images/benjamin_3.jpg","./images/benjamin_4.jpg"]
 };
 
 var staples = {
@@ -80,7 +81,7 @@ var staples = {
   shedding: 1,
   vaccinations: 0,
   neutered: 1,
-  images: ["../images/staples_1.jpg","../images/staples_2.jpg","../images/staples_3.jpg","../images/staples_4.jpg"]
+  images: ["./images/staples_1.jpg","./images/staples_2.jpg","./images/staples_3.jpg","./images/staples_4.jpg"]
 };
 
 var robert = {
@@ -93,7 +94,7 @@ var robert = {
   shedding: 2,
   vaccinations: 1,
   neutered: 1,
-  images: ["../images/ping_4.jpg","../images/ping_2.jpg","../images/ping_3.jpg","../images/ping_1.jpg"]
+  images: ["./images/ping_4.jpg","./images/ping_2.jpg","./images/ping_3.jpg","./images/ping_1.jpg"]
 };
 
 var pet_dict = [robert,staples,benjamin];
@@ -131,31 +132,31 @@ function open(pet){
 
   var activity="";
   for (var j=0; j< pet.activity; j++) {
-    activity += "<img class='paw' src='../images/paw.png'></img>";
+    activity += "<img class='paw' src='./images/paw.png'></img>";
   }
 
   var kids="";
   for (var j=0; j< pet.kids; j++) {
-    kids += "<img class='paw' src='../images/paw.png'></img>";
+    kids += "<img class='paw' src='./images/paw.png'></img>";
   }
 
   var shedding="";
   for (var j=0; j< pet.shedding; j++) {
-    shedding += "<img class='paw' src='../images/paw.png'></img>";
+    shedding += "<img class='paw' src='./images/paw.png'></img>";
   }
 
   var vaccinate="";
   if (pet.vaccinations==1){
-    vaccinate += "<img class='paw' src='../images/yes.png'></img><span> Yes</span>"
+    vaccinate += "<img class='paw' src='./images/yes.png'></img><span> Yes</span>"
   } else {
-    vaccinate += "<img class='paw' src='../images/no.png'></img><span> No</span>"
+    vaccinate += "<img class='paw' src='./images/no.png'></img><span> No</span>"
   }
 
   var neutered="";
   if (pet.neutered==1){
-    neutered += "<img class='paw' src='../images/yes.png'></img><span> Yes<span>"
+    neutered += "<img class='paw' src='./images/yes.png'></img><span> Yes<span>"
   } else {
-    neutered += "<img class='paw' src='../images/no.png'></img><span> No<span>"
+    neutered += "<img class='paw' src='./images/no.png'></img><span> No<span>"
   }
 
   var images="<div class='slideshow-container'>";
@@ -186,7 +187,7 @@ function open(pet){
 }
 
 function click_compare(){
-  var html="<div id='empty-compare' class='empty'><img class='arrow' src='../images/arrow.png'></img><p class='low'>Click a pet to get started.<p></div>";
+  var html="<div id='empty-compare' class='empty'><img class='arrow' src='./images/arrow.png'></img><p class='low'>Click a pet to get started.<p></div>";
   return html;
 }
 
@@ -395,9 +396,9 @@ function showSlides(n,pet) {
       </div>
       <div class="collapse navbar-collapse" id="custom-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../searchres/index.html"><span class= "glyphicon glyphicon-search"></span>Browse</a></li>
-          <li><a href="../adoptionInfo/index.html"><span class= "glyphicon glyphicon-question-sign"></span>Adoption Info</a></li>
-          <li><a href="../favorites/index.html"><span class= "glyphicon glyphicon-heart"></span>Favorites</a></li>
+          <li><a href="../searchres/index.html"><span class= "glyphicon glyphicon-search"></span> Browse</a></li>
+          <li><a href="../adoptionInfo/index.html"><span class= "glyphicon glyphicon-question-sign"></span> Adoption Info</a></li>
+          <li><a href="../favorites/index.html"><span class= "glyphicon glyphicon-heart"></span> Favorites</a></li>
         </ul>
       </div>
 
@@ -411,7 +412,7 @@ function showSlides(n,pet) {
 <div class="container">
 </br>
   <div class="row favorites-header">
-    <img style='padding:10px; margin-left:10px;' class='icon' src='../images/heartbw.png'/><span class="favorites">Favorites</span>
+    <img style='padding:10px; margin-left:10px;' class='icon' src='./images/heartbw.png'/><span class="favorites">Favorites</span>
   </div>
 </br>
   <div class="row description">
@@ -424,7 +425,7 @@ function showSlides(n,pet) {
 
       <div id="pets" class="pets">
         <div id='empty-compare' class='empty'>
-          <img class='arrow' src='../images/arrow.png'></img>
+          <img class='arrow' src='./images/arrow.png'></img>
           <p class='low'>Click a pet to get started.<p>
         </div>
       </div>
