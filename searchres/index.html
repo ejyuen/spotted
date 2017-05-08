@@ -5,7 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	    <title>Search : Spotted</title>
+	    <title>Search Results: Spotted</title>
 
 	    <!-- Bootstrap -->
 	    <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
 					<div class="collapse navbar-collapse" id="custom-collapse">
 						<ul class="nav navbar-nav navbar-right">
 
-							<li><a href="#"><span class= "glyphicon glyphicon-search"></span>Search</a></li>
+							<li><a href="#"><span class= "glyphicon glyphicon-search"></span>Browse</a></li>
 							<li><a href="../adoptionInfo/index.html"><span class= "glyphicon glyphicon-question-sign"></span>Adoption Info</a></li>
 	                        <li><a href="../favorites/index.html"><span class= "glyphicon glyphicon-heart"></span>Favorites</a></li>
 
@@ -63,7 +63,7 @@
 		<div class="container">
 		</br>
 			<div class="row search-header">
-				<img class='icon' src='../images/search.png'/><span class="search">Search</span>
+				<img style='padding:9px; margin-left: 10px' class='icon' src='../images/browsepage.png'/><span class="search">Browse</span>
 			</div>
 		</br>
 
@@ -81,6 +81,9 @@
 				    <br>
 				    <input type="checkbox" class="cbox" id="dog"/>
 				    <label class="filter-option" for="dog">Dog</label>
+				    <br>
+				    <input type="checkbox" class="cbox" id="other"/>
+				    <label class="filter-option" for="dog">Other</label>
 
 				    <div class='filter-param'>Age</div>
 				    <input type="checkbox" class="cbox" id="young"/>
@@ -393,9 +396,9 @@
 		for (i = 0; i < petlist.length; i++){
 			//pet window
 			var newResult = "<div class='petbox' id='" + petlist[i].name + "'><div class='petprev'><img src='" + petlist[i].images[0] + "'></div>"
-							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block'>"
-							+ "<h4>" + petlist[i].name + "</h4> <p>" + petlist[i].gender + ", " + petlist[i].age + ", " + petlist[i].breed + "</p></div><br>"
-							+ "<img style='vertical-align: middle;' src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div>";
+							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block; margin-left: -10px'>"
+							+ "<h4>" + petlist[i].name + "</h4> <p>" + petlist[i].gender + ", " + petlist[i].age + ", " + petlist[i].breed + "</p></div>"
+							+ "<img style='vertical-align: middle; float: right; margin-right: 10px; margin-top: 7px' src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div>";
 
 			//modal
 

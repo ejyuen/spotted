@@ -22,6 +22,13 @@ hr {
     padding: 0px;
 }
 
+.arrow {
+  vertical-align: top;
+  max-height: 200px;
+  display: inline-block;
+  margin-left: 60px;
+}
+
 .close {
 	background-color: transparent;
 	float: right;
@@ -38,9 +45,67 @@ hr {
 
 .description {
 	font-family: 'Josefin Sans';
-	font-size: 16px;
+	font-size: 24px;
 	font-weight: 'light';
   height: 30px;
+  margin-bottom: 10px;
+}
+
+.dot-ping, .dot-benjamin, .dot-staples {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin:0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot-benjamin:hover, .dot-staples:hover, .dot-ping:hover {
+  background-color: #717171;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(209,209,209,0.8);
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev, .next {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  padding-top: 73px;
+  padding-bottom: 72px;
+  padding-left: 9px;
+  padding-right: 9px;
+  top: -185px;
+}
+
+.prev {
+  float: left;
+  margin-left: 1px;
+}
+
+.next {
+  float:right;
+  margin-right: 1px;
+}
+
+.slideshow-container {
+  display: inline-block;
+  width: 250px;
+  height: 175px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
 }
 
 .empty {
@@ -50,7 +115,7 @@ hr {
 	height:542px;
 	width:1170px;
 	background-color: white;
-  border: 1px solid black;
+  border: 0px solid black;
 }
 
 .empty-lineup {
@@ -80,7 +145,7 @@ hr {
 
 .features-space{
   position: relative;
-  height:207px;
+  height:240px;
   background-color: white;
   border: 1px solid white;
 }
@@ -103,8 +168,14 @@ hr {
   overflow: hidden
 }
 
-.lineup-text{
+.lineup-text {
   text-align:center;
+}
+
+.low {
+  margin-top: 170px;
+  display: inline-block;
+  font-size: 20px;
 }
 
 .name {
