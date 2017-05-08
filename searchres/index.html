@@ -288,7 +288,7 @@
 				newModal = newModal + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'>";
 			}
 
-			newModal = newModal + "</div><button class='btn btn-secondary' onclick='plusDivs(-1, " + petlist[i].name + ")'>&#10094;</button><button class='btn btn-secondary' onclick='plusDivs(+1, " + petlist[i].name + ")'>&#10095;</button><button type='button' class='btn btn-secondary'>Feed Treat</button><button type='button' class='btn btn-secondary'>Walk</button><button type='button' class='btn btn-secondary'>Play</button><br><br><p>" + petlist[i].description + "</p></div>";
+			newModal = newModal + "</div><button class='btn btn-secondary' onclick='plusDivs(-1, " + petlist[i].name + ")'>&#10094;</button><button class='btn btn-secondary' onclick='plusDivs(+1, " + petlist[i].name + ")'>&#10095;</button><button type='button' class='btn btn-secondary'>Feed Treat</button><button type='button' class='btn btn-secondary'>Walk</button><button type='button' class='btn btn-secondary'>Play</button><br><br><p class='mod-desc'>" + petlist[i].description + "</p></div>";
 
 
 			//add the pet favorites info

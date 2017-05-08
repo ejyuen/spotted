@@ -4,15 +4,15 @@ $(document).ready(function(){
 
 	$('#exampleModal').modal({show: false});
 
-	//popover on bottom of heart
+	//popover on right of heart
 	$('[data-toggle="popover"]').popover({
-		placement: 'bottom'
+		placement: 'right'
 	});
 
 	//on click, set a 2 second delay before fading out popover
 	$('.fav').click(function(evt){
-		if ($(evt.target).attr('src') != '../images/hearticon-red.png') {
-			$(evt.target).popover("show");
+		if ($(evt.target).attr('src') == '../images/hearticon-pink.png') {
+			$(evt.target).popover("toggle");
 			setTimeout(function(){
 				$('.popover').fadeOut('Slow');
 			}, 2000);
@@ -62,7 +62,6 @@ $(document).on('click', '.petinf', function(evt) {
 	showDivs(window[namestr], window[namestr], name);
 
 	$('#' + name + 'Modal').modal('show');
-	//get the appropriate heart color
 });
 
 
