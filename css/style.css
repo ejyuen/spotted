@@ -21,6 +21,7 @@ body {
 	font-style: normal;
 	text-transform: none;
 	margin: 0px 0;
+	overflow-x: hidden;
 }
 
 img {
@@ -52,7 +53,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
 	font: 700 40px/1.2 'Raleway', sans-serif;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	/*text-transform: none;*/
 	letter-spacing: 5px;
 	/*letter-spacing: 0px;*/
@@ -96,7 +97,7 @@ h6 {
 
 .btn {
 	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	letter-spacing: 1px;
 	font-size: 1em;
 	padding: 8px 26px;
@@ -224,6 +225,7 @@ h6 {
 	/*margin-top: -15px;*/
 	padding: 0;
 
+
 }
 
 .home-top{
@@ -342,7 +344,7 @@ h6 {
 	border: 0;
 	border-radius: 0;
 	margin: 0;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	font-family: 'Raleway', sans-serif;
 
 }
@@ -464,7 +466,7 @@ h6 {
 
 
 .adoption-step-title {
-	text-transform: uppercase;
+	text-transform: capitalize;
 	margin: 0 0 15px;
 	padding: 0;
 
