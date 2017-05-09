@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
 
 
@@ -14,7 +14,7 @@ p{
 }
 
 body {
-	font-family: 'Raleway';
+	font-family: 'Comfortaa';
 }
 
 img {
@@ -55,12 +55,12 @@ img {
 
 .filter-param {
 	font-size: 18px;
-	font-family: "Josefin Sans";
+	font-family: "Josefin Slab";
 }
 
 .filter-option {
 	font-size: 16px;
-	font-family: "Josefin Sans";
+	font-family: "Josefin Slab";
 	padding-left: 10px;
 }
 
@@ -69,10 +69,10 @@ img {
 }
 
 .icon {
-	 width: 50px;
-	 height: 50px;
+	 width: 40px;
+	 height: 36px;
 	 position: relative;
-	 bottom: 14px;
+	 bottom: 8px;
 }
 
 
@@ -125,17 +125,18 @@ img {
 }
 
 .search {
-	font-family: 'Raleway';
-  font-size: 40px;
+	font-family: 'Comfortaa';
+  font-size: 26px;
   font-weight: bold;
   color: var(--darkblue);
 	padding-left: 5px;
 }
 
 .search-header{
-	padding-top: 50px;
+	padding-top: 36px;
 	border-bottom: 1px solid black;
 	background-color: var(--lightgray);
+	height: 76px;
 }
 
 .slide {
@@ -219,4 +220,3 @@ img {
 .active, .dot:hover {
   background-color: #717171;
 }
-
