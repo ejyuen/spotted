@@ -9,7 +9,7 @@ h4 {
 }
 
 p{
-	font-size: 12px !important;
+	font-size: 16px !important;
 
 }
 
@@ -21,6 +21,11 @@ img {
 	height: 100% !important;
 	width: 100%;
 
+}
+
+#seeprof {
+	color: #333333;
+	text-decoration: none;
 }
 
 
@@ -111,6 +116,11 @@ img {
 
 .popover-title {display:none;}
 
+.modal-header{
+	background-color: var(--lightblue);
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+}
 .modal-title {
 	font-size: 25px;
 }
@@ -170,6 +180,7 @@ img {
   overflow: hidden;
   position: relative;
   margin: auto;
+  padding-right: 15px;
 }
 
 .slides {
@@ -186,23 +197,54 @@ img {
   line-height: 400px;
   margin-top: -16px;
   margin-left: -5px;
-  padding: 16px;
+  
   color: white;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  transition: 0.2s ease;
+  
 }
 
+.prev {
+	border-radius: 0 3px 3px 0;
+	padding: 16px 16px 16px 21px;
+}
 /* Position the "next button" to the right */
 .next {
+  text-align: right;
   right: 0;
+  float: right;
+  padding: 16px 5px 16px 0;
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(209,209,209,0.8);
+  /*background-color: rgba(209,209,209,0.8);*/
+  text-decoration: none;
+  color: var(--lightblue);
+}
+
+.subheader {
+	margin-top: 0px;
+	/*text-align: center;*/
+}
+
+#maintenance {
+	margin-top: 20px;
+}
+
+#walk, #feed, #play {
+	margin-top: 10px;
+	width: 160px;
+}
+
+#petdesc {
+	margin-left: 20px;
+	margin-right: 15px;
+}
+.description {
+	padding-top: 10px;
 }
 
 /* The dots/bullets/indicators */
