@@ -316,7 +316,7 @@
 				newModal += "<img class='paw' src='../images/paw.png'></img>";
 			}
 
-			newModal += "</div></div></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary'><a href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div></div>";
+			newModal += "</div></div></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div></div>";
 
 			$('#pet-display').append(newResult);
 			$('#pet-display').append(newModal);
