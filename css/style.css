@@ -148,7 +148,7 @@ h6 {
 }
 
 .spotted-btn {
-  
+
 	background-color: var(--darkblue);
 	color: white;
 	font-family: 'Comfortaa';
@@ -255,7 +255,7 @@ h6 {
 
 #home-top{
 	overflow: hidden;
-	
+
 	position: relative;
 	/*height:100vh;*/
 	flex:1;
@@ -274,7 +274,7 @@ h6 {
     -moz-user-drag: none;
     -ms-user-drag: none;
     user-drag: none;
-         
+
 
 }
 
@@ -283,14 +283,14 @@ h6 {
 	-ms-transform:  translate(900px, -50px) rotate(-10deg) scale(1.0, 1.0); /* IE 9 */
     -webkit-transform:  translate(900px, -50px) rotate(-10deg) scale(1.0, 1.0); /* Chrome, Safari, Opera */
     transform:  translate(900px, -50px) rotate(-10deg) scale(1.0, 1.0);
-    
+
 }
 
 #petImg2{
 	-ms-transform:  translate(-300px, -200px) rotate(30deg) scale(0.80, 0.80); /* IE 9 */
     -webkit-transform:  translate(-300px, -200px) rotate(30deg) scale(0.80, 0.80); /* Chrome, Safari, Opera */
     transform:  translate(-300px, -200px) rotate(30deg) scale(0.80, 0.80);
-    
+
 }
 
 
@@ -454,8 +454,19 @@ h6 {
 /*-----------------------*/
 /***** Services *****/
 /*-----------------------*/
-.adoption-info{
-	
+.info-header{
+	padding-top: 56px;
+	border-bottom: 1px solid black;
+	background-color: var(--lightgray);
+  height: 96px;
+}
+
+.adoption-info {
+	font-family: 'Comfortaa';
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--darkblue);
+	padding-left: 10px;
 }
 
 #filler-rect{
