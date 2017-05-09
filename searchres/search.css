@@ -175,7 +175,7 @@ img {
   overflow: hidden;
   position: relative;
   margin: auto;
-  padding-right: 10px;
+  padding-right: 15px;
 }
 
 .slides {
@@ -209,7 +209,7 @@ img {
   text-align: right;
   right: 0;
   float: right;
-  padding: 16px 0 16px 0;
+  padding: 16px 5px 16px 0;
   border-radius: 3px 0 0 3px;
 }
 
@@ -218,6 +218,24 @@ img {
   /*background-color: rgba(209,209,209,0.8);*/
   text-decoration: none;
   color: var(--lightblue);
+}
+
+.subheader {
+	margin-top: 0px;
+	/*text-align: center;*/
+}
+
+#maintenance {
+	margin-top: 20px;
+}
+
+#walk, #feed, #play {
+	margin-top: 10px;
+	width: 160px;
+}
+
+.description {
+	padding-top: 10px;
 }
 
 /* The dots/bullets/indicators */
