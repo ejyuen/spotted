@@ -40,34 +40,41 @@
 
 	<!-- Navigation start -->
 
-		<header class="header">
+	<header class="header">
 
-		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="../home.html">spotted
+			</div>
+			<div class="collapse navbar-collapse" id="custom-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="./searchres/index.html"><span class= "glyphicon glyphicon-search"></span> Browse</a></li>
+					<li><a href="./adoptionInfo.html"><span class= "glyphicon glyphicon-question-sign"></span> Adoption Info</a></li>
+					<li><a href="./favorites/index.html"><span class= "glyphicon glyphicon-heart"></span> Favorites</a></li>
+				</ul>
+			</div>
 
-			<div class="container">
+		</div><!-- .container -->
 
-				<div class="navbar-header">
-
-					<a class="navbar-brand" href="../home.html">Spotted
-				</div>
-
-				<div class="collapse navbar-collapse" id="custom-collapse">
-					<ul class="nav navbar-nav navbar-right">
-
-						<li><a href="../searchres/index.html"><span class= "glyphicon glyphicon-search"></span> Browse</a></li>
-						<li><a href="#"><span class= "glyphicon glyphicon-question-sign"></span> Adoption Info</a></li>
-                        <li><a href="../favorites/index.html"><span class= "glyphicon glyphicon-heart"></span> Favorites</a></li>
-
-					</ul>
-				</div>
-
-			</div><!-- .container -->
-
-		</nav>
+	</nav>
 
 	</header>
 
 	<!-- Navigation end -->
+	<div class="container">
+		<div class="row info-header">
+			<span class= "glyphicon glyphicon-question-sign" style="top:2px;margin-left:12px;font-size:2.2em;"></span><span class="adoption-info">Adoption Info</span>
+		</div>
+
+
+
+		<input type="checkbox" class="cbox" id="cat"/>
+		<label class="filter-option" for="cat">Cat</label>
+		<br>
+		
+	</div>
+
 
 
 
@@ -76,7 +83,7 @@
 
 	<!-- Adoption Info start -->
 
-	<section id="adoption-info" class="section-chunk">
+	<section class="section-chunk">
 
 
 		<div class="container">
