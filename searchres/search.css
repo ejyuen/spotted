@@ -239,16 +239,14 @@ img {
   position: absolute;
   width: 100px;
   top: 4%;
-  height: 400px;
-  line-height: 400px;
+  height: 314px;
+  line-height: 314px;
   margin-top: -16px;
   margin-left: -5px;
-
   color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.2s ease;
-
 }
 
 .prev {
