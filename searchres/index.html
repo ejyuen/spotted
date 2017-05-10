@@ -44,7 +44,7 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
         			<span class="icon-bar"></span>
        				 <span class="icon-bar"></span>
-        			<span class="icon-bar"></span>                        
+        			<span class="icon-bar"></span>
      				 </button>
 
 					<a class="navbar-brand" href="../home.html">spotted</a>
@@ -327,6 +327,10 @@
 				displayPets = [gatsby, herbert, benjamin, staples, robert];
 				showResults();
 			}
+
+			$('[data-toggle="popover"]').popover({
+				placement: 'right'
+			});
 		});
 
 
@@ -348,6 +352,9 @@
 
 
 	                showResults();
+									$('[data-toggle="popover"]').popover({
+										placement: 'right'
+									});
 	            });
 
 
@@ -372,6 +379,10 @@
 
 
 	                showResults();
+
+									$('[data-toggle="popover"]').popover({
+										placement: 'right'
+									});
 	            });
 
 
