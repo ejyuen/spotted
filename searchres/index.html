@@ -299,6 +299,7 @@
 
 		showResults();
 
+
 		for (i = 0; i < displayPets.length; i++){
 			console.log(displayPets[i].name)
 
@@ -307,9 +308,16 @@
 		console.log("--------");
 
 
+		$(document).keypress(function(e) {
+			breedval = $('#breed').val().trim().toLowerCase();
+			if(e.which == 13) {
+				sortBreed(breedval);
+				showResults();
+			}
+		});
+
+
 	            $('.sortButtonUp').click(function() {
-
-
 
 
 	                var id = $(this).attr('id');
@@ -381,6 +389,24 @@
 	            	}
 
 	        	});
+	        }
+
+	        function sortBreed(breedval) {
+
+	        	if (breedval == "corgi") {
+	        		displayPets = [gatsby];
+	        	} else if (breedval == "maltese") {
+	        		displayPets = [benjamin];
+	        	} else if (breedval == "siamese") {
+	        		displayPets = [robert];
+	        	} else if (breedval == "holland lop" || breedval == "lop") {
+	        		displayPets = [herbert];
+	        	} else if (breedval == "chihuahua") {
+	        		displayPets = [staples];
+	        	} else {
+	        		displayPets = [];
+	        	}    	
+	
 	        }
 
 	        function showResults () {
