@@ -305,8 +305,11 @@
 
 		$(document).keypress(function(e) {
 			breedval = $('#breed').val().trim().toLowerCase();
-			if(e.which == 13) {
+			if(e.which == 13 && breedval != "") {
 				sortBreed(breedval);
+				showResults();
+			} else if (breedval == "") {
+				displayPets = [gatsby, herbert, benjamin, staples, robert];
 				showResults();
 			}
 		});
