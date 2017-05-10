@@ -141,11 +141,11 @@
 							  <button id="drop-down-menu" class="btn btn-secondary dropdown-toggle" value="select" type="button" data-toggle="dropdown">
 							  <p id="drop-down" style="display:inline-block;margin-bottom:0px;margin-right:4px;">--select--</p><span class="caret"></span></button>
 							  <ul class="dropdown-menu">
-							    <li><input class="btn btn-link" type="button" value="Distance &#8593;" onclick="switch_drop('Distance &#8593;')" /></li>
-							    <li><input class="btn btn-link" type="button" value = "Shedding &#8593;" onclick="switch_drop('Shedding &#8593;')"/></li>
-									<li><input class="btn btn-link" type="button" value = "Activity &#8593;" onclick="switch_drop('Activity &#8593;')"/></li>
-							    <li><input class="btn btn-link" type="button" value = "Activity &#8595;" onclick="switch_drop('Activity &#8595;')"/></li>
-									<li><input class="btn btn-link" type="button" value = "Kid-Friendliness &#8595;" onclick="switch_drop('Kid-Friendliness &#8595;')"/></li>
+							    <li><input class="btn btn-link sortButtonUp" id = "distance" type="button" value="Distance &#8593;" onclick="switch_drop('Distance &#8593;')" /></li>
+                                <li><input class="btn btn-link sortButtonUp" id = "shedding" type="button" value = "Shedding &#8593;" onclick="switch_drop('Shedding &#8593;')"/></li>
+                                    <li><input class="btn btn-link sortButtonUp" id = "activityUp" type="button" value = "Activity &#8593;" onclick="switch_drop('Activity &#8593;')"/></li>
+                                <li><input class="btn btn-link sortButtonDown" id = "activityDown" type="button" value = "Activity &#8595;" onclick="switch_drop('Activity &#8595;')"/></li>
+                                    <li><input class="btn btn-link sortButtonDown" id ="kids" type="button" value = "Kid-Friendliness &#8595;" onclick="switch_drop('Kid-Friendliness &#8595;')"/></li>
 							  </ul>
 							</button>
 							</div>
@@ -189,81 +189,97 @@
 
 
 		var gatsby = {
-			name: "Gatsby",
-			species: "dog",
-			gender: "Male",
-			age: "3 years",
-			breed: "Corgi",
-			activity: 4,
-			kids: 5,
-			shedding: 3,
-			vaccinations: 1,
-			neutered: 1,
-			images: ["../images/GatsbyProfile.png", "../images/Gatsby2.png", "../images/Gatsby3.png", "../images/Gatsby1.png"],
-			description: "Gatsby is very active and energetic. He loves to go on hikes, play with other dogs, and play with a whole bunch of toys. Gatsby enjoys meeting new people, and loves interacting with kids. Gatsby would be happy in a bustling family environment. He would do well as the only dog in a home or in a multi-dog home."
-		};
-
-		var herbert = {
-			name: "Herbert",
-			species: "rabbit",
-			gender: "Male",
-			age: "2 years",
-			breed: "Holland Lop",
-			activity: 2,
-			kids: 5,
-			shedding: 3,
-			vaccinations: 1,
-			neutered: 1,
-			images: ["../images/HerbertProfile.png", "../images/Herbert2.jpeg"],
-			description: "Herbert's an unpaired Holland Lop. Gentle and mild-mannered, Herbert can be a little aloof but loves his daily pets. He loves jumping around and climbing things, and tearing up cardboard boxes. Litter trained and socialized, Herbert would make a perfect pet for children or anyone looking for a laid back companion for their home."
-		};
-
-		var benjamin = {
-			  name: "Benjamin",
-			  species: "dog",
-			  gender: "Male",
-			  age: "8 months",
-			  breed: "Maltese",
-			  activity: 3,
-			  kids: 3,
-			  shedding: 2,
-			  vaccinations: 1,
-			  neutered: 1,
-			  images: ["../images/benjamin_square.jpg","../images/benjamin_2.jpg","../images/benjamin_3.jpg","../images/benjamin_4.jpg","../images/benjamin_5.jpg"],
-			  description: "Benjamin just wants to cuddle and nap. He is gentle-mannered and affectionate, eager and sprightly in action, and, has energy and personality larger than his size. The Maltese is a extra-small breed and has a lifespan of 13 to 15 years. He needs good nutrition and grooming."
-		};
-
-		var staples = {
-			  name: "Staples",
-			  species: "dog",
-			  gender: "Male",
-			  age: "4 months",
-			  breed: "Chihuahua",
-			  activity: 2,
-			  kids: 1,
-			  shedding: 1,
-			  vaccinations: 0,
-			  neutered: 1,
-			  images: ["../images/staples_1.jpg","../images/staples_2.jpg","../images/staples_3.jpg","../images/staples_4.jpg"],
-			  description: "hello"
-		};
-
-		var robert = {
-			  name: "Robert",
-			  species: "cat",
-			  gender: "Female",
-			  age: "9 months",
-			  breed: "Siamese",
-			  activity: 5,
-			  kids: 4,
-			  shedding: 2,
-			  vaccinations: 1,
-			  neutered: 1,
-			  images: ["../images/ping_4.jpg","../images/ping_2.jpg","../images/ping_3.jpg","../images/ping_1.jpg"],
-			  description: "im a cat"
-		};
+            name: "Gatsby",
+            species: "dog",
+            gender: "Male",
+            age: "3 years",
+            breed: "Corgi",
+            activity: 4,
+            activityUp: 4,
+            activityDown: 4,
+            kids: 5,
+            shedding: 3,
+            vaccinations: 1,
+            neutered: 1,
+            images: ["../images/GatsbyProfile.png", "../images/Gatsby2.png", "../images/Gatsby3.png", "../images/Gatsby1.png"],
+            description: "Gatsby is very active and energetic. He loves to go on hikes, play with other dogs, and play with a whole bunch of toys. Gatsby enjoys meeting new people, and loves interacting with kids. Gatsby would be happy in a bustling family environment. He would do well as the only dog in a home or in a multi-dog home.",
+            distance: 1
+        };
+ 
+        var herbert = {
+            name: "Herbert",
+            species: "rabbit",
+            gender: "Male",
+            age: "2 years",
+            breed: "Holland Lop",
+            activity: 2,
+            activityUp: 2,
+            activityDown: 2,
+            kids: 5,
+            shedding: 3,
+            vaccinations: 1,
+            neutered: 1,
+            images: ["../images/HerbertProfile.png", "../images/Herbert2.jpeg"],
+            description: "Herbert's an unpaired Holland Lop. Gentle and mild-mannered, Herbert can be a little aloof but loves his daily pets. He loves jumping around and climbing things, and tearing up cardboard boxes. Litter trained and socialized, Herbert would make a perfect pet for children or anyone looking for a laid back companion for their home.",
+            distance: 2
+        };
+ 
+        var benjamin = {
+              name: "Benjamin",
+              species: "dog",
+              gender: "Male",
+              age: "8 months",
+              breed: "Maltese",
+              activity: 3,
+              activityUp: 3,
+              activityDown: 3,
+              kids: 3,
+              shedding: 2,
+              vaccinations: 1,
+              neutered: 1,
+              images: ["../images/benjamin_square.jpg","../images/benjamin_2.jpg","../images/benjamin_3.jpg","../images/benjamin_4.jpg","../images/benjamin_5.jpg"],
+              description: "Benjamin just wants to cuddle and nap. He is gentle-mannered and affectionate, eager and sprightly in action, and, has energy and personality larger than his size. The Maltese is a extra-small breed and has a lifespan of 13 to 15 years. He needs good nutrition and grooming.",
+              distance: 3
+        };
+ 
+        var staples = {
+              name: "Staples",
+              species: "dog",
+              gender: "Male",
+              age: "4 months",
+              breed: "Chihuahua",
+              activity: 2,
+              activityUp: 2,
+              activityDown: 2,
+              kids: 1,
+              shedding: 1,
+              vaccinations: 0,
+              neutered: 1,
+              images: ["../images/staples_1.jpg","../images/staples_2.jpg","../images/staples_3.jpg","../images/staples_4.jpg"],
+              description: "hello",
+              distance: 4
+        };
+ 
+        var robert = {
+              name: "Robert",
+              species: "cat",
+              gender: "Female",
+              age: "9 months",
+              breed: "Siamese",
+              activity: 5,
+              activityUp: 5,
+              activityDown: 5,
+              kids: 4,
+              shedding: 2,
+              vaccinations: 1,
+              neutered: 1,
+              images: ["../images/ping_4.jpg","../images/ping_2.jpg","../images/ping_3.jpg","../images/ping_1.jpg"],
+              description: "im a cat",
+              distance: 5
+        };
 
 		var petlist = [gatsby, herbert, benjamin, staples, robert];
+		var displayPets = [gatsby, herbert, benjamin, staples, robert];
 
 		//manually make the slide indices
 
@@ -273,57 +289,162 @@
 		var BenjaminSlideIndex = 1;
 		var StaplesSlideIndex = 1;
 
-		//add the html for each pet
-		for (i = 0; i < petlist.length; i++){
-			//pet window
-			var newResult = "<div class='petbox' id='" + petlist[i].name + "'><div class='petprev'><img src='" + petlist[i].images[0] + "'></div>"
-							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block; margin-left: -10px'>"
-							+ "<h4>" + petlist[i].name + "</h4> <p>" + petlist[i].gender + ", " + petlist[i].age + ", " + petlist[i].breed + "</p></div>"
-							+ "<img style='vertical-align: middle; float: right; margin-right: 10px; margin-top: 7px' src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div>";
-
-			//modal
-
-			var newModal = "<div class='modal fade' id='" + petlist[i].name + "Modal' tabindex='-1' role='dialog' aria-labelledby='" + petlist[i].name + "Modal' aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h5 class='modal-title' id='" + petlist[i].name + "Modal'>" + petlist[i].name + "</h5></div><div class='modal-body'><div class='row'><div class='col-md-8'>";
-
-			newModal = newModal + "<div class='slideshow-container'>";
-
-			for (j = 0; j < petlist[i].images.length; j++){
-				// newModal = newModal + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'>";
-				newModal = newModal + "<div class='slides'>" + "<img class='" + petlist[i].name + "Slides' src='" + petlist[i].images[j] + "'></div>";
-			}
-
-			// newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ petlist[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ petlist[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div><button type='button' class='btn btn-secondary'>Feed me a treat</button><button type='button' class='btn btn-secondary'>Take me walking</button><button type='button' class='btn btn-secondary'>Play with me</button></div><div class='col-md-4'><p>" + petlist[i].description + "</p>";
-
-			newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ petlist[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ petlist[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 0 10px 10px 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div></div><div class='col-md-4'><h4 class='subheader'>Interact:</h4><button type='button' class='btn btn-secondary' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' id='play'>Play with me</button><h4 class='subheader' id='maintenance'>Maintenance:</h4>";
 
 
-			//add the pet favorites info
+		showResults();
 
-			newModal +="<div class='description'>Activity</div><div>"
-
-			for (k = 0; k < petlist[i].activity; k++){
-				newModal += "<img class='paw' src='../images/paw.png'></img>";
-			}
-
-			newModal += "</div><div class='description'>Kid-Friendliness</div><div>";
-
-			for (l = 0; l < petlist[i].kids; l++){
-				newModal += "<img class='paw' src='../images/paw.png'></img>";
-			}
-
-			newModal += "</div><div class='description'>Shedding</div><div>";
-
-			for (l = 0; l < petlist[i].shedding; l++){
-				newModal += "<img class='paw' src='../images/paw.png'></img>";
-			}
-
-			newModal += "</div></div></div><div class='row'><p id='petdesc'>" + petlist[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + petlist[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + petlist[i].name + " added to favorites!'></div></div></div>";
-
-			$('#pet-display').append(newResult);
-			$('#pet-display').append(newModal);
-
+		for (i = 0; i < displayPets.length; i++){
+			console.log(displayPets[i].name)
+			
 
 		}
+		console.log("--------");
+
+			
+	            $('.sortButtonUp').click(function() {
+
+
+					
+
+	                var id = $(this).attr('id');
+	                
+
+	      
+	                sortResultsUp(id);
+
+	                for (i = 0; i < displayPets.length; i++){
+						console.log(displayPets[i].name);
+						
+
+					}
+					console.log("--------");
+
+
+	                showResults();
+	            });
+
+	               
+	            
+        	
+
+        	
+	            $('.sortButtonDown').click(function() {
+
+	            	var id = $(this).attr('id');
+	                
+
+	      
+	                sortResultsDown(id);
+
+	                for (i = 0; i < displayPets.length; i++){
+						console.log(displayPets[i].name);
+						
+
+					}
+					console.log("--------");
+
+
+	                showResults();
+	            });
+	               
+	            
+
+
+	        function sortResultsUp(prop) {
+	            displayPets = displayPets.sort(function(a, b) {
+	            	alphabetOrder = parseFloat(a["name"]) - parseFloat(b["name"]);
+	            	if (parseFloat(a[prop]) == parseFloat(b[prop])){
+	            		return alphabetOrder;
+	            	}else{
+	            		return parseFloat(a[prop]) - parseFloat(b[prop]);
+	            	}
+	                
+	        	});	
+	            
+	        }
+
+	            
+
+	        function sortResultsDown(prop, desc) {
+	            displayPets = displayPets.sort(function(a, b) {
+	            	alphabetOrder = parseFloat(a["name"]) - parseFloat(b["name"]);
+	            	if (parseFloat(a[prop]) == parseFloat(b[prop])){
+	            		return alphabetOrder;
+	            	}else{
+	            		return parseFloat(b[prop]) - parseFloat(a[prop]);
+	            	}
+	                
+	        	});	
+	        }
+
+	        function showResults () {
+
+	        	$('#pet-display').empty();
+		            			//add the html for each pet
+						//add the html for each pet
+				for (i = 0; i < displayPets.length; i++){
+					//pet window
+					var newResult = "<div class='petbox' id='" + displayPets[i].name + "'><div class='petprev'><img src='" + displayPets[i].images[0] + "'></div>"
+									+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block; margin-left: -10px'>"
+									+ "<h4>" + displayPets[i].name + "</h4> <p>" + displayPets[i].gender + ", " + displayPets[i].age + ", " + displayPets[i].breed + "</p></div>"
+									+ "<img style='vertical-align: middle; float: right; margin-right: 10px; margin-top: 7px' src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div>";
+
+					//modal
+
+					var newModal = "<div class='modal fade' id='" + displayPets[i].name + "Modal' tabindex='-1' role='dialog' aria-labelledby='" + displayPets[i].name + "Modal' aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h5 class='modal-title' id='" + displayPets[i].name + "Modal'>" + displayPets[i].name + "</h5></div><div class='modal-body'><div class='row'><div class='col-md-8'>";
+
+					newModal = newModal + "<div class='slideshow-container'>";
+
+					for (j = 0; j < displayPets[i].images.length; j++){
+						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
+						newModal = newModal + "<div class='slides'>" + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'></div>";
+					}
+
+					// newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ displayPets[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ displayPets[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div><button type='button' class='btn btn-secondary'>Feed me a treat</button><button type='button' class='btn btn-secondary'>Take me walking</button><button type='button' class='btn btn-secondary'>Play with me</button></div><div class='col-md-4'><p>" + displayPets[i].description + "</p>";
+
+					newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ displayPets[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ displayPets[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 0 10px 10px 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div></div><div class='col-md-4'><h4 class='subheader'>Interact:</h4><button type='button' class='btn btn-secondary' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' id='play'>Play with me</button><h4 class='subheader' id='maintenance'>Maintenance:</h4>";
+
+
+					//add the pet favorites info
+
+					newModal +="<div class='description'><p>Activity<p></div><div>"
+
+					for (k = 0; k < displayPets[i].activity; k++){
+						newModal += "<img class='paw' src='../images/paw.png'></img>";
+					}
+
+					newModal += "</div><div class='description'><p>Kid-Friendly</p></div><div>";
+
+					for (l = 0; l < displayPets[i].kids; l++){
+						newModal += "<img class='paw' src='../images/paw.png'></img>";
+					}
+
+					newModal += "</div><div class='description'><p>Shedding</p></div><div>";
+
+					for (l = 0; l < displayPets[i].shedding; l++){
+						newModal += "<img class='paw' src='../images/paw.png'></img>";
+					}
+
+					newModal += "</div></div></div><div class='row'><p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
+
+
+					$('#pet-display').append(newResult);
+					$('#pet-display').append(newModal);
+
+
+
+
+
+					}
+
+
+
+
+
+				}
+        	
+	 
+
 
 		</script>
 <!-- reference: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
