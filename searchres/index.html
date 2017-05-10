@@ -398,12 +398,17 @@
 
 					for (j = 0; j < displayPets[i].images.length; j++){
 						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
-						newModal = newModal + "<div class='slides'>" + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'></div>";
+						newModal = newModal + "<div class='slides-"+displayPets[i].name.toLowerCase()+"'>" + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'></div>";
 					}
 
 					// newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ displayPets[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ displayPets[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div><button type='button' class='btn btn-secondary'>Feed me a treat</button><button type='button' class='btn btn-secondary'>Take me walking</button><button type='button' class='btn btn-secondary'>Play with me</button></div><div class='col-md-4'><p>" + displayPets[i].description + "</p>";
 
-					newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ displayPets[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ displayPets[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 0 10px 10px 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div></div><div class='col-md-4'><h4 class='subheader'>Interact:</h4><button type='button' class='btn btn-secondary' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' id='play'>Play with me</button><h4 class='subheader' id='maintenance'>Maintenance:</h4>";
+					newModal = newModal + "</div><a class='prev' onclick='plusSlides(-1,"+displayPets[i].name+");' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusSlides(+1,"+displayPets[i].name+");'>&#10095;</a><div style='text-align:center;margin: 0 10px 10px 10px;'>";
+					for (j = 0; j < displayPets[i].images.length; j++){
+						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
+						newModal = newModal + "<span class='dot-"+displayPets[i].name.toLowerCase()+"' onclick='currentSlide("+(j+1)+")'></span>";
+					}
+					newModal = newModal+"</div></div><div class='col-md-4'><h4 class='subheader'>Interact:</h4><button type='button' class='btn btn-secondary' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' id='play'>Play with me</button><h4 class='subheader' id='maintenance'>Maintenance:</h4>";
 
 
 					//add the pet favorites info
@@ -449,7 +454,7 @@
 
 		</script>
 <!-- reference: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
-  <script>
+  <!-- <script>
   var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -476,6 +481,6 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-  </script>
+  </script> -->
 	</body>
 </html>
