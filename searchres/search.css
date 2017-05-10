@@ -222,7 +222,7 @@ img {
 /* Slideshow container */
 .slideshow-container {
   width: 400px;
-  height: 400px;
+  height: 314px;
   overflow: hidden;
   position: relative;
   margin: auto;
@@ -304,11 +304,17 @@ img {
 }
 
 #petdesc {
+  margin-top: 20px;
 	margin-left: 20px;
-	margin-right: 15px;
+	margin-right: 20px;
 }
 .description {
 	padding-top: 10px;
+}
+
+.bootons {
+  margin-left: 20px;
+	margin-right: 20px;
 }
 
 /* The dots/bullets/indicators */

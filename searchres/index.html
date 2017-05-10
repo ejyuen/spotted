@@ -32,33 +32,43 @@
 
 	<body>
 	<!-- Navigation start -->
+		<!-- Navigation start -->
 
 		<header class="header">
 
-			<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 
-				<div class="container">
+			<div class="container">
 
-					<div class="navbar-header">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+        			<span class="icon-bar"></span>
+       				 <span class="icon-bar"></span>
+        			<span class="icon-bar"></span>                        
+     				 </button>
 
-						<a class="navbar-brand" href="../home.html">spotted
-					</div>
+					<a class="navbar-brand" href="../home.html">spotted</a>
+				</div>
 
-					<div class="collapse navbar-collapse" id="custom-collapse">
-						<ul class="nav navbar-nav navbar-right">
 
-							<li><a href="#"><span class= "glyphicon glyphicon-search"></span> Browse</a></li>
+
+				<div class="collapse navbar-collapse" id="custom-collapse">
+					<ul class="nav navbar-nav navbar-right">
+<li class = "nav-item active"><a href="#"><span class= "glyphicon glyphicon-search"></span> Browse</a></li>
 							<li><a href="../adoptionInfo/index.html"><span class= "glyphicon glyphicon-question-sign"></span> Adoption Info</a></li>
 	                        <li><a href="../favorites/index.html"><span class= "glyphicon glyphicon-heart"></span> Favorites</a></li>
 
-						</ul>
-					</div>
+					</ul>
+				</div>
 
-				</div><!-- .container -->
+			</div><!-- .container -->
 
-			</nav>
+		</nav>
 
-		</header>
+	</header>
+
+	<!-- Navigation end -->
+
 
 		<div class="container">
 		</br>
@@ -419,7 +429,25 @@
     		displayPets = [];
     	}    	
 
+<<<<<<< HEAD
     }
+=======
+	        	if (breedval == "corgi") {
+	        		displayPets = [gatsby];
+	        	} else if (breedval == "maltese") {
+	        		displayPets = [benjamin];
+	        	} else if (breedval == "siamese") {
+	        		displayPets = [robert];
+	        	} else if (breedval == "holland lop" || breedval == "lop") {
+	        		displayPets = [herbert];
+	        	} else if (breedval == "chihuahua") {
+	        		displayPets = [staples];
+	        	} else {
+	        		displayPets = [];
+	        	}
+
+	        }
+>>>>>>> a28578e2280f5290779963163f767aaaace848ed
 
     function showResults () {
 
@@ -444,10 +472,17 @@
 				newModal = newModal + "<div class='slides-"+displayPets[i].name.toLowerCase()+"'>" + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'></div>";
 			}
 
+<<<<<<< HEAD
 			for (k = 0; k < displayPets[i].videos.length; k++){
 				// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
 				newModal = newModal + "<div class='slides'>" + "<iframe width='370' height='350' class='" + displayPets[i].name + "Slides' src='" + displayPets[i].videos[k] + "'></iframe></div>";
 			}					
+=======
+					for (k = 0; k < displayPets[i].videos.length; k++){
+						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
+						newModal = newModal + "<div class='slides'>" + "<iframe width='370' height='350' class='" + displayPets[i].name + "Slides' src='" + displayPets[i].videos[k] + "'></iframe></div>";
+					}
+>>>>>>> a28578e2280f5290779963163f767aaaace848ed
 
 			// newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ displayPets[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ displayPets[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div><button type='button' class='btn btn-secondary'>Feed me a treat</button><button type='button' class='btn btn-secondary'>Take me walking</button><button type='button' class='btn btn-secondary'>Play with me</button></div><div class='col-md-4'><p>" + displayPets[i].description + "</p>";
 
@@ -457,6 +492,7 @@
 				newModal = newModal + "<span class='dot-"+displayPets[i].name.toLowerCase()+"' onclick='currentSlide("+(j+1)+")'></span>";
 			}
 			newModal = newModal+"</div></div><div class='col-md-4'><h4 class='subheader'>Interact:</h4><button type='button' class='btn btn-secondary' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' id='play'>Play with me</button><h4 class='subheader' id='maintenance'>Maintenance:</h4>";
+
 
 
 			//add the pet favorites info
@@ -479,7 +515,9 @@
 				newModal += "<img class='paw' src='../images/paw.png'></img>";
 			}
 
-			newModal += "</div></div></div><div class='row'><p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary' style='margin-right:8px;'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
+			newModal += "</div></div></div><div class='row'><h4 class='subheader bootons'>Interact:</h4><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='play'>Play with me</button>"
+			newModal += "<p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary' style='margin-right:8px;'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
+
 
 
 			$('#pet-display').append(newResult);

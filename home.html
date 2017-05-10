@@ -39,9 +39,9 @@ var digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 $(document).ready(function()
 {
+    
 
-
-
+  
 
 });
 
@@ -69,16 +69,16 @@ $(document).on('keyup', function(evt) {
     validZip = zipValue.length == 5 && allDigits;
 
     console.log("validZip" + validZip)
-
+   
 
     if (validZip && (evt.keyCode == 13)){
     	$("#zipButton").click();
     	window.location.href = "./searchres/index.html";
-
+     	
      	console.log("triggered");
     }
-
-});
+    	
+}); 	
 
 
 </script>
@@ -98,8 +98,13 @@ $(document).on('keyup', function(evt) {
 			<div class="container">
 
 				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+        			<span class="icon-bar"></span>
+       				 <span class="icon-bar"></span>
+        			<span class="icon-bar"></span>                        
+     				 </button>
 
-					<a class="navbar-brand" href="./home.html">spotted
+					<a class="navbar-brand" href="./home.html">spotted</a>
 				</div>
 
 
@@ -136,22 +141,22 @@ $(document).on('keyup', function(evt) {
 
 		<div class="container" id = "home-container">
 
-
+			
 			<div class="row">
 
-
+			
 
 				<div class="col-sm-4 col-sm-offset-4">
 					<div class="section-chunk-header" style = "background-color: rgba(245, 245, 245, 0.8);">
-						<h2 class="section-chunk-title">spotted</h2>
-
+						<h2 class="section-chunk-title">spotted</h2> 
+						
 						<h6 class="section-chunk-subtitle" style = "letter-spacing: 4px; color: #666; text-align: center; padding-left: 60px; text-transform: lowercase; font-family: 'Comfortaa', Times, sans-serif; padding-top: 2.8em;">
 							online pet adoption
 						</h6>
 						<div class="section-chunk-subtitle">
 
 							<br><br>
-
+						
 							Our mission is to help you with the pet adoption process so that loveable animals can find a home!
 						</div>
 					</div>
@@ -178,15 +183,22 @@ $(document).on('keyup', function(evt) {
 				<div class="section-chunk-subtitle text-center">
 					<br>
 					<br>
-
-
-					<span class= "glyphicon glyphicon-question-sign"></span>  New to adoption? Click <strong style='text-decoration: underline;'><a href="./adoptionInfo/index.html">here</a></strong> to learn 
+					<span class= "glyphicon glyphicon-question-sign"></span>  New to adoption? Click <a href="./adoptionInfo/index.html">here</a> to learn more about the requirements and process!
 				</div>
 			</div>
 		</div><!-- .container -->
 	</section>
 
 	<!-- Mission end -->
+
+
+
+
+
+
+
+
+
 
 
 
@@ -230,7 +242,7 @@ $(document).on('keyup', function(evt) {
 
 	<!-- Footer end -->
 
-
+	
 
 
 
