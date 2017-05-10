@@ -480,7 +480,7 @@
 =======
 					for (k = 0; k < displayPets[i].videos.length; k++){
 						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
-						newModal = newModal + "<div class='slides'>" + "<iframe width='370' height='350' class='" + displayPets[i].name + "Slides' src='" + displayPets[i].videos[k] + "'></iframe></div>";
+						newModal = newModal + "<div class='slides-"+displayPets[i].name.toLowerCase()+"'>" + "<iframe width='370' height='350' class='" + displayPets[i].name + "Slides' src='" + displayPets[i].videos[k] + "'></iframe></div>";
 					}
 >>>>>>> a28578e2280f5290779963163f767aaaace848ed
 
