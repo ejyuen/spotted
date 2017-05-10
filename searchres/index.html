@@ -322,61 +322,59 @@
 			breedval = $('#breed').val().trim().toLowerCase();
 			if(e.which == 13 && breedval != "") {
 				sortBreed(breedval);
-				showResults();
 			} else if (breedval == "") {
 				displayPets = [gatsby, herbert, benjamin, staples, robert];
-				showResults();
+
 			}
 
+			showResults();
 			$('[data-toggle="popover"]').popover({
 				placement: 'right'
 			});
 		});
 
 
-	            $('.sortButtonUp').click(function() {
+        $('.sortButtonUp').click(function() {
 
 
-	                var id = $(this).attr('id');
-
-
-
-	                sortResultsUp(id);
-
-	                for (i = 0; i < displayPets.length; i++){
-						console.log(displayPets[i].name);
-
-
-					}
-					console.log("--------");
-
-
-	                showResults();
-									$('[data-toggle="popover"]').popover({
-										placement: 'right'
-									});
-	            });
+            var id = $(this).attr('id');
 
 
 
+            sortResultsUp(id);
+
+            for (i = 0; i < displayPets.length; i++){
+				console.log(displayPets[i].name);
+
+
+			}
+			console.log("--------");
+
+
+            showResults();
+            $('[data-toggle="popover"]').popover({
+				placement: 'right'
+			});
+        });
 
 
 
-	            $('.sortButtonDown').click(function() {
-
-	            	var id = $(this).attr('id');
 
 
+        $('.sortButtonDown').click(function() {
 
-	                sortResultsDown(id);
-
-	                for (i = 0; i < displayPets.length; i++){
-						console.log(displayPets[i].name);
+        	var id = $(this).attr('id');
 
 
-					}
-					console.log("--------");
 
+            sortResultsDown(id);
+
+            for (i = 0; i < displayPets.length; i++){
+				console.log(displayPets[i].name);
+
+
+			}
+			console.log("--------");
 
 	                showResults();
 
@@ -387,128 +385,131 @@
 
 
 
+    function sortResultsUp(prop) {
+        displayPets = displayPets.sort(function(a, b) {
+        	alphabetOrder = parseFloat(a["name"]) - parseFloat(b["name"]);
+        	if (parseFloat(a[prop]) == parseFloat(b[prop])){
+        		return alphabetOrder;
+        	}else{
+        		return parseFloat(a[prop]) - parseFloat(b[prop]);
+        	}
 
-	        function sortResultsUp(prop) {
-	            displayPets = displayPets.sort(function(a, b) {
-	            	alphabetOrder = parseFloat(a["name"]) - parseFloat(b["name"]);
-	            	if (parseFloat(a[prop]) == parseFloat(b[prop])){
-	            		return alphabetOrder;
-	            	}else{
-	            		return parseFloat(a[prop]) - parseFloat(b[prop]);
-	            	}
+    	});
 
-	        	});
-
-	        }
-
-
-
-	        function sortResultsDown(prop, desc) {
-	            displayPets = displayPets.sort(function(a, b) {
-	            	alphabetOrder = parseFloat(a["name"]) - parseFloat(b["name"]);
-	            	if (parseFloat(a[prop]) == parseFloat(b[prop])){
-	            		return alphabetOrder;
-	            	}else{
-	            		return parseFloat(b[prop]) - parseFloat(a[prop]);
-	            	}
-
-	        	});
-	        }
-
-	        function sortBreed(breedval) {
-
-	        	if (breedval == "corgi") {
-	        		displayPets = [gatsby];
-	        	} else if (breedval == "maltese") {
-	        		displayPets = [benjamin];
-	        	} else if (breedval == "siamese") {
-	        		displayPets = [robert];
-	        	} else if (breedval == "holland lop" || breedval == "lop") {
-	        		displayPets = [herbert];
-	        	} else if (breedval == "chihuahua") {
-	        		displayPets = [staples];
-	        	} else {
-	        		displayPets = [];
-	        	}
-
-	        }
-
-	        function showResults () {
-
-	        	$('#pet-display').empty();
-		            			//add the html for each pet
-						//add the html for each pet
-				for (i = 0; i < displayPets.length; i++){
-					//pet window
-					var newResult = "<div class='petbox' id='" + displayPets[i].name + "'><div class='petprev'><img src='" + displayPets[i].images[0] + "'></div>"
-									+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block; margin-left: -10px'>"
-									+ "<h4>" + displayPets[i].name + "</h4> <p>" + displayPets[i].gender + ", " + displayPets[i].age + ", " + displayPets[i].breed + "</p></div>"
-									+ "<img style='vertical-align: middle; float: right; margin-right: 10px; margin-top: 7px' src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div>";
-
-					//modal
-
-					var newModal = "<div class='modal fade' id='" + displayPets[i].name + "Modal' tabindex='-1' role='dialog' aria-labelledby='" + displayPets[i].name + "Modal' aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h5 class='modal-title' id='" + displayPets[i].name + "Modal'>" + displayPets[i].name + "</h5></div><div class='modal-body'><div class='row'><div class='col-md-8'>";
-
-					newModal = newModal + "<div class='slideshow-container'>";
-
-					for (j = 0; j < displayPets[i].images.length; j++){
-						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
-						newModal = newModal + "<div class='slides-"+displayPets[i].name.toLowerCase()+"'>" + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'></div>";
-					}
-
-					for (k = 0; k < displayPets[i].videos.length; k++){
-						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
-						newModal = newModal + "<div class='slides-"+displayPets[i].name.toLowerCase()+"'>" + "<iframe width='370' height='350' class='" + displayPets[i].name + "Slides' src='" + displayPets[i].videos[k] + "'></iframe></div>";
-					}
-
-					// newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ displayPets[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ displayPets[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div><button type='button' class='btn btn-secondary'>Feed me a treat</button><button type='button' class='btn btn-secondary'>Take me walking</button><button type='button' class='btn btn-secondary'>Play with me</button></div><div class='col-md-4'><p>" + displayPets[i].description + "</p>";
-
-					newModal = newModal + "</div><a class='prev' onclick='plusSlides(-1,"+displayPets[i].name+");' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusSlides(+1,"+displayPets[i].name+");'>&#10095;</a><div style='text-align:center;margin: 0 10px 10px 10px;'>";
-					for (j = 0; j < displayPets[i].images.length; j++){
-						// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
-						newModal = newModal + "<span class='dot-"+displayPets[i].name.toLowerCase()+"' onclick='currentSlide("+(j+1)+")'></span>";
-					}
-					newModal = newModal+"</div></div><div class='col-md-4'><h4 class='subheader' id='maintenance'>Maintenance:</h4>";
-
-
-					//add the pet favorites info
-
-					newModal +="<div class='description'><p>Activity<p></div><div>"
-
-					for (k = 0; k < displayPets[i].activity; k++){
-						newModal += "<img class='paw' src='../images/paw.png'></img>";
-					}
-
-					newModal += "</div><div class='description'><p>Kid-Friendly</p></div><div>";
-
-					for (l = 0; l < displayPets[i].kids; l++){
-						newModal += "<img class='paw' src='../images/paw.png'></img>";
-					}
-
-					newModal += "</div><div class='description'><p>Shedding</p></div><div>";
-
-					for (l = 0; l < displayPets[i].shedding; l++){
-						newModal += "<img class='paw' src='../images/paw.png'></img>";
-					}
-
-					newModal += "</div></div></div><div class='row'><h4 class='subheader bootons'>Interact:</h4><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='play'>Play with me</button>"
-					newModal += "<p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary' style='margin-right:8px;'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
-
-
-					$('#pet-display').append(newResult);
-					$('#pet-display').append(newModal);
+    }
 
 
 
+    function sortResultsDown(prop, desc) {
+        displayPets = displayPets.sort(function(a, b) {
+        	alphabetOrder = parseFloat(a["name"]) - parseFloat(b["name"]);
+        	if (parseFloat(a[prop]) == parseFloat(b[prop])){
+        		return alphabetOrder;
+        	}else{
+        		return parseFloat(b[prop]) - parseFloat(a[prop]);
+        	}
+
+    	});
+    }
+
+    function sortBreed(breedval) {
+
+    	if (breedval == "corgi") {
+    		displayPets = [gatsby];
+    	} else if (breedval == "maltese") {
+    		displayPets = [benjamin];
+    	} else if (breedval == "siamese") {
+    		displayPets = [robert];
+    	} else if (breedval == "holland lop" || breedval == "lop") {
+    		displayPets = [herbert];
+    	} else if (breedval == "chihuahua") {
+    		displayPets = [staples];
+    	} else {
+    		displayPets = [];
+    	}
+
+    }
 
 
-					}
+    function showResults () {
+
+    	$('#pet-display').empty();
+            			//add the html for each pet
+				//add the html for each pet
+		for (i = 0; i < displayPets.length; i++){
+			//pet window
+			var newResult = "<div class='petbox' id='" + displayPets[i].name + "'><div class='petprev'><img src='" + displayPets[i].images[0] + "'></div>"
+							+ "<div class='descbox'><div class='petinf' style='vertical-align: middle; display: inline-block; margin-left: -10px'>"
+							+ "<h4>" + displayPets[i].name + "</h4> <p>" + displayPets[i].gender + ", " + displayPets[i].age + ", " + displayPets[i].breed + "</p></div>"
+							+ "<img style='vertical-align: middle; float: right; margin-right: 10px; margin-top: 7px' src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div>";
+
+			//modal
+
+			var newModal = "<div class='modal fade' id='" + displayPets[i].name + "Modal' tabindex='-1' role='dialog' aria-labelledby='" + displayPets[i].name + "Modal' aria-hidden='true'><div class='modal-dialog' role='document'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h5 class='modal-title' id='" + displayPets[i].name + "Modal'>" + displayPets[i].name + "</h5></div><div class='modal-body'><div class='row'><div class='col-md-8'>";
+
+			newModal = newModal + "<div class='slideshow-container'>";
+
+			for (j = 0; j < displayPets[i].images.length; j++){
+				// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
+				newModal = newModal + "<div class='slides-"+displayPets[i].name.toLowerCase()+"'>" + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'></div>";
+			}
+
+			for (k = 0; k < displayPets[i].videos.length; k++){
+				// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
+				newModal = newModal + "<div class='slides'>" + "<iframe width='370' height='350' class='" + displayPets[i].name + "Slides' src='" + displayPets[i].videos[k] + "'></iframe></div>";
+			}
+
+
+			// newModal = newModal + "</div><a class='prev' onclick='plusDivs(-1, "+ displayPets[i].name + "); plusSlides(-1);' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusDivs(+1, "+ displayPets[i].name + "); plusSlides(+1);'>&#10095;</a><div style='text-align:center;margin: 10px;'><span class='dot' onclick='currentSlide(1)'></span><span class='dot' onclick='currentSlide(2)'></span><span class='dot' onclick='currentSlide(3)'></span><span class='dot' onclick='currentSlide(4)'></span></div><button type='button' class='btn btn-secondary'>Feed me a treat</button><button type='button' class='btn btn-secondary'>Take me walking</button><button type='button' class='btn btn-secondary'>Play with me</button></div><div class='col-md-4'><p>" + displayPets[i].description + "</p>";
+
+			newModal = newModal + "</div><a class='prev' onclick='plusSlides(-1,"+displayPets[i].name+");' style='margin-left:-15px;'>&#10094;</a><a class='next' onclick='plusSlides(+1,"+displayPets[i].name+");'>&#10095;</a><div style='text-align:center;margin: 0 10px 10px 10px;'>";
+			for (j = 0; j < displayPets[i].images.length; j++){
+				// newModal = newModal + "<img class='" + displayPets[i].name + "Slides' src='" + displayPets[i].images[j] + "'>";
+				newModal = newModal + "<span class='dot-"+displayPets[i].name.toLowerCase()+"' onclick='currentSlide("+(j+1)+")'></span>";
+			}
+			newModal = newModal+"</div></div><div class='col-md-4'><h4 class='subheader'>Interact:</h4><button type='button' class='btn btn-secondary' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' id='play'>Play with me</button><h4 class='subheader' id='maintenance'>Maintenance:</h4>";
+
+
+
+			//add the pet favorites info
+
+			newModal +="<div class='description'><p>Activity<p></div><div>"
+
+			for (k = 0; k < displayPets[i].activity; k++){
+				newModal += "<img class='paw' src='../images/paw.png'></img>";
+			}
+
+			newModal += "</div><div class='description'><p>Kid-Friendly</p></div><div>";
+
+			for (l = 0; l < displayPets[i].kids; l++){
+				newModal += "<img class='paw' src='../images/paw.png'></img>";
+			}
+
+			newModal += "</div><div class='description'><p>Shedding</p></div><div>";
+
+			for (l = 0; l < displayPets[i].shedding; l++){
+				newModal += "<img class='paw' src='../images/paw.png'></img>";
+			}
+
+			newModal += "</div></div></div><div class='row'><h4 class='subheader bootons'>Interact:</h4><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='play'>Play with me</button>"
+			newModal += "<p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary' style='margin-right:8px;'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
+
+
+
+			$('#pet-display').append(newResult);
+			$('#pet-display').append(newModal);
 
 
 
 
 
-				}
+			}
+
+
+
+
+
+		}
 
 
 
