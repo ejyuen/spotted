@@ -65,20 +65,114 @@ $(document).on('click', '.petinf', function(evt) {
 });
 
 
-function plusDivs(n, name) {
-    showDivs(window[name.id + 'SlideIndex'] += n, window[name.id + 'SlideIndex'], name.id);
-}
-
+// function plusDivs(n, name) {
+//     showDivs(window[name.id + 'SlideIndex'] += n, window[name.id + 'SlideIndex'], name.id);
+// }
+//
 function showDivs(n, slideIndex, name) {
     var i;
     var x = document.getElementsByClassName(name + "Slides");
     if (n > x.length) {window[name + 'SlideIndex'] = 1}
     if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    x[window[name + 'SlideIndex'] -1].style.display = "block";
 }
+
+var slideIndex_benjamin=1;
+var slideIndex_robert=1;
+var slideIndex_staples=1;
+var slideIndex_gatsby=1;
+var slideIndex_herbert=1;
+
+function plusSlides(n,pet) {
+  if (pet.id.toLowerCase()=='staples'){
+    slideIndex_staples+=n;
+    showSlides(slideIndex_staples,'staples');
+  } else if (pet.id.toLowerCase()=='benjamin'){
+    slideIndex_benjamin+=n;
+    showSlides(slideIndex_benjamin,'benjamin');
+  } else if (pet.id.toLowerCase()=='robert'){
+    slideIndex_robert+=n;
+    showSlides(slideIndex_robert,'robert');
+  } else if (pet.id.toLowerCase()=='gatsby'){
+    slideIndex_robert+=n;
+    showSlides(slideIndex_robert,'gatsby');
+  } else if (pet.id.toLowerCase()=='herbert'){
+    slideIndex_robert+=n;
+    showSlides(slideIndex_robert,'herbert');
+  }
+}
+
+function currentSlide(n,pet) {
+  if (pet.id.toLowerCase()=='staples'){
+    slideIndex_staples=n;
+    showSlides(slideIndex_staples,'staples');
+  } else if (pet.id.toLowerCase()=='benjamin'){
+    slideIndex_benjamin=n;
+    showSlides(slideIndex_benjamin,'benjamin');
+  } else if (pet.id.toLowerCase()=='robert'){
+    slideIndex_robert=n;
+    showSlides(slideIndex_robert,'robert');
+  } else if (pet.id.toLowerCase()=='gatsby'){
+    slideIndex_robert=n;
+    showSlides(slideIndex_robert,'gatsby');
+  } else if (pet.id.toLowerCase()=='herbert'){
+    slideIndex_robert=n;
+    showSlides(slideIndex_robert,'herbert');
+  }
+}
+
+function showSlides(n,pet) {
+  var i;
+  var slides = document.getElementsByClassName("slides-"+pet);
+  var dots = document.getElementsByClassName("dot-"+pet);
+  if (n > slides.length) {
+    if (pet=='staples'){
+      slideIndex_staples=1;
+    } else if (pet=='benjamin'){
+      slideIndex_benjamin=1;
+    } else if (pet=='robert'){
+      slideIndex_robert=1;
+    } else if (pet=='gatsby'){
+      slideIndex_robert=1;
+    } else if (pet=='herbert'){
+      slideIndex_robert=1;
+    }
+  } else if (n < 1) {
+    if (pet=='staples'){
+      slideIndex_staples=slides.length;
+    } else if (pet=='benjamin'){
+      slideIndex_benjamin=slides.length;
+    } else if (pet=='robert'){
+      slideIndex_robert=slides.length;
+    } else if (pet=='gatsby'){
+      slideIndex_robert=slides.length;
+    } else if (pet=='herbert'){
+      slideIndex_robert=slides.length;
+    }
+  }
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  if (pet=='staples'){
+    slides[slideIndex_staples-1].style.display = "block";
+    dots[slideIndex_staples-1].className += " active";
+  } else if (pet=='benjamin'){
+    slides[slideIndex_benjamin-1].style.display = "block";
+    dots[slideIndex_benjamin-1].className += " active";
+  } else if (pet=='robert'){
+    slides[slideIndex_robert-1].style.display = "block";
+    dots[slideIndex_robert-1].className += " active";
+  } else if (pet=='gatsby'){
+    slides[slideIndex_robert-1].style.display = "block";
+    dots[slideIndex_robert-1].className += " active";
+  } else if (pet=='herbert'){
+    slides[slideIndex_robert-1].style.display = "block";
+    dots[slideIndex_robert-1].className += " active";
+  }
+}
+
 
 function switch_drop(phrase){
 	$("#drop-down").text(phrase);
