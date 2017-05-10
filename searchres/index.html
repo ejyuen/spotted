@@ -5,7 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	    <title>Search Results: Spotted</title>
+	    <title>Spotted - Browse</title>
 
 	    <!-- Bootstrap -->
 	    <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -70,9 +70,9 @@
 			<div class="row">
 				<div class="col-md-3 left">
 				      <div class="row zipcode">
-				        <label for='zipcode' style="margin-left: -20px;">Zip-Code:</label>				     
+				        <label for='zipcode' style="margin-left: -20px;font-family: 'Josefin Slab';font-size:16px;">Zip-Code:</label>
 				        <input type="text" class="form-control" id="zipcode" placeholder="01803" style="display: inline-block; width: 70px; height: 32px;"/>
-						<a href="#" style="display: inline-block; margin-left: -5px; margin-top:-2px;" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-arrow-right"></span> </a>
+						<a href="#" style="display: inline-block; margin-left: -5px; margin-top:2px;" class="btn btn-sm zip-enter"><span class="glyphicon glyphicon-arrow-right"></span> </a>
 				      </div>
 				    </br>
 				    <div class='filter-param'>Type</div>
@@ -133,8 +133,9 @@
 
 							<div class="breed-search">
 
-				        <label for='breed'>Breed:</label>
+				        <label for='breed' style='font-family: "Josefin Slab";font-size:16px;'>Breed:</label>
 				        <input type="text" class="form-control" id="breed" placeholder="Golden Retriever, Siamese, etc." style="display:inline-block; width: 300px;"/>
+								<a href="#" style="display: inline-block; margin-left: -5px; margin-top:2px;" class="btn zip-enter"><span class= "glyphicon glyphicon-search"></span> </a>
 				      </div>
 
 							<div class="dropdown" style="display:inline-block;">Sort by
@@ -205,7 +206,7 @@
             description: "Gatsby is very active and energetic. He loves to go on hikes, play with other dogs, and play with a whole bunch of toys. Gatsby enjoys meeting new people, and loves interacting with kids. Gatsby would be happy in a bustling family environment. He would do well as the only dog in a home or in a multi-dog home.",
             distance: 1
         };
- 
+
         var herbert = {
             name: "Herbert",
             species: "rabbit",
@@ -223,7 +224,7 @@
             description: "Herbert's an unpaired Holland Lop. Gentle and mild-mannered, Herbert can be a little aloof but loves his daily pets. He loves jumping around and climbing things, and tearing up cardboard boxes. Litter trained and socialized, Herbert would make a perfect pet for children or anyone looking for a laid back companion for their home.",
             distance: 2
         };
- 
+
         var benjamin = {
               name: "Benjamin",
               species: "dog",
@@ -241,7 +242,7 @@
               description: "Benjamin just wants to cuddle and nap. He is gentle-mannered and affectionate, eager and sprightly in action, and, has energy and personality larger than his size. The Maltese is a extra-small breed and has a lifespan of 13 to 15 years. He needs good nutrition and grooming.",
               distance: 3
         };
- 
+
         var staples = {
               name: "Staples",
               species: "dog",
@@ -259,7 +260,7 @@
               description: "hello",
               distance: 4
         };
- 
+
         var robert = {
               name: "Robert",
               species: "cat",
@@ -295,26 +296,26 @@
 
 		for (i = 0; i < displayPets.length; i++){
 			console.log(displayPets[i].name)
-			
+
 
 		}
 		console.log("--------");
 
-			
+
 	            $('.sortButtonUp').click(function() {
 
 
-					
+
 
 	                var id = $(this).attr('id');
-	                
 
-	      
+
+
 	                sortResultsUp(id);
 
 	                for (i = 0; i < displayPets.length; i++){
 						console.log(displayPets[i].name);
-						
+
 
 					}
 					console.log("--------");
@@ -323,22 +324,22 @@
 	                showResults();
 	            });
 
-	               
-	            
-        	
 
-        	
+
+
+
+
 	            $('.sortButtonDown').click(function() {
 
 	            	var id = $(this).attr('id');
-	                
 
-	      
+
+
 	                sortResultsDown(id);
 
 	                for (i = 0; i < displayPets.length; i++){
 						console.log(displayPets[i].name);
-						
+
 
 					}
 					console.log("--------");
@@ -346,8 +347,8 @@
 
 	                showResults();
 	            });
-	               
-	            
+
+
 
 
 	        function sortResultsUp(prop) {
@@ -358,12 +359,12 @@
 	            	}else{
 	            		return parseFloat(a[prop]) - parseFloat(b[prop]);
 	            	}
-	                
-	        	});	
-	            
+
+	        	});
+
 	        }
 
-	            
+
 
 	        function sortResultsDown(prop, desc) {
 	            displayPets = displayPets.sort(function(a, b) {
@@ -373,8 +374,8 @@
 	            	}else{
 	            		return parseFloat(b[prop]) - parseFloat(a[prop]);
 	            	}
-	                
-	        	});	
+
+	        	});
 	        }
 
 	        function showResults () {
@@ -425,7 +426,7 @@
 						newModal += "<img class='paw' src='../images/paw.png'></img>";
 					}
 
-					newModal += "</div></div></div><div class='row'><p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
+					newModal += "</div></div></div><div class='row'><p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary' style='margin-right:8px;'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
 
 
 					$('#pet-display').append(newResult);
@@ -442,8 +443,8 @@
 
 
 				}
-        	
-	 
+
+
 
 
 		</script>
