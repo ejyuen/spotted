@@ -1,15 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
-
+:root{
+    --darkblue: RGB(100,160,142);
+		--lightblue: RGB(190,216,211);
+		--lightorange: RGB(253,200,84);
+		--darkorange: RGB(249,150,49);
+		--lightgray: RGB(245,245,245);
+}
 
 h4 {
+	font-family: 'Comfortaa' !important;
 	font-size: 16px !important;
 	margin-bottom: 2px !important;
 }
 
+h5 {
+	font-family: 'Comfortaa' !important;
+	font-size: 20px !important;
+	font-weight: bold !important;
+}
+
 p{
-	font-size: 12px !important;
+	font-family: 'Josefin Slab' !important;
+	font-size: 16px !important;
 
 }
 
@@ -21,6 +35,28 @@ img {
 	height: 100% !important;
 	width: 100%;
 
+}
+
+.btn-secondary {
+	background-color: var(--darkblue);
+	font-weight: bold;
+	color: white;
+	font-family: "Comfortaa" !important;
+}
+
+.btn-secondary:hover {
+	background-color: var(--lightorange);
+	font-weight: bold;
+	color: white !important;
+}
+
+#seeprof{
+	font-weight: bold;
+	color: white !important;
+}
+
+.cbox {
+	margin-left: 16px !important;
 }
 
 #seeprof {
@@ -45,6 +81,8 @@ img {
 .dropdown {
 	float: right;
 	margin-right: 6px;
+	font-family: "Josefin Slab";
+	font-size: 16px;
 }
 
 .fav {
@@ -98,6 +136,13 @@ img {
 	border: 1px solid lightgray;
 }
 
+
+
+#drop-down-menu, #drop-down {
+	background-color: var(--darkblue);
+	font-family: "Comfortaa";
+}
+
 #pet-display {
 	width: 855.5px;
 	padding: 0px;
@@ -112,6 +157,7 @@ img {
 	height: 217px;
 	width: 273px;
 	cursor: pointer;
+	user-select: none;
 }
 
 .popover-title {display:none;}
@@ -197,12 +243,12 @@ img {
   line-height: 400px;
   margin-top: -16px;
   margin-left: -5px;
-  
+
   color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.2s ease;
-  
+
 }
 
 .prev {
@@ -228,6 +274,24 @@ img {
 .subheader {
 	margin-top: 0px;
 	/*text-align: center;*/
+}
+
+.zip-enter{
+	background-color: var(--darkblue);
+	color: white;
+	border-top-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+}
+
+#breed, #zipcode{
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	font-family: "Josefin Slab";
+}
+
+.zip-enter:hover {
+  background-color: var(--lightorange);
+	color: white !important;
 }
 
 #maintenance {
