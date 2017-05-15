@@ -492,7 +492,7 @@
 			}
 
 			newModal += "</div></div></div><div class='row'><h4 class='subheader bootons'>Interact:</h4><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='feed'>Feed me a treat</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='walk'>Take me walking</button><button type='button' class='btn btn-secondary' style='margin-left: 20px;' id='play'>Play with me</button>"
-			newModal += "<p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary' style='margin-right:8px;'><a id='seeprof' href='../petprofile/index.html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
+			newModal += "<p id='petdesc'>" + displayPets[i].description + "</p></div></div><div class='modal-footer'><button type='button' class='btn btn-secondary' style='margin-right:8px;'><a id='seeprof' href='../petprofile/"+displayPets[i].name.toLowerCase()+".html'>See Profile</a></button><img src='../images/hearticon-pink.png' id='" + displayPets[i].name + "-fav-modal' class='fav' data-toggle='popover' data-content= '" + displayPets[i].name + " added to favorites!'></div></div></div>";
 
 
 

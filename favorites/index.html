@@ -181,7 +181,7 @@ function open(pet){
                                   +shedding+"</div><hr/><div class='description'>"
                                   +vaccinate+"</div><hr/><div class='description'>"
                                   +neutered+"</div><hr/><div>"
-                                  +"<input type='button' id='go-to-profile' class='btn profile' value='Go To Profile'/></div></div></div>";
+                                  +"<input type='button' id='go-to-profile-"+pet.name.toLowerCase()+"' class='btn profile' value='Go To Profile'/></div></div></div>";
 
   $("#pets").append(add);
 }
@@ -251,8 +251,16 @@ function close(name){
 }
 
 
-$(document).on('click',"#go-to-profile", function(evt){
-  document.location.href = "../petprofile/index.html";
+$(document).on('click',"#go-to-profile-staples", function(evt){
+  document.location.href = "../petprofile/staples.html";
+})
+
+$(document).on('click',"#go-to-profile-benjamin", function(evt){
+  document.location.href = "../petprofile/benjamin.html";
+})
+
+$(document).on('click',"#go-to-profile-robert", function(evt){
+  document.location.href = "../petprofile/robert.html";
 })
 
 $(document).on('click',"#search", function(evt){
@@ -397,7 +405,7 @@ function showSlides(n,pet) {
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
               <span class="icon-bar"></span>
                <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
+              <span class="icon-bar"></span>
              </button>
 
           <a class="navbar-brand" href="../home.html">spotted</a>
