@@ -87,53 +87,56 @@
 				    </br>
 				    <div class='filter-param'>Type</div>
 
-				    <input type="checkbox" class="cbox" id="cat"/>
-				    <label class="filter-option" for="cat">Cat</label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="dog"/>
-				    <label class="filter-option" for="dog">Dog</label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="other"/>
-				    <label class="filter-option" for="dog">Other</label>
+				    <div id = "filters">
 
-				    <div class='filter-param'>Age</div>
-				    <input type="checkbox" class="cbox" id="young"/>
-				    <label class="filter-option" for="young"> < 1 year </label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="med"/>
-				    <label class="filter-option" for="med"> 1-2 years </label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="old"/>
-				    <label class="filter-option" for="old"> 3-5 years</label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="sr"/>
-				    <label class="filter-option" for="sr"> > 5 years </label>
+					    <input type="checkbox" class="cbox" id="cat"/>
+					    <label class="filter-option" for="cat">Cat</label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="dog"/>
+					    <label class="filter-option" for="dog">Dog</label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="other"/>
+					    <label class="filter-option" for="dog">Other</label>
 
-				    <div class='filter-param'>Sex</div>
+					    <div class='filter-param'>Age</div>
+					    <input type="checkbox" class="cbox" id="young"/>
+					    <label class="filter-option" for="young"> < 1 year </label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="med"/>
+					    <label class="filter-option" for="med"> 1-2 years </label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="old"/>
+					    <label class="filter-option" for="old"> 3-5 years</label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="sr"/>
+					    <label class="filter-option" for="sr"> > 5 years </label>
 
-				    <input type="checkbox" class="cbox" id="male"/>
-				    <label class="filter-option" for="male">Male</label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="female"/>
-				    <label class="filter-option" for="female">Female</label>
+					    <div class='filter-param'>Sex</div>
 
-				    <div class='filter-param'>Health</div>
+					    <input type="checkbox" class="cbox" id="male"/>
+					    <label class="filter-option" for="male">Male</label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="female"/>
+					    <label class="filter-option" for="female">Female</label>
 
-				    <input type="checkbox" class="cbox" id="fixed"/>
-				    <label class="filter-option" for="fixed">Spayed/Neutered</label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="specneeds"/>
-				    <label class="filter-option" for="specneeds">Special Needs</label>
+					    <div class='filter-param'>Health</div>
 
-				    <div class='filter-param'>Size</div>
-				    <input type="checkbox" class="cbox" id="small"/>
-				    <label class="filter-option" for="small">Small</label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="medium"/>
-				    <label class="filter-option" for="medium">Medium</label>
-				    <br>
-				    <input type="checkbox" class="cbox" id="large"/>
-				    <label class="filter-option" for="large">Large</label>
+					    <input type="checkbox" class="cbox" id="fixed"/>
+					    <label class="filter-option" for="fixed">Spayed/Neutered</label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="specneeds"/>
+					    <label class="filter-option" for="specneeds">Special Needs</label>
+
+					    <div class='filter-param'>Size</div>
+					    <input type="checkbox" class="cbox" id="small"/>
+					    <label class="filter-option" for="small">Small</label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="medium"/>
+					    <label class="filter-option" for="medium">Medium</label>
+					    <br>
+					    <input type="checkbox" class="cbox" id="large"/>
+					    <label class="filter-option" for="large">Large</label>
+					    </div>
 				</div>
 
 				<div class="col-md-9">
@@ -296,6 +299,8 @@
 
 		var petlist = [gatsby, herbert, benjamin, staples, robert];
 		var displayPets = [gatsby, herbert, benjamin, staples, robert];
+		var currentSort = "distance";
+
 
 		//manually make the slide indices
 
@@ -318,6 +323,8 @@
 		console.log("--------");
 
 
+
+
 		$(document).keypress(function(e) {
 			breedval = $('#breed').val().trim().toLowerCase();
 			if(e.which == 13 && breedval != "") {
@@ -338,6 +345,34 @@
 
 
             var id = $(this).attr('id');
+
+            currentSort = id;
+
+
+
+            sortResultsUp(id);
+
+            for (i = 0; i < displayPets.length; i++){
+				console.log(displayPets[i].name);
+
+
+			}
+			console.log("--------");
+
+
+            showResults();
+            $('[data-toggle="popover"]').popover({
+				placement: 'right'
+			});
+        });
+
+        $('.sortButtonUp').click(function() {
+
+
+
+
+            var id = $(this).attr('id');
+            currentSort = id;
 
 
 
@@ -384,6 +419,171 @@
 	            });
 
 
+    $("#filters :checkbox").click(function() {
+   		cat = [robert];
+   		dog = [gatsby, benjamin, staples];
+   		other = [herbert];
+
+   		young = [benjamin, staples, robert];
+   		med = [herbert];
+   		old = [gatsby];
+
+   		male = [gatsby, herbert, benjamin, staples];
+   		female = [robert];
+
+   		fixed = [gatsby, herbert, benjamin, staples, robert];
+   		specneeds = [];
+
+   		small = [herbert, staples];
+
+   		medium = [benjamin, robert];
+
+   		large = [gatsby];
+
+   		filterOptions = [cat, dog, other, young, med, old, male, female, fixed, specneeds, small, medium, large];
+   		checkedList = [];
+   		sex = [];
+   		species = [];
+   		age = [];
+   		special = [];
+   		size = [];
+
+
+
+
+   		$("#filters :checkbox:checked").each(function() {
+       		checkedList.push(this.id);
+   		});
+
+   		for (i = 0; i < checkedList.length; i++){
+				console.log(checkedList[i]);
+
+		}
+
+
+		if (checkedList.indexOf("cat") > -1){
+			for (i=0; i < cat.length; i++){
+				species.push(cat[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("dog") > -1){
+			for (i=0; i < dog.length; i++){
+				species.push(dog[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("other") > -1){
+			for (i=0; i < other.length; i++){
+				species.push(other[i]);
+			}
+
+		}
+
+
+		if (checkedList.indexOf("young") > -1){
+			for (i=0; i < young.length; i++){
+				age.push(young[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("med") > -1){
+			for (i=0; i < med.length; i++){
+				age.push(med[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("old") > -1){
+			for (i=0; i < old.length; i++){
+				age.push(old[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("fixed") > -1){
+			for (i=0; i < fixed.length; i++){
+				special.push(fixed[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("specneeds") > -1){
+			for (i=0; i < specneeds.length; i++){
+				special.push(specneeds[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("male") > -1){
+			for (i=0; i < male.length; i++){
+				sex.push(male[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("female") > -1){
+			for (i=0; i < female.length; i++){
+				sex.push(female[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("small") > -1){
+			for (i=0; i < small.length; i++){
+				size.push(small[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("medium") > -1){
+			for (i=0; i < medium.length; i++){
+				size.push(medium[i]);
+			}
+
+		}
+
+		if (checkedList.indexOf("large") > -1){
+			for (i=0; i < large.length; i++){
+				size.push(large[i]);
+			}
+
+		}
+
+		displayPets = intersect(intersect(intersect(species, age), intersect(special, size)), sex); 
+
+
+
+
+		if (currentSort == "distance" || currentSort == "activityUp" || currentSort == "shedding"){
+			sortResultsUp(currentSort);
+		}else{
+			sortResultsDown(currentSort);
+		}
+		showResults();
+
+
+
+
+
+
+
+
+
+	});
+
+	function intersect(a, b) {
+	    var t;
+	    if (b.length > a.length) t = b, b = a, a = t; // indexOf to loop over shorter
+	    return a.filter(function (e) {
+	        return b.indexOf(e) > -1;
+	    });
+	}
+
+
 
     function sortResultsUp(prop) {
         displayPets = displayPets.sort(function(a, b) {
@@ -400,7 +600,7 @@
 
 
 
-    function sortResultsDown(prop, desc) {
+    function sortResultsDown(prop) {
         displayPets = displayPets.sort(function(a, b) {
         	alphabetOrder = parseFloat(a["name"]) - parseFloat(b["name"]);
         	if (parseFloat(a[prop]) == parseFloat(b[prop])){
